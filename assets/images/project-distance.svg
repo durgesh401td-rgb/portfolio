@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="distBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#082f49" />
+      <stop offset="100%" stop-color="#0c4a6e" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" rx="12" fill="url(#distBg)" />
+
+  <!-- Header -->
+  <rect width="600" height="44" rx="12" fill="#0369a1" />
+  <rect y="34" width="600" height="10" fill="#0369a1" />
+  <circle cx="24" cy="22" r="5" fill="#ef4444" />
+  <circle cx="40" cy="22" r="5" fill="#f59e0b" />
+  <circle cx="56" cy="22" r="5" fill="#10b981" />
+  <text x="82" y="27" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#ffffff">📡 Distance Measurement System | C++ / Arduino / ESP8266</text>
+  <rect x="460" y="11" width="120" height="22" rx="4" fill="#0284c7" />
+  <text x="520" y="26" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="11" fill="#ffffff">Wireless Wi-Fi</text>
+
+  <!-- Left: Hardware diagram -->
+  <g transform="translate(25, 65)">
+    <rect width="260" height="286" rx="8" fill="#075985" stroke="#38bdf8" stroke-width="1" />
+    <text x="18" y="26" font-family="sans-serif" font-weight="bold" font-size="12" fill="#e0f2fe">Hardware Interface &amp; Sensor</text>
+
+    <!-- Arduino Board -->
+    <g transform="translate(18, 42)">
+      <rect width="105" height="95" rx="6" fill="#0284c7" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="52" y="30" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#ffffff">ARDUINO</text>
+      <text x="52" y="44" text-anchor="middle" font-family="monospace" font-size="8" fill="#bae6fd">ATmega328P</text>
+      <rect x="10" y="55" width="85" height="25" rx="3" fill="#0369a1" />
+      <text x="52" y="71" text-anchor="middle" font-family="monospace" font-size="8" fill="#e0f2fe">C++ Logic</text>
+    </g>
+
+    <!-- ESP8266 Module -->
+    <g transform="translate(140, 42)">
+      <rect width="100" height="95" rx="6" fill="#0f172a" stroke="#facc15" stroke-width="1.5" />
+      <text x="50" y="30" text-anchor="middle" font-family="monospace" font-size="9" font-weight="bold" fill="#facc15">ESP8266</text>
+      <text x="50" y="44" text-anchor="middle" font-family="monospace" font-size="8" fill="#94a3b8">Wi-Fi Transmit</text>
+      <circle cx="50" cy="70" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1" />
+      <text x="50" y="74" text-anchor="middle" font-size="12">📶</text>
+    </g>
+
+    <!-- Ultrasonic Wave Simulation -->
+    <g transform="translate(18, 155)">
+      <rect width="224" height="110" rx="6" fill="#0369a1" />
+      <text x="14" y="24" font-family="sans-serif" font-size="10" fill="#bae6fd">ULTRASONIC PULSE TIME-OF-FLIGHT</text>
+      <!-- Pulses -->
+      <path d="M 40 60 Q 60 45 60 75" fill="none" stroke="#38bdf8" stroke-width="2" />
+      <path d="M 80 60 Q 110 35 110 85" fill="none" stroke="#38bdf8" stroke-width="2" />
+      <path d="M 130 60 Q 170 25 170 95" fill="none" stroke="#38bdf8" stroke-width="2" />
+      <!-- Target obstacle -->
+      <rect x="185" y="40" width="25" height="50" rx="4" fill="#f43f5e" />
+      <text x="197" y="68" text-anchor="middle" font-size="9" font-weight="bold" fill="#ffffff">OBJ</text>
+      <text x="14" y="100" font-family="monospace" font-size="9" fill="#facc15">d = (time × speedOfSound) / 2</text>
+    </g>
+  </g>
+
+  <!-- Right: Wireless Data Stream Receiver -->
+  <g transform="translate(305, 65)">
+    <rect width="270" height="286" rx="8" fill="#075985" stroke="#38bdf8" stroke-width="1" />
+    <text x="18" y="26" font-family="sans-serif" font-weight="bold" font-size="12" fill="#e0f2fe">Wireless Web Telemetry</text>
+
+    <!-- Live Display Box -->
+    <rect x="18" y="42" width="234" height="95" rx="8" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+    <text x="30" y="66" font-family="sans-serif" font-size="10" fill="#94a3b8">REAL-TIME DISTANCE</text>
+    <text x="30" y="102" font-family="monospace" font-weight="bold" font-size="32" fill="#38bdf8">18.4 <tspan font-size="14" fill="#94a3b8">cm</tspan></text>
+    <text x="30" y="124" font-family="monospace" font-size="9" fill="#34d399">● Packet Loss: 0.0% | Latency: 12ms</text>
+
+    <!-- System logs -->
+    <rect x="18" y="150" width="234" height="115" rx="6" fill="#0f172a" />
+    <text x="26" y="172" font-family="monospace" font-size="8" fill="#34d399">[UART] Arduino Serial: TRIG sent</text>
+    <text x="26" y="188" font-family="monospace" font-size="8" fill="#38bdf8">[ECHO] Return pulse: 1070 us</text>
+    <text x="26" y="204" font-family="monospace" font-size="8" fill="#facc15">[ESP8266] Wi-Fi UDP Broadcast: OK</text>
+    <text x="26" y="220" font-family="monospace" font-size="8" fill="#e2e8f0">[HTTP Client] Web hook received 18.4cm</text>
+    <text x="26" y="246" font-family="monospace" font-size="8" fill="#a7f3d0">Status: SENSING &amp; STREAMING ACTIVE</text>
+  </g>
+</svg>

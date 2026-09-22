@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="rbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="rbAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" rx="12" fill="url(#rbBg)" />
+
+  <!-- Header -->
+  <rect width="600" height="44" rx="12" fill="#1e293b" />
+  <rect y="34" width="600" height="10" fill="#1e293b" />
+  <circle cx="24" cy="22" r="5" fill="#ef4444" />
+  <circle cx="40" cy="22" r="5" fill="#f59e0b" />
+  <circle cx="56" cy="22" r="5" fill="#10b981" />
+  <text x="82" y="27" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#38bdf8">📄 AI Resume Builder | Instant ATS-Formatted CV Generator</text>
+  <rect x="440" y="11" width="140" height="22" rx="4" fill="#1e3a8a" stroke="#38bdf8" stroke-width="1" />
+  <text x="510" y="26" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="11" fill="#93c5fd">HTML / CSS / JS</text>
+
+  <!-- Left: Form Input Wizard Mockup -->
+  <g transform="translate(25, 65)">
+    <rect width="250" height="286" rx="8" fill="#111827" stroke="#334155" stroke-width="1" />
+    <text x="16" y="26" font-family="sans-serif" font-weight="bold" font-size="12" fill="#f8fafc">User Details Wizard</text>
+
+    <!-- Step indicator -->
+    <rect x="16" y="38" width="55" height="4" rx="2" fill="#38bdf8" />
+    <rect x="75" y="38" width="55" height="4" rx="2" fill="#38bdf8" />
+    <rect x="134" y="38" width="55" height="4" rx="2" fill="#38bdf8" />
+    <rect x="193" y="38" width="40" height="4" rx="2" fill="#475569" />
+
+    <!-- Input fields simulation -->
+    <rect x="16" y="55" width="218" height="32" rx="5" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="26" y="75" font-family="sans-serif" font-size="11" fill="#f8fafc">Durgesh Sonar</text>
+
+    <rect x="16" y="98" width="218" height="32" rx="5" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="26" y="118" font-family="sans-serif" font-size="11" fill="#94a3b8">B.Tech CSE (AI &amp; ML)</text>
+
+    <rect x="16" y="142" width="218" height="60" rx="5" fill="#1f2937" stroke="#374151" stroke-width="1" />
+    <text x="26" y="160" font-family="sans-serif" font-size="10" fill="#cbd5e1">Skills: Python, C++, IoT, Web</text>
+    <text x="26" y="176" font-family="sans-serif" font-size="10" fill="#94a3b8">Projects: Smart Plant Monitoring...</text>
+
+    <rect x="16" y="215" width="218" height="36" rx="6" fill="url(#rbAccent)" />
+    <text x="125" y="238" text-anchor="middle" font-family="sans-serif" font-weight="bold" font-size="12" fill="#ffffff">⚡ Generate Formatted Resume</text>
+  </g>
+
+  <!-- Right: Formatted Resume Sheet Preview -->
+  <g transform="translate(295, 65)">
+    <rect width="280" height="286" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1" />
+    
+    <!-- Top banner on sheet -->
+    <rect x="18" y="18" width="244" height="2" fill="#0284c7" />
+    <text x="18" y="38" font-family="sans-serif" font-weight="bold" font-size="16" fill="#0f172a">DURGESH SONAR</text>
+    <text x="18" y="52" font-family="sans-serif" font-size="9" fill="#0284c7">B.Tech CSE (AI &amp; ML) | Sandip University</text>
+    
+    <line x1="18" y1="62" x2="262" y2="62" stroke="#e2e8f0" stroke-width="1" />
+    
+    <text x="18" y="78" font-family="sans-serif" font-weight="bold" font-size="10" fill="#334155">PROFILE SUMMARY</text>
+    <rect x="18" y="85" width="244" height="22" rx="3" fill="#f8fafc" />
+    <text x="24" y="98" font-family="sans-serif" font-size="8" fill="#64748b">Motivated CSE AI &amp; ML student with hands-on...</text>
+
+    <text x="18" y="125" font-family="sans-serif" font-weight="bold" font-size="10" fill="#334155">TECHNICAL EXPERTISE</text>
+    <text x="18" y="140" font-family="sans-serif" font-size="8" fill="#475569">• Languages: C, C++, Python, JavaScript</text>
+    <text x="18" y="154" font-family="sans-serif" font-size="8" fill="#475569">• IoT / Hardware: ESP8266, ultrasonic &amp; distance sensors</text>
+
+    <text x="18" y="178" font-family="sans-serif" font-weight="bold" font-size="10" fill="#334155">PROJECTS</text>
+    <text x="18" y="194" font-family="sans-serif" font-size="8" font-weight="bold" fill="#0f172a">Smart Plant Monitoring System using IoT</text>
+    <text x="18" y="208" font-family="sans-serif" font-size="8" font-weight="bold" fill="#0f172a">IoT Smart Lighting &amp; Distance Alert System</text>
+    
+    <rect x="18" y="230" width="115" height="28" rx="4" fill="#0f172a" />
+    <text x="75" y="248" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="10" fill="#ffffff">📥 Download PDF</text>
+  </g>
+</svg>

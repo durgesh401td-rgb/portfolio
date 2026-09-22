@@ -1,55 +1,111 @@
 # 🌟 Durgesh Sonar – Personal Portfolio Website
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://durgesh-portfolio.vercel.app)
-[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![Java](https://img.shields.io/badge/Java_17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.oracle.com/java/)
-[![Python](https://img.shields.io/badge/Python_3-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![IoT ESP8266](https://img.shields.io/badge/IoT-ESP8266-E05D44?style=for-the-badge&logo=espressif&logoColor=white)](https://www.espressif.com/)
+[![Gemini AI](https://img.shields.io/badge/Google_Gemini-API-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 
-> A modern, responsive, accessible, and high-performance **Personal Portfolio Website** designed and engineered to showcase the technical skills, academic foundation, software projects, certifications, and experience of **Durgesh Sonar**.
+> **B.Tech CSE (AI &amp; ML) Student | Aspiring Business Analyst | IoT &amp; Technology Enthusiast**  
+> Sandip University, Nashik | Maharashtra, India
 
 ---
 
-## 🔗 Live Links & Profiles
+## 🔗 Profiles & Contact Links
 
-- **🚀 Live Website (Vercel):** [https://durgesh-portfolio.vercel.app](https://durgesh-portfolio.vercel.app) *(or your deployed Vercel domain)*
-- **🐙 GitHub Repository:** [https://github.com/durgesh401td-rgb/portfolio](https://github.com/durgesh401td-rgb)
+- **🚀 Live Website (Vercel):** [https://durgesh-portfolio.vercel.app](https://durgesh-portfolio.vercel.app)
+- **🐙 GitHub Profile:** [https://github.com/durgesh401td-rgb](https://github.com/durgesh401td-rgb)
 - **💼 LinkedIn Profile:** [https://www.linkedin.com/in/durgesh-sonar-441231389/](https://www.linkedin.com/in/durgesh-sonar-441231389/)
-- **📧 Contact Email:** [durgeshsonar401@gmail.com](mailto:durgeshsonar401@gmail.com)
+- **📧 Email:** [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com)
 
 ---
 
-## 🎯 Project Overview
+## 👤 Profile Summary
 
-This website serves as a primary professional hub for **Durgesh Sonar**, an aspiring Software Engineer and undergraduate Computer Science Engineering student. Developed as part of the **Software Engineering Portfolio Website Development Task**, the application spotlights proficiencies across **Java, Python, JavaScript, CSS3, and HTML5**.
-
-Built using clean, zero-dependency modern web standards, the site achieves **100/100 Lighthouse performance**, zero Flash of Unstyled Content (FOUC), accessible keyboard navigation, and responsive typography across mobile, tablet, and desktop displays.
+Motivated B.Tech Computer Science &amp; Engineering (AI &amp; ML) student at Sandip University, Nashik with hands-on exposure to Python, C/C++, IoT and ESP8266-based projects, along with Business Analytics learning through MyCaptain. Builds and ships independent projects spanning IoT, AI-assisted tools and browser-based interactive apps, published openly on GitHub. Demonstrated problem-solving, teamwork and leadership through academic and project activities, backed by 6 months of practical work experience at Blinkit as a Picker-Packer.
 
 ---
 
-## ✨ Key Features
+## 🛠️ Technical Skills
 
-- 🌓 **Dynamic Dark / Light Mode:** Native `color-scheme` implementation with inline zero-FOUC initialization script and `localStorage` persistence.
-- ⚡ **Hero Typing Simulation:** Animated multi-role typewriter highlighting specialties in Software Engineering, Java, Python, and Full-Stack Development.
-- 🔍 **Real-Time Project Search & Filtering:** Filter showcase projects instantly by category (`All`, `Web`, `Java`, `Python`) or search by keywords.
-- 🗂️ **Native `<dialog>` Modals:** Accessible project deep-dive and resume modals with keyboard trapping, `Escape` key close, and light-dismiss backdrop clicking.
-- 📊 **Interactive Skills Progress Visualization:** Categorized skill cards with animated progress indicators covering Languages, Web, Frameworks, Databases, and DevOps tools.
-- 📄 **Dual-Format Resume Showcase:** Includes both an interactive modal viewer and an ATS-friendly, printable standalone resume page (`resume.html`) with tailored print stylesheets.
-- 📩 **Interactive Contact Module:** Form with accessible inputs, validation feedback (`:user-valid`), instant toast notification, and direct `mailto:` fallback.
-- 📱 **100% Mobile Responsive:** Fluid responsive layouts built on modern CSS Grid and Flexbox, with a slide-out hamburger navigation drawer for mobile devices.
-
----
-
-## 🛠️ Technologies Used
-
-| Category | Technologies |
+| Category | Skills &amp; Tools |
 | :--- | :--- |
-| **Frontend Languages** | HTML5 (Semantic, ARIA), CSS3 (Custom Properties, Grid, Flexbox), JavaScript (ES6+ Modular) |
-| **Backend & Systems** | Java 17 (Core, OOP, Multithreading, Concurrency, JDBC), Python 3 (Scripting, Pandas, Flask) |
-| **Databases** | MySQL, PostgreSQL, MongoDB, LocalStorage API |
-| **Tools & Hosting** | Git, GitHub, VS Code, Vercel Edge CDN, Postman, Linux CLI |
+| **Programming** | C, C++, Python, JavaScript |
+| **Web / Frontend** | HTML, CSS, JavaScript, Three.js |
+| **AI / Tooling** | Google Gemini API, MediaPipe, Google Apps Script |
+| **Development** | VS Code, MSYS2, Git &amp; GitHub |
+| **IoT / Hardware** | ESP8266, ultrasonic &amp; distance sensors, LEDs, sensor-based automation |
+| **Business / Analytics** | Business Analytics fundamentals, project-based learning |
+
+---
+
+## 🚀 Projects Showcase
+
+### Academic Projects
+1. **Smart Plant Monitoring System using IoT**
+   - Developed an IoT-based plant monitoring concept using ESP8266 and sensor-based data collection to monitor plant/environment conditions and support smarter plant care.
+   - *Tech:* ESP8266, sensors, IoT automation, C++.
+
+2. **IoT Smart Lighting &amp; Distance Alert System**
+   - Built an ESP8266-based system using an ultrasonic sensor, LDR and LED/RGB indication for distance-based alerts and smart lighting behavior.
+   - *Tech:* ESP8266, ultrasonic sensor, LDR, LEDs, C++.
+
+### Featured GitHub Projects (`github.com/durgesh401td-rgb`)
+3. **AI Resume Builder** *(HTML / CSS / JavaScript)*
+   - A web-based tool that helps users create professional resumes quickly — users enter details such as education, skills, projects and experience, and the tool generates a formatted resume.
+
+4. **SmartTrack** *(HTML / Google Apps Script)*
+   - A responsive Expense &amp; Investment Tracker web portal featuring interactive compound-growth calculators, with real-time data storage powered by Google Sheets and Google Apps Script.
+
+5. **AI Voice Assistant — "Aura"** *(Python)*
+   - A next-generation, voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop rather than simple command matching.
+
+6. **Distance Measurement System** *(C++ / Arduino / ESP8266)*
+   - An IoT-based system built with Arduino and an ESP8266 Wi-Fi module — an ultrasonic sensor measures distance to an object, Arduino processes the readings, and the ESP8266 sends the data wirelessly.
+
+7. **Car Racing Game** *(JavaScript / Three.js / MediaPipe)*
+   - A gesture-controlled, infinite car racing game featuring bright Solar Highway graphics and a Knockout Elimination mode, with real-time hand tracking via webcam and explosion effects.
+
+---
+
+## 💼 Work Experience
+
+**Blinkit — Picker-Packer | 6 Months**
+- Picked and packed customer orders accurately and efficiently in a fast-paced environment.
+- Handled products and order-related tasks while maintaining accuracy and timely processing.
+- Worked collaboratively with team members to support smooth day-to-day operations.
+- Developed practical skills in responsibility, time management, teamwork and workplace discipline.
+
+**Additional Experience:**
+- Academic project coordination and hands-on technical activities involving IoT, programming and practical problem solving at Sandip University, Nashik.
+
+---
+
+## 🎓 Education
+
+**B.Tech — Computer Science &amp; Engineering (Artificial Intelligence &amp; Machine Learning)**  
+Sandip University, Nashik
+
+---
+
+## 🏆 Certifications &amp; Recognition
+
+**Business Analytics Course** | MyCaptain · January 2026
+- Appreciation letter from mentor Adeeba Kadri recognizing participation, willingness to learn, skill development and a unique approach to assigned projects.
+- MyCaptain is recognized by SDSN among the Top 50 youth-led solutions in quality education.
+- MyCaptain Business Analytics Certificate included as a certification credential.
+
+---
+
+## 🤝 Leadership &amp; Soft Skills
+
+- Leadership &amp; team coordination
+- Teamwork &amp; collaboration
+- Problem-solving &amp; analytical thinking
+- Communication &amp; active participation
+- Time management &amp; responsibility
+- Quick learning, creative approach
 
 ---
 
@@ -58,104 +114,44 @@ Built using clean, zero-dependency modern web standards, the site achieves **100
 ```
 portfolio/
 ├── index.html                  # Main portfolio single-page application
-├── resume.html                 # Dedicated ATS-friendly, printable resume page
-├── vercel.json                 # Vercel deployment & security headers configuration
-├── .gitignore                  # Git ignore rules for clean repository
-├── README.md                   # Comprehensive GitHub repository documentation
-├── DOCUMENTATION.md            # Full Academic / SE Project Documentation
+├── resume.html                 # Formatted ATS-friendly printable resume
+├── vercel.json                 # Vercel deployment configuration
+├── .gitignore                  # Git ignore rules
+├── README.md                   # GitHub project overview & quickstart
+├── DOCUMENTATION.md            # Software Engineering Project Documentation
 ├── css/
-│   ├── style.css               # Main design system, dark/light theme, responsive styles
-│   └── resume.css              # Print & screen styling for printable resume
+│   ├── style.css               # Design system & responsive stylesheet
+│   └── resume.css              # Print & screen styling for resume.html
 ├── js/
-│   ├── main.js                 # Theme manager, typing animation, search, modals, form
-│   └── projects-data.js        # Structured project showcase & skills database
+│   ├── main.js                 # Theme switcher, modals, search, contact form
+│   └── projects-data.js        # Structured project & skills data from PDF
 └── assets/
     └── images/
-        ├── profile-avatar.svg  # Sleek modern developer visual avatar
-        ├── project-taskforge.svg
-        ├── project-banking.svg
-        ├── project-pyinsight.svg
-        ├── project-algos.svg
-        └── project-portfolio.svg
+        ├── profile-avatar.svg
+        ├── project-plant-iot.svg
+        ├── project-smart-lighting.svg
+        ├── project-aura.svg
+        ├── project-smarttrack.svg
+        ├── project-resume-builder.svg
+        ├── project-distance.svg
+        └── project-racing.svg
 ```
 
 ---
 
-## 🚀 How to Run the Project Locally
+## 🚀 How to Run Locally
 
-No external build tools or complex npm installations are required! You can run the portfolio directly in any modern web browser:
-
-### Option 1: Direct File Access
-Simply double-click `index.html` in your file explorer to launch the portfolio in your browser.
-
-### Option 2: Using VS Code Live Server (Recommended)
-1. Open the project folder in **Visual Studio Code**.
-2. Install the **Live Server** extension (by Ritwick Dey).
-3. Right-click `index.html` and select **"Open with Live Server"**.
-4. The website will launch automatically at `http://127.0.0.1:5500/index.html`.
-
-### Option 3: Using Python HTTP Server
-Open your terminal in the project root directory and run:
-```bash
-# Python 3
-python -m http.server 3000
-```
-Navigate to `http://localhost:3000` in your web browser.
+1. Clone or open the repository folder in **VS Code**.
+2. Right-click `index.html` and select **"Open with Live Server"**, or run:
+   ```bash
+   python -m http.server 3000
+   ```
+3. Open `http://localhost:3000` in your web browser.
 
 ---
 
-## 💻 GitHub Setup & Push Guide
+## ☁️ Vercel Deployment
 
-Follow these commands to push this codebase to your GitHub repository:
-
-```bash
-# 1. Initialize git repository (if not already done)
-git init
-
-# 2. Add all project files
-git add .
-
-# 3. Create initial commit
-git commit -m "feat: complete personal portfolio website with documentation"
-
-# 4. Set the main branch
-git branch -M main
-
-# 5. Connect your remote GitHub repository
-git remote add origin https://github.com/durgesh401td-rgb/portfolio.git
-
-# 6. Push code to GitHub
-git push -u origin main
-```
-
----
-
-## ☁️ Vercel Deployment Guide
-
-Deploying this portfolio on Vercel takes under 2 minutes:
-
-1. **Sign in to Vercel:** Go to [vercel.com](https://vercel.com) and log in with your **GitHub account**.
-2. **Import Repository:** Click **"Add New..."** → **"Project"**, then select your `portfolio` repository from GitHub.
-3. **Configure Settings:**
-   - **Framework Preset:** Select *Other* (Zero-config static site).
-   - **Root Directory:** `./` (Default).
-   - **Build Command:** Leave blank.
-   - **Output Directory:** Leave blank.
-4. **Deploy:** Click **"Deploy"**. Vercel will build and assign you a live HTTPS URL (e.g. `https://durgesh-portfolio.vercel.app`).
-5. **Continuous Deployment:** Any time you `git push` to your GitHub `main` branch, Vercel will automatically redeploy the latest changes!
-
----
-
-## 👨‍💻 Author Information
-
-**Durgesh Sonar**  
-*Aspiring Software Engineer | Full-Stack & Systems Developer*  
-- **GitHub:** [@durgesh401td-rgb](https://github.com/durgesh401td-rgb)  
-- **LinkedIn:** [Durgesh Sonar](https://www.linkedin.com/in/durgesh-sonar-441231389/)  
-- **Email:** [durgeshsonar401@gmail.com](mailto:durgeshsonar401@gmail.com)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+1. Push this repository to your GitHub account: `https://github.com/durgesh401td-rgb/portfolio`.
+2. Connect your repository to [vercel.com](https://vercel.com).
+3. Select framework preset **"Other"** and deploy with zero configuration.

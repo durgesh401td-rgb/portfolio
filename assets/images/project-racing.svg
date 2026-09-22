@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="raceBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4c0519" />
+      <stop offset="40%" stop-color="#881337" />
+      <stop offset="70%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="380" rx="12" fill="url(#raceBg)" />
+
+  <!-- Window Bar -->
+  <rect width="600" height="42" rx="12" fill="#18181b" />
+  <rect y="30" width="600" height="12" fill="#18181b" />
+  <circle cx="24" cy="21" r="5" fill="#ef4444" />
+  <circle cx="40" cy="21" r="5" fill="#f59e0b" />
+  <circle cx="56" cy="21" r="5" fill="#10b981" />
+  <text x="82" y="26" font-family="system-ui, sans-serif" font-weight="bold" font-size="13" fill="#f43f5e">🏎️ Solar Highway | 3D Gesture-Controlled Racing</text>
+  <rect x="440" y="10" width="140" height="22" rx="4" fill="#9f1239" />
+  <text x="510" y="25" text-anchor="middle" font-family="monospace" font-weight="bold" font-size="11" fill="#ffe4e6">Three.js + MediaPipe</text>
+
+  <!-- 3D Perspective Road & Synthwave Sun -->
+  <circle cx="300" cy="160" r="55" fill="url(#sunGrad)" />
+  
+  <!-- Perspective Road -->
+  <polygon points="260,180 340,180 490,360 110,360" fill="#09090b" stroke="#f43f5e" stroke-width="2" />
+  
+  <!-- Road Dash lines -->
+  <polygon points="296,180 304,180 307,220 293,220" fill="#fef08a" />
+  <polygon points="292,235 308,235 312,280 288,280" fill="#fef08a" />
+  <polygon points="286,300 314,300 320,360 280,360" fill="#fef08a" />
+
+  <!-- Player 3D Car Visual -->
+  <g transform="translate(255, 270)">
+    <!-- Car body -->
+    <rect x="15" y="10" width="60" height="45" rx="10" fill="#38bdf8" stroke="#ffffff" stroke-width="2" />
+    <polygon points="25,10 65,10 58,0 32,0" fill="#0284c7" />
+    <!-- Wheels -->
+    <rect x="5" y="15" width="10" height="18" rx="3" fill="#18181b" />
+    <rect x="75" y="15" width="10" height="18" rx="3" fill="#18181b" />
+    <rect x="5" y="35" width="10" height="18" rx="3" fill="#18181b" />
+    <rect x="75" y="35" width="10" height="18" rx="3" fill="#18181b" />
+    <!-- Taillights -->
+    <rect x="20" y="50" width="12" height="4" rx="2" fill="#ef4444" />
+    <rect x="58" y="50" width="12" height="4" rx="2" fill="#ef4444" />
+  </g>
+
+  <!-- Webcam MediaPipe Hand Tracking Overlay Inset (Top Right) -->
+  <g transform="translate(420, 55)">
+    <rect width="155" height="110" rx="8" fill="#09090b" opacity="0.9" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="12" y="20" font-family="sans-serif" font-size="9" font-weight="bold" fill="#38bdf8">WEBCAM MEDIAPIPE</text>
+    <text x="12" y="32" font-family="monospace" font-size="8" fill="#a1a1aa">Hand Mesh 21-Points</text>
+
+    <!-- Skeletal hand points -->
+    <circle cx="77" cy="85" r="4" fill="#38bdf8" />
+    <circle cx="50" cy="65" r="3" fill="#34d399" />
+    <circle cx="65" cy="50" r="3" fill="#34d399" />
+    <circle cx="80" cy="45" r="3" fill="#34d399" />
+    <circle cx="95" cy="50" r="3" fill="#34d399" />
+    <circle cx="110" cy="65" r="3" fill="#34d399" />
+    <line x1="77" y1="85" x2="80" y2="45" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="77" y="103" text-anchor="middle" font-family="sans-serif" font-size="8" font-weight="bold" fill="#facc15">STEER: CENTER</text>
+  </g>
+
+  <!-- Speedometer & Knockout HUD (Top Left) -->
+  <g transform="translate(25, 55)">
+    <rect width="150" height="85" rx="8" fill="#09090b" opacity="0.9" stroke="#f43f5e" stroke-width="1.5" />
+    <text x="14" y="22" font-family="sans-serif" font-size="9" fill="#f43f5e">KNOCKOUT MODE</text>
+    <text x="14" y="52" font-family="monospace" font-weight="bold" font-size="24" fill="#ffffff">214 <tspan font-size="11" fill="#facc15">KM/H</tspan></text>
+    <text x="14" y="72" font-family="sans-serif" font-size="9" fill="#34d399">RANK: 1st / 8 Eliminator</text>
+  </g>
+</svg>

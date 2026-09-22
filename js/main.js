@@ -1,6 +1,6 @@
 /**
  * main.js
- * Interactive logic for Durgesh Sonar's Personal Portfolio Website
+ * Interactive logic strictly tailored to Durgesh Sonar's profile & projects
  */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,14 +21,12 @@ function initTheme() {
   const themeToggleBtn = document.getElementById("theme-toggle-btn");
   const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
   
-  // Read saved preference or detect system
   const savedTheme = localStorage.getItem("color-scheme");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
   let currentTheme = savedTheme || (prefersDark.matches ? "dark" : "light");
   applyTheme(currentTheme);
 
-  // Toggle on button click
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
       const nextTheme = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
@@ -38,7 +36,6 @@ function initTheme() {
     });
   }
 
-  // React to OS changes if user hasn't explicitly overridden
   prefersDark.addEventListener("change", (e) => {
     if (!localStorage.getItem("color-scheme")) {
       applyTheme(e.matches ? "dark" : "light");
@@ -64,18 +61,18 @@ function initTypingEffect() {
   if (!target) return;
 
   const roles = [
-    "Software Engineering Enthusiast",
-    "Java & Python Programmer",
-    "Full-Stack Web Developer",
-    "DSA & Problem Solving Explorer",
-    "Open Source Contributor"
+    "B.Tech CSE (AI & ML) Student",
+    "Aspiring Business Analyst",
+    "IoT & Technology Enthusiast",
+    "Python, C/C++ & JavaScript Developer",
+    "Autonomous AI & Web App Builder"
   ];
 
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  const typeSpeed = 80;
-  const deleteSpeed = 40;
+  const typeSpeed = 75;
+  const deleteSpeed = 35;
   const holdTime = 1800;
 
   function type() {
@@ -121,7 +118,6 @@ function initMobileMenu() {
     toggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
-  // Close when clicking any nav link
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       navMenu.classList.remove("open");
@@ -130,7 +126,6 @@ function initMobileMenu() {
     });
   });
 
-  // Close when clicking outside
   document.addEventListener("click", (e) => {
     if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target) && navMenu.classList.contains("open")) {
       navMenu.classList.remove("open");
@@ -207,7 +202,6 @@ function initProjects() {
 
   renderFilteredProjects();
 
-  // Search input handler
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
       currentSearchQuery = e.target.value.toLowerCase().trim();
@@ -215,7 +209,6 @@ function initProjects() {
     });
   }
 
-  // Filter tabs handler
   tabButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       tabButtons.forEach(b => b.classList.remove("active"));
@@ -254,7 +247,7 @@ function initProjects() {
       card.innerHTML = `
         <div class="project-thumb-wrap">
           <img src="${project.image}" alt="${project.title} Preview" class="project-thumb" loading="lazy" />
-          <span class="project-category-badge">${project.category}</span>
+          <span class="project-category-badge">${project.category.toUpperCase()}</span>
         </div>
         <div class="project-body">
           <h3 class="project-title">${project.title}</h3>
@@ -272,7 +265,7 @@ function initProjects() {
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
                 Code
               </a>
-              <a href="${project.liveDemo}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" aria-label="Live Demo for ${project.title}">
+              <a href="${project.liveDemo}" target="_blank" rel="noopener" class="btn btn-primary btn-sm" aria-label="Demo for ${project.title}">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
                 Demo
               </a>
@@ -283,7 +276,6 @@ function initProjects() {
       projectsGrid.appendChild(card);
     });
 
-    // Attach modal trigger listeners
     document.querySelectorAll(".open-details-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         const projectId = btn.dataset.projectId;
@@ -294,25 +286,22 @@ function initProjects() {
 }
 
 /* --------------------------------------------------------------------------
-   6. Native <dialog> Modals (Accessible & Light-Dismiss)
+   6. Native <dialog> Modals
    -------------------------------------------------------------------------- */
 function initDialogModals() {
   const projectDialog = document.getElementById("project-dialog");
   const resumeDialog = document.getElementById("resume-dialog");
 
-  // Project Modal Close
   const projectCloseBtn = document.getElementById("project-dialog-close");
   if (projectCloseBtn && projectDialog) {
     projectCloseBtn.addEventListener("click", () => projectDialog.close());
   }
 
-  // Resume Modal Close
   const resumeCloseBtn = document.getElementById("resume-dialog-close");
   if (resumeCloseBtn && resumeDialog) {
     resumeCloseBtn.addEventListener("click", () => resumeDialog.close());
   }
 
-  // View Resume Buttons
   document.querySelectorAll(".open-resume-modal-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
@@ -320,7 +309,6 @@ function initDialogModals() {
     });
   });
 
-  // Light-dismiss support (clicking the backdrop outside the dialog bounds)
   [projectDialog, resumeDialog].forEach(dialog => {
     if (!dialog) return;
     dialog.addEventListener("click", (event) => {
@@ -392,7 +380,6 @@ function initContactForm() {
       return;
     }
 
-    // Submit animation & feedback
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = `<span>Sending...</span>`;
@@ -402,12 +389,11 @@ function initContactForm() {
       submitBtn.innerHTML = originalText;
       submitBtn.disabled = false;
       form.reset();
-      showToast("🎉 Thank you, Durgesh received your message!", "success");
+      showToast("🎉 Thank you! Durgesh has received your message.", "success");
 
-      // Optional mailto fallback trigger
-      const mailtoUrl = `mailto:durgeshsonar401@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+      const mailtoUrl = `mailto:durgesh401td@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
       window.location.href = mailtoUrl;
-    }, 800);
+    }, 700);
   });
 }
 
