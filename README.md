@@ -1,6 +1,6 @@
 # 🌟 Durgesh Sonar – Personal Portfolio Website
 
-[![Vercel Deployment](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
+[![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -14,7 +14,7 @@
 
 ## 🔗 Profiles & Contact Links
 
-- **🚀 Live Website (Vercel):** [https://durgesh-portfolio.vercel.app](https://durgesh-portfolio.vercel.app)
+- **🚀 Live Website (Vercel):** [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
 - **🐙 GitHub Profile:** [https://github.com/durgesh401td-rgb](https://github.com/durgesh401td-rgb)
 - **💼 LinkedIn Profile:** [https://www.linkedin.com/in/durgesh-sonar-441231389/](https://www.linkedin.com/in/durgesh-sonar-441231389/)
 - **📧 Email:** [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com)

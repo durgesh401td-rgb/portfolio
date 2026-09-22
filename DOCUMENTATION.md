@@ -13,7 +13,7 @@
 | **GitHub Profile** | [https://github.com/durgesh401td-rgb](https://github.com/durgesh401td-rgb) |
 | **LinkedIn Profile** | [https://www.linkedin.com/in/durgesh-sonar-441231389/](https://www.linkedin.com/in/durgesh-sonar-441231389/) |
 | **Email Address** | [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com) |
-| **Live Deployment URL** | [https://durgesh-portfolio.vercel.app](https://durgesh-portfolio.vercel.app) |
+| **Live Deployment URL** | [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/) |
 | **Target Audience** | Academic Evaluators, Technical Recruiters, Internship Providers, Engineering Mentors |
 | **Date of Submission** | September 2026 |
 
@@ -203,7 +203,7 @@ git push -u origin main
 1. Log in to [vercel.com](https://vercel.com) using your GitHub account (`durgesh401td-rgb`).
 2. Click **"Add New..."** → **"Project"** and import the `portfolio` repository.
 3. Select framework preset **"Other"** (static site zero-config).
-4. Click **"Deploy"**. The site will deploy to `https://durgesh-portfolio.vercel.app` in seconds.
+4. Click **"Deploy"**. The site will deploy to `https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/` in seconds.
 5. Any subsequent `git push` to `main` will automatically trigger continuous production redeployments.
 
 ---
