@@ -1,7 +1,7 @@
-# 🎬 DURFLIX — Durgesh Sonar Personal Portfolio Website (Netflix-Themed)
+# 🎬 Durgesh — Personal Portfolio Website (Netflix-Themed)
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
-[![Theme](https://img.shields.io/badge/UI_Theme-Netflix_DURFLIX-E50914?style=for-the-badge&logo=netflix&logoColor=white)](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
+[![Theme](https://img.shields.io/badge/UI_Theme-Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
@@ -10,7 +10,7 @@
 
 > **B.Tech CSE (AI &amp; ML) Student | Aspiring Business Analyst | IoT &amp; Technology Enthusiast**  
 > Sandip University, Nashik | Maharashtra, India  
-> *Engineered as a full-featured, interactive streaming platform interface ("DURFLIX") inspired by Netflix.*
+> *Engineered as a full-featured, interactive streaming platform interface inspired by Netflix.*
 
 ---
 

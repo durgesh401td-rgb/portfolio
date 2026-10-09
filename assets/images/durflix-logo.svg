@@ -8,10 +8,10 @@
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.8" />
     </filter>
   </defs>
-  <!-- Stylized DURFLIX logo text with slight arch and bold cinema kerning -->
+  <!-- Stylized DURGESH logo text with slight arch and bold cinema kerning -->
   <g filter="url(#shadow)">
     <text x="10" y="58" font-family="'Bebas Neue', 'Arial Black', Impact, sans-serif" font-size="54" font-weight="900" fill="url(#netflixRed)" letter-spacing="3">
-      DURFLIX
+      DURGESH
     </text>
   </g>
   <!-- Red accent underline curve -->

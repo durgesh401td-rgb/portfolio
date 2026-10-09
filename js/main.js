@@ -1,6 +1,6 @@
 /**
  * main.js
- * Netflix "DURFLIX" Interactive Engine for Durgesh Sonar's Portfolio
+ * Netflix-Inspired Interactive Engine for Durgesh Sonar's Portfolio
  */
 
 document.addEventListener("DOMContentLoaded", () => {
