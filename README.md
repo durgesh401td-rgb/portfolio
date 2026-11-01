@@ -16,7 +16,7 @@
 
 ## 🔗 Profiles & Contact Links
 
-- **🚀 Live Website (Vercel):** [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
+- **🚀 Live Website (Vercel):** [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-durgesh401td-rgb.vercel.app/)
 - **🐙 GitHub Profile:** [https://github.com/durgesh401td-rgb](https://github.com/durgesh401td-rgb)
 - **💼 LinkedIn Profile:** [https://www.linkedin.com/in/durgesh-sonar-441231389/](https://www.linkedin.com/in/durgesh-sonar-441231389/)
 - **📧 Email:** [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com)
