@@ -24,7 +24,7 @@ const PORTFOLIO_DATA = {
     ]
   },
 
-  // 7 Verified Projects from Official Resume with Full Case Study Data
+  // 7 Verified Projects with complete 11-point Case Study Hierarchy
   projects: [
     {
       id: "aura-assistant",
@@ -33,7 +33,7 @@ const PORTFOLIO_DATA = {
       status: "Completed",
       badge: "FEATURED AI",
       year: "2026",
-      shortSummary: "Voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop.",
+      shortSummary: "Voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop for reasoning and multi-step task execution.",
       image: "assets/images/project-aura.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
@@ -43,9 +43,12 @@ const PORTFOLIO_DATA = {
         problem: "Traditional voice assistants rely on rigid rule-based command syntax, failing whenever user requests require multi-step reasoning, dynamic desktop context analysis, or error self-correction.",
         goal: "Build an autonomous AI agent capable of understanding conversational intent, reasoning through task decomposition, taking actions on Windows (file operations, browser lookup, system control), and providing spoken audio feedback.",
         role: "Sole AI & Software Engineer — architected the ReAct loop, integrated Gemini API, configured microphone input streaming, and engineered system automation tools.",
+        process: "Requirement analysis → Google Gemini multimodal prompt engineering → Voice capture via SpeechRecognition → Agentic ReAct decision engine → Win32 API system tool hooks → Spoken audio synthesis output.",
         architecture: "Audio Input (SpeechRecognition) → Text Transcription → Agentic ReAct Engine (Google Gemini 1.5 Pro/Flash) → Tool Execution Dispatcher (OS, Browser, Shell) → Speech Synthesis Output (pyttsx3/TTS).",
+        technologies: ["Python 3.10+", "Google Gemini API", "ReAct Loop", "SpeechRecognition", "pyttsx3", "Win32 API"],
         challenges: "Managing latency during multi-turn ReAct loops and preventing hallucinated tool arguments. Resolved by implementing strict structured output schema validation and prompt-level tool boundary definitions.",
-        outcome: "Created a functional, highly responsive autonomous assistant that handles complex commands such as 'Find my latest assignment PDF, summarize it, and read out the key points' entirely hands-free."
+        outcome: "Created a functional, highly responsive autonomous assistant that handles complex commands such as 'Find my latest assignment PDF, summarize it, and read out the key points' entirely hands-free.",
+        lessons: "Agentic ReAct loops require robust tool schema boundaries and exception handlers to avoid infinite loops during multi-step desktop reasoning."
       }
     },
     {
@@ -56,7 +59,8 @@ const PORTFOLIO_DATA = {
       badge: "IOT HARDWARE",
       year: "2025",
       shortSummary: "ESP8266-powered smart agricultural telemetry system monitoring soil moisture, temperature, and ambient humidity with automated alerts.",
-      image: "assets/images/project-plant-iot.svg",
+      image: "assets/images/project-plant-iot.png",
+      fallbackImage: "assets/images/project-plant-iot.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
       technologies: ["ESP8266", "IoT", "C++", "Soil Sensors", "DHT11", "Automation"],
@@ -65,9 +69,12 @@ const PORTFOLIO_DATA = {
         problem: "Overwatering and severe dehydration are the leading causes of plant mortality in indoor and greenhouse environments due to irregular manual checking.",
         goal: "Engineer an energy-efficient, wireless IoT telemetry node that continuously measures vital soil parameters and alerts caregivers via local RGB indicators and network telemetry.",
         role: "Hardware & Firmware Developer — wired ESP8266 microcontroller, calibrated soil capacitive probes, programmed ADC readings in C++, and established Wi-Fi telemetry.",
+        process: "Breadboard prototyping → Sensor calibration (capacitive soil probe + DHT11) → ESP8266 ADC sampling routines in C++ → Power optimization via GPIO gating → HTTP telemetry dispatch.",
         architecture: "Hardware Node (ESP8266 + Soil Hygrometer + DHT11 Temp/Humidity) → Local Threshold Logic → Local LED/Buzzer Alarm → Wi-Fi HTTP Telemetry Stream → Web/Mobile Dashboard.",
+        technologies: ["ESP8266 NodeMCU", "C++ / Arduino IDE", "Soil Hygrometer", "DHT11 Sensor", "Wi-Fi HTTP Client"],
         challenges: "Analog sensor corrosion from continuous electrical bias in moist soil. Solved by powering the sensor probe only during active measurement read cycles via an ESP8266 digital GPIO pin.",
-        outcome: "Demonstrated reliable, real-time plant telemetry with accurate threshold notifications, significantly reducing water consumption while maintaining optimal soil moisture."
+        outcome: "Demonstrated reliable, real-time plant telemetry with accurate threshold notifications, significantly reducing water consumption while maintaining optimal soil moisture.",
+        lessons: "Continuous DC bias accelerates electrolytic sensor corrosion in moist soil; powering probes intermittently via microcontroller GPIO pins extends hardware lifespan dramatically."
       }
     },
     {
@@ -77,8 +84,9 @@ const PORTFOLIO_DATA = {
       status: "Completed",
       badge: "EMBEDDED",
       year: "2025",
-      shortSummary: "Dual-function automated lighting and proximity detection system utilizing ultrasonic sensors, LDRs, and ESP8266 microcontrollers.",
-      image: "assets/images/project-smart-lighting.svg",
+      shortSummary: "Dual-function automated lighting and proximity detection system utilizing ultrasonic sensors, LDR ambient detection, and ESP8266 microcontrollers.",
+      image: "assets/images/project-smart-lighting.png",
+      fallbackImage: "assets/images/project-smart-lighting.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
       technologies: ["ESP8266", "HC-SR04 Ultrasonic", "LDR Sensor", "RGB LED", "C++"],
@@ -87,9 +95,12 @@ const PORTFOLIO_DATA = {
         problem: "Wasted energy from lighting unoccupied spaces and lack of real-time obstacle/proximity alerts in modern desktop and accessibility workstations.",
         goal: "Develop an automated hardware module combining ambient light thresholds (LDR) with time-of-flight ultrasonic distance calculations (HC-SR04) for adaptive lighting and warning alerts.",
         role: "Embedded Systems Developer — calculated sensor trigger timings, wrote non-blocking interrupt routines in C++, and assembled the circuit board.",
+        process: "Circuit layout design → HC-SR04 ultrasonic echo timing code → LDR ambient light threshold tuning → Hysteresis filter implementation → Non-blocking PWM LED driver.",
         architecture: "Sensors (LDR light meter + HC-SR04 Ultrasonic) → ESP8266 Microcontroller → Algorithmic Distance & Ambient Calculation → PWM-driven RGB Lighting & Buzzer Alert.",
+        technologies: ["ESP8266", "HC-SR04 Ultrasonic", "LDR Sensor", "RGB LED", "C++", "PWM Control"],
         challenges: "Ultrasonic bounce anomalies and ambient light flicker. Resolved by applying software sliding-window smoothing filters and hysteresis thresholds on light transitions.",
-        outcome: "Successfully achieved automated power-saving illumination and instantaneous distance hazard warnings within 2cm–400cm precision."
+        outcome: "Successfully achieved automated power-saving illumination and instantaneous distance hazard warnings within 2cm–400cm precision.",
+        lessons: "Sensor debounce and hysteresis thresholds are essential to prevent rapid light flickering around the ambient dusk threshold."
       }
     },
     {
@@ -109,9 +120,12 @@ const PORTFOLIO_DATA = {
         problem: "Users often avoid budgeting apps that require expensive subscriptions, complicated setups, or storing sensitive financial data on third-party opaque servers.",
         goal: "Create a lightweight, zero-cost, private personal finance tracker that synchronizes transactions directly into the user's private Google Sheet via serverless Google Apps Script REST endpoints.",
         role: "Full-Stack Developer — built the web client, structured financial data models, coded Apps Script web endpoints, and implemented interactive interest forecasting charts.",
+        process: "Financial metric wireframing → Compound interest calculation engine → Google Apps Script serverless REST API → Google Sheets database integration → Responsive UI styling.",
         architecture: "Vanilla JS / HTML5 UI → Fetch API REST Calls → Google Apps Script Web App Endpoint → Google Sheets Database + Client-side Compound Growth Calculator.",
+        technologies: ["JavaScript (ES6+)", "HTML5 Semantic", "CSS3 Flex/Grid", "Google Apps Script", "Google Sheets API"],
         challenges: "CORS handling and authentication with Google Apps Script web apps. Resolved by configuring redirect-following POST request handlers and JSONP fallback structures.",
-        outcome: "Delivered a snappy, private, and customizable financial dashboard that empowers users to monitor spending trends and project wealth accumulation effortlessly."
+        outcome: "Delivered a snappy, private, and customizable financial dashboard that empowers users to monitor spending trends and project wealth accumulation effortlessly.",
+        lessons: "Google Apps Script redirects require careful redirect-handling in fetch queries; client-side caching ensures snappy UI performance regardless of spreadsheet sync latency."
       }
     },
     {
@@ -131,9 +145,12 @@ const PORTFOLIO_DATA = {
         problem: "Job seekers struggle with cumbersome word processor templates that break formatting during export or fail automated Applicant Tracking System (ATS) parsers.",
         goal: "Engineer a high-speed, client-side resume builder that updates the formatted document preview in real time and renders pixel-perfect printed A4 pages.",
         role: "Frontend Engineer — designed the dynamic reactive form inputs, state synchronization engine, and print-optimized stylesheet.",
+        process: "ATS guideline research → Dynamic multi-step form architecture → Live side-by-side preview engine → CSS paged media print stylesheet tuning → Cross-browser vector PDF testing.",
         architecture: "Reactive Form Controls → JavaScript State Model → Live HTML Template Renderer → CSS Media Print Pagination & Clean Vector PDF Export.",
+        technologies: ["HTML5", "CSS3", "JavaScript (ES6+)", "DOM Manipulation", "@media print Engine"],
         challenges: "Ensuring identical rendering between browser preview and printed PDF page boundaries. Solved using strict page-break CSS properties and mm/pt print media queries.",
-        outcome: "Created an intuitive, zero-dependency builder that formats resumes cleanly, saving users hours of formatting frustration."
+        outcome: "Created an intuitive, zero-dependency builder that formats resumes cleanly, saving users hours of formatting frustration.",
+        lessons: "Standardizing CSS units to millimeters (mm) and points (pt) inside @media print guarantees exact 1-page bounds matching printed paper standards."
       }
     },
     {
@@ -153,9 +170,12 @@ const PORTFOLIO_DATA = {
         problem: "Manual distance measurement in hazardous or confined spaces is dangerous and inefficient, necessitating wireless telemetry.",
         goal: "Build a self-calibrating distance meter capable of accurate measurement across variable temperatures and transmitting data to remote observers.",
         role: "Embedded Hardware Programmer — calibrated sound velocity formulas in C++, managed I2C communication, and linked the Arduino to ESP8266 serial streams.",
+        process: "Ultrasonic transducer physics calculation → Arduino ATmega328P pulse timing code → I2C 16x2 LCD bus integration → UART serial bridge to ESP8266 → Wireless distance transmission.",
         architecture: "HC-SR04 Transducer → Arduino ATmega328P (Microsecond timing) → I2C 16x2 LCD Display → UART Serial Bridge → ESP8266 Wi-Fi Telemetry.",
+        technologies: ["C++", "Arduino ATmega328P", "ESP8266", "HC-SR04 Transducer", "I2C LiquidCrystal"],
         challenges: "Microsecond timing precision on Arduino while concurrently driving I2C display updates. Solved by decoupling timing-critical pulse calculations from slower display refresh loops.",
-        outcome: "Engineered a robust, portable measurement tool providing instantaneous readouts with high stability across indoor test environments."
+        outcome: "Engineered a robust, portable measurement tool providing instantaneous readouts with high stability across indoor test environments.",
+        lessons: "Sound velocity varies with air temperature; compensating distance math with ambient temperature readings improves measurement accuracy."
       }
     },
     {
@@ -175,9 +195,12 @@ const PORTFOLIO_DATA = {
         problem: "Traditional browser games feel disconnected from real-world natural human interactions and rarely take advantage of modern on-device machine learning.",
         goal: "Demonstrate that modern browser APIs and lightweight AI pipelines can deliver latency-free, gesture-driven 3D interactive entertainment directly on standard consumer webcams.",
         role: "Game & Vision Developer — implemented Three.js camera/lighting/mesh rendering, integrated MediaPipe Hand Landmark detection, and mapped spatial coordinates to vehicle physics.",
+        process: "Three.js 3D scene setup (lighting, infinite track, vehicle mesh) → MediaPipe hand tracking pipeline integration → Landmark angle calculation → Vehicle physics interpolation → Explosion particle effects.",
         architecture: "Webcam Stream → MediaPipe Hand Landmark Detection (TensorFlow.js/WASM) → Gesture Angle Computation → Three.js Vehicle Physics Loop → Dynamic Particle & Audio Effects.",
+        technologies: ["JavaScript (ES6+)", "Three.js", "MediaPipe Hands", "WebGL Shaders", "Web Audio API"],
         challenges: "Maintaining steady 60 FPS while running real-time vision inference on camera frames. Solved by downsampling webcam frames to 320x240 for AI processing and interpolating vehicle steering angles smoothly.",
-        outcome: "Created an exhilarating, viral 3D arcade experience that wows users with responsive hands-free control and explosive visual feedback."
+        outcome: "Created an exhilarating, viral 3D arcade experience that wows users with responsive hands-free control and explosive visual feedback.",
+        lessons: "Downsampling webcam input frames to 320x240 for on-device AI inference preserves a solid 60 FPS in WebGL rendering loops."
       }
     }
   ],

@@ -587,22 +587,41 @@ function initProjectTiltAndModal() {
   const dialog = document.getElementById("case-study-dialog");
   const closeBtn = document.getElementById("case-study-close-btn");
 
-  // 3D Perspective Tilt on MouseMove
+  // 3D Perspective Tilt and Specular Holographic Glare on MouseMove
   cards.forEach((card) => {
     card.addEventListener("mousemove", (e) => {
       const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const rotateX = -(y / rect.height) * 8;
-      const rotateY = (x / rect.width) * 8;
-      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+      const clientX = e.clientX - rect.left;
+      const clientY = e.clientY - rect.top;
+      const xPercent = (clientX / rect.width) * 100;
+      const yPercent = (clientY / rect.height) * 100;
+
+      const x = clientX - rect.width / 2;
+      const y = clientY - rect.height / 2;
+      const rotateX = -(y / (rect.height / 2)) * 10;
+      const rotateY = (x / (rect.width / 2)) * 10;
+
+      card.style.setProperty("--mouse-x", `${xPercent}%`);
+      card.style.setProperty("--mouse-y", `${yPercent}%`);
+      card.style.transform = `perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-8px) scale(1.02)`;
     });
 
-    // Open Case Study Modal
-    card.addEventListener("click", () => {
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0) scale(1)`;
+    });
+
+    // Keyboard accessibility: Enter or Space triggers case study modal
+    card.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        const projectId = card.getAttribute("data-project-id");
+        openCaseStudy(projectId);
+      }
+    });
+
+    // Open Case Study Modal on click (prevent trigger if clicking quick icon links)
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".card-quick-links") || e.target.closest(".card-icon-link")) return;
       const projectId = card.getAttribute("data-project-id");
       openCaseStudy(projectId);
     });
@@ -615,27 +634,38 @@ function initProjectTiltAndModal() {
 
     // Populate Dialog Elements
     const img = document.getElementById("dialog-banner-img");
+    const badgeText = document.getElementById("dialog-badge-text");
     const title = document.getElementById("dialog-title");
     const overview = document.getElementById("dialog-overview");
     const problem = document.getElementById("dialog-problem");
     const goal = document.getElementById("dialog-goal");
     const role = document.getElementById("dialog-role");
+    const process = document.getElementById("dialog-process");
     const architecture = document.getElementById("dialog-architecture");
     const challenges = document.getElementById("dialog-challenges");
     const outcome = document.getElementById("dialog-outcome");
+    const lessons = document.getElementById("dialog-lessons");
     const githubBtn = document.getElementById("dialog-github-btn");
     const demoBtn = document.getElementById("dialog-demo-btn");
     const tagsContainer = document.getElementById("dialog-tags");
 
-    if (img) img.src = project.image;
+    if (img) {
+      img.src = project.image;
+      img.onerror = () => {
+        if (project.fallbackImage) img.src = project.fallbackImage;
+      };
+    }
+    if (badgeText) badgeText.textContent = `${project.badge || "COMPLETED"} · ${project.year || "2025"}`;
     if (title) title.textContent = project.title;
     if (overview) overview.textContent = project.caseStudy.overview;
     if (problem) problem.textContent = project.caseStudy.problem;
     if (goal) goal.textContent = project.caseStudy.goal;
     if (role) role.textContent = project.caseStudy.role;
+    if (process) process.textContent = project.caseStudy.process;
     if (architecture) architecture.textContent = project.caseStudy.architecture;
     if (challenges) challenges.textContent = project.caseStudy.challenges;
     if (outcome) outcome.textContent = project.caseStudy.outcome;
+    if (lessons) lessons.textContent = project.caseStudy.lessons;
 
     if (githubBtn) githubBtn.href = project.github;
     if (demoBtn) demoBtn.href = project.liveDemo;
