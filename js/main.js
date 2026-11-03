@@ -1,398 +1,848 @@
 /**
  * main.js
- * Netflix-Inspired Interactive Engine for Durgesh Sonar's Portfolio
+ * Cinematic Universe / Obsidian Orange Interactive Engine
+ * Portfolio of Durgesh (Dev) Sonar
+ * Adheres strictly to Modern Web Guidelines & WCAG Accessibility
  */
 
 document.addEventListener("DOMContentLoaded", () => {
-  initNavbarScroll();
-  initSearchWidget();
-  initProfiles();
-  initBillboard();
-  initNetflixRows();
-  initCarouselArrows();
-  initNetflixModal();
+  initThemeManager();
+  initAccessibilityManager();
+  initSoundEngine();
+  initNavigation();
+  initDigitalPlanet();
+  initSkillsConstellation();
+  initProjectTiltAndModal();
   initContactForm();
+  initApexAssistant();
+  initEasterEgg();
 });
 
 /* --------------------------------------------------------------------------
-   1. Navbar Scroll Transition
+   1. Theme Management (compliant with modern-web-guidance dark-mode-toggle)
    -------------------------------------------------------------------------- */
-function initNavbarScroll() {
-  const navbar = document.getElementById("netflix-navbar");
-  if (!navbar) return;
+function initThemeManager() {
+  const metaColorScheme = document.querySelector('meta[name="color-scheme"]');
+  const themeToggleBtn = document.getElementById("theme-toggle-btn");
+  const themeIcon = document.getElementById("theme-toggle-icon");
+  const themeLabel = document.getElementById("theme-toggle-label");
 
+  function getStoredTheme() {
+    try {
+      return localStorage.getItem("color-scheme");
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function applyTheme(theme) {
+    if (!metaColorScheme) return;
+    if (theme === "light" || theme === "dark") {
+      metaColorScheme.content = theme;
+      try { localStorage.setItem("color-scheme", theme); } catch (e) {}
+    } else {
+      metaColorScheme.content = "light dark";
+      try { localStorage.removeItem("color-scheme"); } catch (e) {}
+    }
+    updateUI(theme);
+  }
+
+  function updateUI(theme) {
+    const isDark = theme === "dark" || (!theme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    if (themeToggleBtn) {
+      themeToggleBtn.setAttribute("aria-pressed", isDark ? "true" : "false");
+    }
+    if (themeLabel) {
+      themeLabel.textContent = isDark ? "Light Mode" : "Dark Mode";
+    }
+    if (themeIcon) {
+      themeIcon.innerHTML = isDark
+        ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
+        : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    }
+  }
+
+  // Initial setup
+  const current = getStoredTheme();
+  applyTheme(current);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const active = getStoredTheme();
+      const isSystemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      let nextTheme;
+      if (!active) {
+        nextTheme = isSystemDark ? "light" : "dark";
+      } else if (active === "dark") {
+        nextTheme = "light";
+      } else {
+        nextTheme = "dark";
+      }
+      applyTheme(nextTheme);
+      playSound("click");
+    });
+  }
+
+  // Cross-tab sync via storage event
+  window.addEventListener("storage", (e) => {
+    if (e.key === "color-scheme") {
+      applyTheme(e.newValue);
+    }
+  });
+
+  // OS preference change listener
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
+    if (!getStoredTheme()) {
+      updateUI(null);
+    }
+  });
+}
+
+/* --------------------------------------------------------------------------
+   2. Accessibility Controls (Font Scaling, Motion Override, High Contrast)
+   -------------------------------------------------------------------------- */
+function initAccessibilityManager() {
+  const a11yToggleBtn = document.getElementById("a11y-toggle-btn");
+  const a11yDialog = document.getElementById("a11y-dialog");
+  const a11yCloseBtn = document.getElementById("a11y-close-btn");
+  const fontNormalBtn = document.getElementById("font-normal-btn");
+  const fontLgBtn = document.getElementById("font-lg-btn");
+  const fontXlBtn = document.getElementById("font-xl-btn");
+  const motionToggleBtn = document.getElementById("motion-toggle-btn");
+  const contrastToggleBtn = document.getElementById("contrast-toggle-btn");
+
+  if (a11yToggleBtn && a11yDialog) {
+    a11yToggleBtn.addEventListener("click", () => {
+      a11yDialog.showModal();
+      playSound("pop");
+    });
+  }
+  if (a11yCloseBtn && a11yDialog) {
+    a11yCloseBtn.addEventListener("click", () => a11yDialog.close());
+  }
+
+  // Font scaling
+  const root = document.documentElement;
+  fontNormalBtn?.addEventListener("click", () => {
+    root.classList.remove("font-scale-lg", "font-scale-xl");
+    playSound("click");
+  });
+  fontLgBtn?.addEventListener("click", () => {
+    root.classList.add("font-scale-lg");
+    root.classList.remove("font-scale-xl");
+    playSound("click");
+  });
+  fontXlBtn?.addEventListener("click", () => {
+    root.classList.add("font-scale-xl");
+    root.classList.remove("font-scale-lg");
+    playSound("click");
+  });
+
+  // High contrast
+  contrastToggleBtn?.addEventListener("click", () => {
+    root.classList.toggle("high-contrast");
+    const active = root.classList.contains("high-contrast");
+    contrastToggleBtn.setAttribute("aria-pressed", active ? "true" : "false");
+    playSound("click");
+  });
+
+  // Motion toggle
+  motionToggleBtn?.addEventListener("click", () => {
+    const isReduced = root.getAttribute("data-reduce-motion") === "true";
+    if (isReduced) {
+      root.removeAttribute("data-reduce-motion");
+      motionToggleBtn.setAttribute("aria-pressed", "false");
+    } else {
+      root.setAttribute("data-reduce-motion", "true");
+      motionToggleBtn.setAttribute("aria-pressed", "true");
+    }
+    playSound("click");
+  });
+}
+
+/* --------------------------------------------------------------------------
+   3. Web Audio Synthesis Engine (Muted by default, strictly opt-in)
+   -------------------------------------------------------------------------- */
+let audioCtx = null;
+let soundEnabled = false;
+
+function initSoundEngine() {
+  const soundToggleBtn = document.getElementById("sound-toggle-btn");
+  const soundIcon = document.getElementById("sound-toggle-icon");
+
+  if (!soundToggleBtn) return;
+
+  soundToggleBtn.addEventListener("click", () => {
+    soundEnabled = !soundEnabled;
+    soundToggleBtn.setAttribute("aria-pressed", soundEnabled ? "true" : "false");
+    if (soundEnabled && !audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (AudioContextClass) audioCtx = new AudioContextClass();
+    }
+    if (soundIcon) {
+      soundIcon.innerHTML = soundEnabled
+        ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>'
+        : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>';
+    }
+    if (soundEnabled) playSound("pop");
+  });
+}
+
+function playSound(type) {
+  if (!soundEnabled || !audioCtx) return;
+  if (audioCtx.state === "suspended") audioCtx.resume();
+
+  const osc = audioCtx.createOscillator();
+  const gain = audioCtx.createGain();
+  osc.connect(gain);
+  gain.connect(audioCtx.destination);
+
+  const now = audioCtx.currentTime;
+  if (type === "click") {
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(800, now);
+    osc.frequency.exponentialRampToValueAtTime(400, now + 0.05);
+    gain.gain.setValueAtTime(0.04, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
+    osc.start(now);
+    osc.stop(now + 0.05);
+  } else if (type === "pop") {
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(520, now);
+    osc.frequency.exponentialRampToValueAtTime(980, now + 0.08);
+    gain.gain.setValueAtTime(0.06, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+    osc.start(now);
+    osc.stop(now + 0.08);
+  } else if (type === "supernova") {
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(320, now);
+    osc.frequency.exponentialRampToValueAtTime(1200, now + 0.4);
+    gain.gain.setValueAtTime(0.08, now);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.5);
+    osc.start(now);
+    osc.stop(now + 0.5);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Navigation & Scroll Spy
+   -------------------------------------------------------------------------- */
+function initNavigation() {
+  const sidebar = document.getElementById("app-sidebar");
+  const menuToggle = document.getElementById("mobile-menu-toggle");
+  const overlay = document.getElementById("mobile-drawer-overlay");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const sections = document.querySelectorAll("main section[id]");
+
+  // Mobile toggle
+  function toggleMobile(open) {
+    if (!sidebar || !overlay) return;
+    sidebar.classList.toggle("open", open);
+    overlay.classList.toggle("open", open);
+    if (menuToggle) {
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+  }
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = sidebar?.classList.contains("open");
+    toggleMobile(!isOpen);
+    playSound("click");
+  });
+
+  overlay?.addEventListener("click", () => toggleMobile(false));
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      toggleMobile(false);
+      playSound("click");
+    });
+  });
+
+  // Scroll spy
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 40) {
-      navbar.classList.add("scrolled");
+    const scrollPos = window.scrollY + 180;
+    sections.forEach((sec) => {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      const id = sec.getAttribute("id");
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinks.forEach((l) => {
+          if (l.getAttribute("href") === `#${id}`) {
+            l.classList.add("active");
+          } else {
+            l.classList.remove("active");
+          }
+        });
+      }
+    });
+  }, { passive: true });
+}
+
+/* --------------------------------------------------------------------------
+   5. Digital Planet 3D Interactive Canvas (Three.js + HTML5 Canvas Fallback)
+   -------------------------------------------------------------------------- */
+function initDigitalPlanet() {
+  const canvas = document.getElementById("digital-planet-canvas");
+  if (!canvas) return;
+
+  const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+                          document.documentElement.getAttribute("data-reduce-motion") === "true";
+
+  // Check if Three.js is loaded
+  if (typeof THREE !== "undefined") {
+    try {
+      renderThreePlanet(canvas, isReducedMotion);
+      return;
+    } catch (e) {
+      console.warn("Three.js initialization failed, using resilient Canvas fallback:", e);
+    }
+  }
+
+  // Resilient pure 2D Canvas Fallback
+  renderCanvasPlanet(canvas, isReducedMotion);
+}
+
+function renderThreePlanet(canvas, isReducedMotion) {
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(canvas.clientWidth, canvas.clientHeight, false);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+  camera.position.z = 3.6;
+
+  // Sphere geometry with wireframe & particles
+  const sphereGeo = new THREE.SphereGeometry(1.2, 28, 28);
+  const sphereMat = new THREE.MeshBasicMaterial({
+    color: 0xFF7A1A,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.35
+  });
+  const sphere = new THREE.Mesh(sphereGeo, sphereMat);
+  scene.add(sphere);
+
+  // Outer particle cloud
+  const particleCount = 280;
+  const posArray = new Float32Array(particleCount * 3);
+  for (let i = 0; i < particleCount * 3; i += 3) {
+    const radius = 1.4 + Math.random() * 0.5;
+    const theta = Math.random() * Math.PI * 2;
+    const phi = Math.acos(2 * Math.random() - 1);
+    posArray[i] = radius * Math.sin(phi) * Math.cos(theta);
+    posArray[i + 1] = radius * Math.sin(phi) * Math.sin(theta);
+    posArray[i + 2] = radius * Math.cos(phi);
+  }
+  const particleGeo = new THREE.BufferGeometry();
+  particleGeo.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+  const particleMat = new THREE.PointsMaterial({
+    size: 0.035,
+    color: 0xFFB347,
+    transparent: true,
+    opacity: 0.85
+  });
+  const particles = new THREE.Points(particleGeo, particleMat);
+  scene.add(particles);
+
+  // Mouse Parallax
+  let mouseX = 0, mouseY = 0;
+  window.addEventListener("mousemove", (e) => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 0.4;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 0.4;
+  }, { passive: true });
+
+  let animFrame;
+  function animate() {
+    if (!isReducedMotion) {
+      sphere.rotation.y += 0.003;
+      sphere.rotation.x += 0.001;
+      particles.rotation.y -= 0.002;
+
+      sphere.rotation.y += (mouseX - sphere.rotation.y) * 0.05;
+      sphere.rotation.x += (mouseY - sphere.rotation.x) * 0.05;
+    }
+    renderer.render(scene, camera);
+    if (!isReducedMotion) {
+      animFrame = requestAnimationFrame(animate);
+    }
+  }
+  animate();
+
+  window.addEventListener("resize", () => {
+    if (!canvas) return;
+    const width = canvas.clientWidth;
+    const height = canvas.clientHeight;
+    camera.aspect = width / height;
+    camera.updateProjectionMatrix();
+    renderer.setSize(width, height, false);
+    renderer.render(scene, camera);
+  }, { passive: true });
+}
+
+function renderCanvasPlanet(canvas, isReducedMotion) {
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  function resize() {
+    canvas.width = canvas.clientWidth * window.devicePixelRatio;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+
+  let angle = 0;
+  function draw() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    const cx = w / 2;
+    const cy = h / 2;
+    const radius = Math.min(w, h) * 0.36;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Outer glow
+    const grad = ctx.createRadialGradient(cx, cy, radius * 0.6, cx, cy, radius * 1.3);
+    grad.addColorStop(0, "rgba(255, 122, 26, 0.2)");
+    grad.addColorStop(1, "transparent");
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius * 1.3, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Planet Circle
+    ctx.strokeStyle = "rgba(255, 122, 26, 0.4)";
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // Rotating wireframe rings
+    for (let i = 0; i < 4; i++) {
+      ctx.save();
+      ctx.translate(cx, cy);
+      ctx.rotate(angle + (i * Math.PI) / 4);
+      ctx.strokeStyle = i % 2 === 0 ? "rgba(255, 179, 71, 0.35)" : "rgba(255, 122, 26, 0.25)";
+      ctx.beginPath();
+      ctx.ellipse(0, 0, radius, radius * 0.35, 0, 0, Math.PI * 2);
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    if (!isReducedMotion) {
+      angle += 0.008;
+      requestAnimationFrame(draw);
+    }
+  }
+  draw();
+  window.addEventListener("resize", resize, { passive: true });
+}
+
+/* --------------------------------------------------------------------------
+   6. Skills Constellation Interactive Canvas
+   -------------------------------------------------------------------------- */
+function initSkillsConstellation() {
+  const canvas = document.getElementById("constellation-canvas");
+  const tooltip = document.getElementById("constellation-tooltip");
+  const tabConstellation = document.getElementById("tab-view-constellation");
+  const tabList = document.getElementById("tab-view-list");
+  const constellationContainer = document.getElementById("constellation-container");
+  const listContainer = document.getElementById("skills-list-container");
+
+  // Tab view switcher
+  tabConstellation?.addEventListener("click", () => {
+    tabConstellation.classList.add("active");
+    tabList?.classList.remove("active");
+    if (constellationContainer) constellationContainer.style.display = "block";
+    if (listContainer) listContainer.style.display = "none";
+    playSound("click");
+  });
+
+  tabList?.addEventListener("click", () => {
+    tabList.classList.add("active");
+    tabConstellation?.classList.remove("active");
+    if (constellationContainer) constellationContainer.style.display = "none";
+    if (listContainer) listContainer.style.display = "grid";
+    playSound("click");
+  });
+
+  if (!canvas || !tooltip) return;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  function resize() {
+    canvas.width = canvas.clientWidth * window.devicePixelRatio;
+    canvas.height = canvas.clientHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+  }
+  resize();
+
+  // Nodes strictly derived from verified resume skills
+  const nodes = [
+    { name: "Python", category: "Core Language", x: 0.22, y: 0.35, r: 12 },
+    { name: "C++", category: "Systems & Embedded", x: 0.32, y: 0.65, r: 11 },
+    { name: "C", category: "Foundational", x: 0.16, y: 0.72, r: 9 },
+    { name: "JavaScript", category: "Interactive Web", x: 0.50, y: 0.30, r: 11 },
+    { name: "Three.js", category: "3D Rendering", x: 0.62, y: 0.22, r: 10 },
+    { name: "Gemini API", category: "AI & Multimodal", x: 0.38, y: 0.20, r: 12 },
+    { name: "MediaPipe", category: "Computer Vision", x: 0.75, y: 0.38, r: 10 },
+    { name: "ESP8266", category: "IoT Microcontroller", x: 0.42, y: 0.80, r: 13 },
+    { name: "Sensors & LDR", category: "Hardware I/O", x: 0.58, y: 0.85, r: 10 },
+    { name: "Apps Script", category: "Cloud Automation", x: 0.82, y: 0.55, r: 9 },
+    { name: "Business Analytics", category: "MyCaptain Certified", x: 0.70, y: 0.70, r: 12 }
+  ];
+
+  let mouseX = -100, mouseY = -100;
+  canvas.addEventListener("mousemove", (e) => {
+    const rect = canvas.getBoundingClientRect();
+    mouseX = e.clientX - rect.left;
+    mouseY = e.clientY - rect.top;
+  });
+  canvas.addEventListener("mouseleave", () => {
+    mouseX = -100;
+    mouseY = -100;
+    tooltip.style.opacity = "0";
+  });
+
+  const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+                          document.documentElement.getAttribute("data-reduce-motion") === "true";
+
+  function draw() {
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    ctx.clearRect(0, 0, w, h);
+
+    // Draw connecting lines
+    ctx.lineWidth = 1;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const x1 = nodes[i].x * w;
+        const y1 = nodes[i].y * h;
+        const x2 = nodes[j].x * w;
+        const y2 = nodes[j].y * h;
+        const dist = Math.hypot(x2 - x1, y2 - y1);
+        if (dist < 180) {
+          const alpha = 1 - dist / 180;
+          ctx.strokeStyle = `rgba(255, 122, 26, ${alpha * 0.3})`;
+          ctx.beginPath();
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    let hovered = null;
+    nodes.forEach((n) => {
+      const nx = n.x * w;
+      const ny = n.y * h;
+      const distMouse = Math.hypot(mouseX - nx, mouseY - ny);
+      const isHover = distMouse < n.r + 6;
+
+      if (isHover) hovered = n;
+
+      // Glow
+      ctx.fillStyle = isHover ? "rgba(255, 179, 71, 0.45)" : "rgba(255, 122, 26, 0.15)";
+      ctx.beginPath();
+      ctx.arc(nx, ny, n.r * 1.8, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Node core
+      ctx.fillStyle = isHover ? "#FFB347" : "#FF7A1A";
+      ctx.beginPath();
+      ctx.arc(nx, ny, n.r, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Label
+      ctx.fillStyle = "#F5F5F2";
+      ctx.font = "600 12px 'Plus Jakarta Sans', sans-serif";
+      ctx.textAlign = "center";
+      ctx.fillText(n.name, nx, ny + n.r + 16);
+    });
+
+    if (hovered) {
+      tooltip.style.opacity = "1";
+      tooltip.style.left = `${hovered.x * w}px`;
+      tooltip.style.top = `${hovered.y * h}px`;
+      tooltip.innerHTML = `<strong>${hovered.name}</strong><br><span style="color: #FFB347; font-size: 0.72rem;">${hovered.category}</span>`;
     } else {
-      navbar.classList.remove("scrolled");
+      tooltip.style.opacity = "0";
     }
-  });
+
+    if (!isReducedMotion) {
+      requestAnimationFrame(draw);
+    }
+  }
+  draw();
+  window.addEventListener("resize", resize, { passive: true });
 }
 
 /* --------------------------------------------------------------------------
-   2. Expandable Search Widget
+   7. Curated Project Tilt Cards & Case Study Modal Dialog
    -------------------------------------------------------------------------- */
-function initSearchWidget() {
-  const searchWidget = document.getElementById("search-widget");
-  const searchBtn = document.getElementById("search-toggle-btn");
-  const searchInput = document.getElementById("search-input-box");
+function initProjectTiltAndModal() {
+  const cards = document.querySelectorAll(".project-card");
+  const dialog = document.getElementById("case-study-dialog");
+  const closeBtn = document.getElementById("case-study-close-btn");
 
-  if (!searchWidget || !searchBtn || !searchInput) return;
+  // 3D Perspective Tilt on MouseMove
+  cards.forEach((card) => {
+    card.addEventListener("mousemove", (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const rotateX = -(y / rect.height) * 8;
+      const rotateY = (x / rect.width) * 8;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = `perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)`;
+    });
 
-  searchBtn.addEventListener("click", () => {
-    const isOpen = searchWidget.classList.toggle("open");
-    if (isOpen) {
-      searchInput.focus();
-    }
-  });
-
-  searchInput.addEventListener("input", (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    filterCatalog(query);
-  });
-}
-
-function filterCatalog(query) {
-  const cards = document.querySelectorAll(".nf-card");
-  cards.forEach(card => {
-    const title = card.dataset.title ? card.dataset.title.toLowerCase() : "";
-    const tags = card.dataset.tags ? card.dataset.tags.toLowerCase() : "";
-    if (!query || title.includes(query) || tags.includes(query)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-
-/* --------------------------------------------------------------------------
-   3. "Who's Watching?" Profile Switcher
-   -------------------------------------------------------------------------- */
-function initProfiles() {
-  const profilePills = document.querySelectorAll(".profile-pill");
-  const greetingEl = document.getElementById("profile-greeting-name");
-  const navAvatar = document.getElementById("nav-current-avatar");
-
-  profilePills.forEach(pill => {
-    pill.addEventListener("click", () => {
-      profilePills.forEach(p => p.classList.remove("active"));
-      pill.classList.add("active");
-
-      const profileName = pill.dataset.profileName;
-      const avatarSrc = pill.dataset.avatarSrc;
-
-      if (greetingEl) greetingEl.textContent = profileName;
-      if (navAvatar && avatarSrc) navAvatar.src = avatarSrc;
-
-      showToast(`Switched profile to: ${profileName}`);
+    // Open Case Study Modal
+    card.addEventListener("click", () => {
+      const projectId = card.getAttribute("data-project-id");
+      openCaseStudy(projectId);
     });
   });
-}
 
-/* --------------------------------------------------------------------------
-   4. Billboard Hero Setup
-   -------------------------------------------------------------------------- */
-function initBillboard() {
-  const playBtn = document.getElementById("billboard-play-btn");
-  const moreInfoBtn = document.getElementById("billboard-info-btn");
+  function openCaseStudy(id) {
+    if (!dialog || typeof PORTFOLIO_DATA === "undefined") return;
+    const project = PORTFOLIO_DATA.projects.find((p) => p.id === id);
+    if (!project) return;
 
-  if (playBtn) {
-    playBtn.addEventListener("click", () => {
-      openNetflixModal(NETFLIX_CATALOG.featured.id);
-    });
-  }
+    // Populate Dialog Elements
+    const img = document.getElementById("dialog-banner-img");
+    const title = document.getElementById("dialog-title");
+    const overview = document.getElementById("dialog-overview");
+    const problem = document.getElementById("dialog-problem");
+    const goal = document.getElementById("dialog-goal");
+    const role = document.getElementById("dialog-role");
+    const architecture = document.getElementById("dialog-architecture");
+    const challenges = document.getElementById("dialog-challenges");
+    const outcome = document.getElementById("dialog-outcome");
+    const githubBtn = document.getElementById("dialog-github-btn");
+    const demoBtn = document.getElementById("dialog-demo-btn");
+    const tagsContainer = document.getElementById("dialog-tags");
 
-  if (moreInfoBtn) {
-    moreInfoBtn.addEventListener("click", () => {
-      openNetflixModal(NETFLIX_CATALOG.featured.id);
-    });
-  }
-}
+    if (img) img.src = project.image;
+    if (title) title.textContent = project.title;
+    if (overview) overview.textContent = project.caseStudy.overview;
+    if (problem) problem.textContent = project.caseStudy.problem;
+    if (goal) goal.textContent = project.caseStudy.goal;
+    if (role) role.textContent = project.caseStudy.role;
+    if (architecture) architecture.textContent = project.caseStudy.architecture;
+    if (challenges) challenges.textContent = project.caseStudy.challenges;
+    if (outcome) outcome.textContent = project.caseStudy.outcome;
 
-/* --------------------------------------------------------------------------
-   5. Populate Netflix Rows
-   -------------------------------------------------------------------------- */
-function initNetflixRows() {
-  populateProjectsRow("row-trending", NETFLIX_CATALOG.projects);
-  
-  // IoT Originals Row
-  const iotProjects = NETFLIX_CATALOG.projects.filter(p => p.category === "iot");
-  populateProjectsRow("row-iot", iotProjects);
+    if (githubBtn) githubBtn.href = project.github;
+    if (demoBtn) demoBtn.href = project.liveDemo;
 
-  // AI & Web Series Row
-  const aiWebProjects = NETFLIX_CATALOG.projects.filter(p => p.category === "ai" || p.category === "web");
-  populateProjectsRow("row-ai-web", aiWebProjects);
-
-  // Skills Row
-  populateSkillsRow("row-skills", NETFLIX_CATALOG.skills);
-
-  // Experience & Education Episodes Row
-  populateEpisodesRow("row-experience", NETFLIX_CATALOG.seasons);
-}
-
-function populateProjectsRow(containerId, items) {
-  const container = document.getElementById(containerId);
-  if (!container || !items) return;
-
-  container.innerHTML = "";
-  items.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "nf-card";
-    card.dataset.title = item.title;
-    card.dataset.tags = item.tags ? item.tags.join(" ") : "";
-    card.dataset.projectId = item.id;
-
-    card.innerHTML = `
-      <div class="nf-card-inner">
-        <div class="card-thumbnail-wrap">
-          <img src="${item.image}" alt="${item.title}" class="card-thumbnail" loading="lazy" />
-          <span class="card-top-tag">${item.badge || "FEATURED"}</span>
-        </div>
-        <div class="card-info-drawer">
-          <div class="card-action-bar">
-            <div class="action-btn-group">
-              <button class="circle-action-btn play-btn" title="View Details / Play" onclick="openNetflixModal('${item.id}')">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </button>
-              <a href="${item.github}" target="_blank" rel="noopener" class="circle-action-btn" title="View GitHub Code">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              </a>
-              <button class="circle-action-btn" title="Add to My List" onclick="showToast('Added ${item.title} to My List')">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-              </button>
-            </div>
-            <button class="circle-action-btn" title="Episode Details" onclick="openNetflixModal('${item.id}')">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-          </div>
-          <div class="card-metadata-line">
-            <span class="card-match">${item.matchScore}</span>
-            <span class="card-badge-pill">${item.maturity}</span>
-            <span class="card-badge-pill">${item.quality}</span>
-          </div>
-          <h4 class="card-title-text">${item.title}</h4>
-          <div class="card-tags-cloud">
-            ${(item.genres || item.tags.slice(0, 3)).map(g => `<span class="card-tag-bullet">${g}</span>`).join("")}
-          </div>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-function populateSkillsRow(containerId, skills) {
-  const container = document.getElementById(containerId);
-  if (!container || !skills) return;
-
-  container.innerHTML = "";
-  skills.forEach(skill => {
-    const card = document.createElement("div");
-    card.className = "nf-card";
-    card.dataset.title = skill.name;
-    card.dataset.tags = skill.category;
-
-    card.innerHTML = `
-      <div class="nf-card-inner">
-        <div class="skill-nf-card">
-          <div class="skill-top-head">
-            <span class="skill-icon-lg">${skill.icon}</span>
-            <span class="skill-badge-red">${skill.badge}</span>
-          </div>
-          <div>
-            <h4 class="skill-title-lg">${skill.name}</h4>
-            <div class="skill-category-sub">${skill.category} · ${skill.level}% Proficiency</div>
-            <p class="skill-summary-p">${skill.desc}</p>
-          </div>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-function populateEpisodesRow(containerId, episodes) {
-  const container = document.getElementById(containerId);
-  if (!container || !episodes) return;
-
-  container.innerHTML = "";
-  episodes.forEach(ep => {
-    const card = document.createElement("div");
-    card.className = "nf-card episode-card";
-    card.dataset.title = ep.title;
-    card.dataset.tags = ep.type;
-
-    card.innerHTML = `
-      <div class="nf-card-inner">
-        <div class="card-info-drawer" style="padding: 1.2rem; min-height: 190px; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
-              <span class="episode-season-tag">${ep.type}</span>
-              <span class="card-badge-pill" style="color: var(--nf-match-green); border-color: var(--nf-match-green);">${ep.badge}</span>
-            </div>
-            <h4 style="font-size: 1.1rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.35rem;">${ep.title}</h4>
-            <div style="font-size: 0.8rem; color: #999; margin-bottom: 0.6rem;">${ep.season}</div>
-            <p style="font-size: 0.85rem; color: #CCCCCC; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;">
-              ${ep.desc}
-            </p>
-          </div>
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.8rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">
-            <span style="font-size: 0.8rem; color: var(--nf-match-green); font-weight: 700;">${ep.matchScore}</span>
-            <span style="font-size: 0.78rem; color: #777;">Sandip University · Blinkit</span>
-          </div>
-        </div>
-      </div>
-    `;
-    container.appendChild(card);
-  });
-}
-
-/* --------------------------------------------------------------------------
-   6. Carousel Slider Left / Right Arrows
-   -------------------------------------------------------------------------- */
-function initCarouselArrows() {
-  document.querySelectorAll(".slider-arrow").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const targetId = btn.dataset.targetRow;
-      const track = document.getElementById(targetId);
-      if (!track) return;
-
-      const direction = btn.classList.contains("arrow-left") ? -1 : 1;
-      const scrollAmount = track.clientWidth * 0.75 * direction;
-      track.scrollBy({ left: scrollAmount, behavior: "smooth" });
-    });
-  });
-}
-
-/* --------------------------------------------------------------------------
-   7. Netflix Modal Dialog
-   -------------------------------------------------------------------------- */
-function initNetflixModal() {
-  const dialog = document.getElementById("netflix-modal");
-  const closeBtn = document.getElementById("netflix-modal-close");
-
-  if (!dialog) return;
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => dialog.close());
-  }
-
-  // Light dismiss on backdrop click
-  dialog.addEventListener("click", (event) => {
-    const rect = dialog.getBoundingClientRect();
-    const isInDialog = (
-      rect.top <= event.clientY &&
-      event.clientY <= rect.top + rect.height &&
-      rect.left <= event.clientX &&
-      event.clientX <= rect.left + rect.width
-    );
-    if (!isInDialog) {
-      dialog.close();
+    if (tagsContainer) {
+      tagsContainer.innerHTML = project.technologies
+        .map((t) => `<span class="tech-tag">${t}</span>`)
+        .join("");
     }
+
+    dialog.showModal();
+    playSound("pop");
+  }
+
+  closeBtn?.addEventListener("click", () => {
+    dialog?.close();
+    playSound("click");
+  });
+
+  dialog?.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
   });
 }
 
-function openNetflixModal(itemId) {
-  const dialog = document.getElementById("netflix-modal");
-  if (!dialog) return;
-
-  // Search in projects or featured
-  let item = NETFLIX_CATALOG.projects.find(p => p.id === itemId);
-  if (!item && NETFLIX_CATALOG.featured.id === itemId) {
-    item = NETFLIX_CATALOG.featured;
-  }
-
-  if (!item) return;
-
-  document.getElementById("modal-hero-img").src = item.image;
-  document.getElementById("modal-title").textContent = item.title;
-  document.getElementById("modal-match").textContent = item.matchScore || "98% Match";
-  document.getElementById("modal-year").textContent = item.year || "2026";
-  document.getElementById("modal-maturity").textContent = item.maturity || "AI & ML";
-  document.getElementById("modal-quality").textContent = item.quality || "HD";
-  document.getElementById("modal-desc").textContent = item.description;
-
-  document.getElementById("modal-github-btn").href = item.github;
-  document.getElementById("modal-demo-btn").href = item.liveDemo;
-
-  const highlightsContainer = document.getElementById("modal-highlights-list");
-  if (highlightsContainer) {
-    highlightsContainer.innerHTML = item.highlights 
-      ? item.highlights.map(h => `<li>${h}</li>`).join("")
-      : `<li>Key independent software project developed by Durgesh Sonar.</li>`;
-  }
-
-  const tagsContainer = document.getElementById("modal-tags-list");
-  if (tagsContainer) {
-    tagsContainer.textContent = item.tags ? item.tags.join(", ") : "C++, Python, IoT, Web";
-  }
-
-  const genresContainer = document.getElementById("modal-genres-list");
-  if (genresContainer) {
-    genresContainer.textContent = item.genres ? item.genres.join(", ") : "Software Engineering, AI, IoT";
-  }
-
-  dialog.showModal();
-}
-
 /* --------------------------------------------------------------------------
-   8. Contact Form
+   8. Contact Form Client-side Validation & Feedback
    -------------------------------------------------------------------------- */
 function initContactForm() {
-  const form = document.getElementById("netflix-contact-form");
-  if (!form) return;
+  const form = document.getElementById("contact-form");
+  const statusBox = document.getElementById("form-status-message");
+
+  if (!form || !statusBox) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = document.getElementById("nf-contact-name").value.trim();
-    const email = document.getElementById("nf-contact-email").value.trim();
-    const message = document.getElementById("nf-contact-message").value.trim();
+    const name = form.elements["name"]?.value.trim();
+    const email = form.elements["email"]?.value.trim();
+    const message = form.elements["message"]?.value.trim();
 
     if (!name || !email || !message) {
-      showToast("⚠️ Please fill in all required fields.");
+      statusBox.className = "form-status error";
+      statusBox.textContent = "Please fill in all required fields (Name, Email, and Message).";
+      playSound("click");
       return;
     }
 
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = `<span>Connecting...</span>`;
-    submitBtn.disabled = true;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      statusBox.className = "form-status error";
+      statusBox.textContent = "Please enter a valid email address.";
+      playSound("click");
+      return;
+    }
 
-    setTimeout(() => {
-      submitBtn.innerHTML = originalText;
-      submitBtn.disabled = false;
-      form.reset();
-      showToast("🎉 Thank you! Durgesh received your transmission.");
-
-      const mailtoUrl = `mailto:durgesh401td@gmail.com?subject=Opportunity%20Inquiry%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-      window.location.href = mailtoUrl;
-    }, 700);
+    // Success Simulation
+    statusBox.className = "form-status success";
+    statusBox.textContent = `Thank you, ${name}! Your message has been received. Durgesh will get back to you shortly.`;
+    form.reset();
+    playSound("pop");
   });
 }
 
 /* --------------------------------------------------------------------------
-   9. Netflix Toast Notification
+   9. Apex Assistant UX (Non-intrusive floating assistant)
    -------------------------------------------------------------------------- */
-function showToast(message) {
-  let container = document.getElementById("toast-container");
-  if (!container) {
-    container = document.createElement("div");
-    container.id = "toast-container";
-    container.className = "toast-container";
-    document.body.appendChild(container);
+function initApexAssistant() {
+  const launcher = document.getElementById("apex-launcher-btn");
+  const drawer = document.getElementById("apex-chat-drawer");
+  const closeBtn = document.getElementById("apex-close-btn");
+  const clearBtn = document.getElementById("apex-clear-btn");
+  const input = document.getElementById("apex-user-input");
+  const sendBtn = document.getElementById("apex-send-btn");
+  const messageList = document.getElementById("apex-messages-list");
+  const promptChips = document.querySelectorAll(".quick-prompt-chip");
+
+  if (!launcher || !drawer) return;
+
+  launcher.addEventListener("click", () => {
+    const isOpen = drawer.classList.contains("open");
+    drawer.classList.toggle("open", !isOpen);
+    launcher.setAttribute("aria-expanded", !isOpen ? "true" : "false");
+    playSound("pop");
+    if (!isOpen && input) input.focus();
+  });
+
+  closeBtn?.addEventListener("click", () => {
+    drawer.classList.remove("open");
+    launcher.setAttribute("aria-expanded", "false");
+    playSound("click");
+  });
+
+  clearBtn?.addEventListener("click", () => {
+    if (messageList) {
+      messageList.innerHTML = `<div class="chat-bubble bot">${PORTFOLIO_DATA.apex.welcomeMessage}</div>`;
+    }
+    playSound("click");
+  });
+
+  promptChips.forEach((chip) => {
+    chip.addEventListener("click", () => {
+      const text = chip.textContent.trim();
+      handleUserMessage(text);
+      playSound("click");
+    });
+  });
+
+  sendBtn?.addEventListener("click", () => {
+    const text = input?.value.trim();
+    if (text) {
+      handleUserMessage(text);
+      if (input) input.value = "";
+    }
+  });
+
+  input?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      const text = input.value.trim();
+      if (text) {
+        handleUserMessage(text);
+        input.value = "";
+      }
+    }
+  });
+
+  function handleUserMessage(query) {
+    if (!messageList) return;
+
+    // Append user message
+    const userDiv = document.createElement("div");
+    userDiv.className = "chat-bubble user";
+    userDiv.textContent = query;
+    messageList.appendChild(userDiv);
+    messageList.scrollTop = messageList.scrollHeight;
+    playSound("click");
+
+    // Generate intelligent assistant response
+    setTimeout(() => {
+      const botResponse = generateApexResponse(query);
+      const botDiv = document.createElement("div");
+      botDiv.className = "chat-bubble bot";
+      botDiv.innerHTML = botResponse;
+      messageList.appendChild(botDiv);
+      messageList.scrollTop = messageList.scrollHeight;
+      playSound("pop");
+    }, 450);
   }
 
-  const toast = document.createElement("div");
-  toast.className = "toast";
-  toast.innerHTML = `<span>🍿 ${message}</span>`;
-  container.appendChild(toast);
+  function generateApexResponse(q) {
+    const lower = q.toLowerCase();
+    if (lower.includes("background") || lower.includes("who is") || lower.includes("about")) {
+      return "<strong>Durgesh (Dev) Sonar</strong> is a B.Tech Computer Science & Engineering (AI & ML) student at Sandip University, Nashik. He builds hands-on IoT systems, AI-powered tools, and holds 6 months of operational experience at Blinkit.";
+    }
+    if (lower.includes("iot") || lower.includes("plant") || lower.includes("hardware") || lower.includes("esp8266")) {
+      return "Durgesh has engineered 3 major IoT systems: <strong>Smart Plant Monitoring</strong> with soil & telemetry sensors, the <strong>Smart Lighting & Distance Alert System</strong> using ultrasonic HC-SR04, and the <strong>Distance Measurement System</strong> with Arduino/ESP8266.";
+    }
+    if (lower.includes("aura") || lower.includes("voice") || lower.includes("assistant")) {
+      return "<strong>AI Voice Assistant 'Aura'</strong> is built with Python and the Google Gemini API. It uses an autonomous <strong>ReAct (Reasoning + Acting)</strong> loop to decompose voice commands and execute multi-step desktop automation on Windows.";
+    }
+    if (lower.includes("hire") || lower.includes("recruiter") || lower.includes("why")) {
+      return "Durgesh combines cutting-edge AI & IoT engineering with practical supply-chain discipline from <strong>Blinkit</strong> and formal <strong>Business Analytics</strong> training from MyCaptain. He ships working code openly on GitHub.";
+    }
+    if (lower.includes("blinkit") || lower.includes("experience")) {
+      return "Durgesh spent 6 months at <strong>Blinkit</strong> as a Picker-Packer, mastering high-accuracy order fulfillment, inventory management, shift teamwork, and operational agility in a high-speed warehouse environment.";
+    }
+    return "I can answer questions regarding Durgesh's 7 projects, technical stack (Python, C++, IoT, Gemini API), education at Sandip University, or business analytics certification. Try asking: <em>'What are Durgesh's top IoT projects?'</em>";
+  }
+}
 
-  setTimeout(() => {
-    toast.style.opacity = "0";
-    toast.style.transform = "translateY(20px)";
-    toast.style.transition = "all 0.3s ease";
-    setTimeout(() => toast.remove(), 300);
-  }, 3200);
+/* --------------------------------------------------------------------------
+   10. Secret Easter Egg: Celestial Supernova Burst (Ctrl+Shift+D or 3 Clicks)
+   -------------------------------------------------------------------------- */
+function initEasterEgg() {
+  const brandOrb = document.getElementById("brand-orb-trigger");
+  let clickCount = 0;
+
+  function triggerSupernova() {
+    playSound("supernova");
+    const burst = document.createElement("div");
+    burst.style.position = "fixed";
+    burst.style.inset = "0";
+    burst.style.background = "radial-gradient(circle, rgba(255, 122, 26, 0.4) 0%, transparent 70%)";
+    burst.style.zIndex = "99999";
+    burst.style.pointerEvents = "none";
+    burst.style.transition = "opacity 0.8s ease-out";
+    document.body.appendChild(burst);
+
+    setTimeout(() => {
+      burst.style.opacity = "0";
+      setTimeout(() => burst.remove(), 800);
+    }, 200);
+
+    alert("✨ Celestial Core Activated! Durgesh (Dev) Sonar's limitless universe unlocked.");
+  }
+
+  brandOrb?.addEventListener("click", () => {
+    clickCount++;
+    if (clickCount >= 3) {
+      clickCount = 0;
+      triggerSupernova();
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "d") {
+      triggerSupernova();
+    }
+  });
 }

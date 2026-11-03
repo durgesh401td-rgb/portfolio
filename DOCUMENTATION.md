@@ -15,7 +15,7 @@
 | **Email Address** | [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com) |
 | **Live Deployment URL** | [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/) |
 | **Target Audience** | Academic Evaluators, Technical Recruiters, Internship Providers, Engineering Mentors |
-| **Date of Submission** | September 2026 |
+| **Date of Submission** | November 2026 |
 
 ---
 
@@ -28,7 +28,7 @@
 6. [6. System Requirements](#6-system-requirements)
 7. [7. Website Features](#7-website-features)
 8. [8. Website Structure & Architecture](#8-website-structure--architecture)
-9. [9. UI/UX Design](#9-uiux-design)
+9. [9. UI/UX Design (Obsidian Orange / Cinematic Universe)](#9-uiux-design-obsidian-orange--cinematic-universe)
 10. [10. Implementation Details](#10-implementation-details)
 11. [11. GitHub Repository Management](#11-github-repository-management)
 12. [12. Vercel Deployment Step-by-Step Guide](#12-vercel-deployment-step-by-step-guide)
@@ -106,16 +106,17 @@ Key components include:
 
 | Section | Description & Engineering Details |
 | :--- | :--- |
-| **🏠 Home** | Name, tagline ("B.Tech CSE (AI & ML) Student \| Aspiring Business Analyst \| IoT & Technology Enthusiast"), Sandip University badge, animated typewriter headline, visual avatar with floating tech pills, action buttons, and quick metrics strip. |
-| **👤 Profile** | Complete profile narrative, background in AI/ML, IoT, and Business Analytics, practical discipline from Blinkit, and leadership & soft skills cards. |
-| **💻 Skills** | Interactive categorized filter (`All`, `Programming`, `Web / Frontend`, `AI / Tooling`, `Development`, `IoT / Hardware`, `Business / Analytics`) with animated progress bars. |
-| **🚀 Projects** | 7 featured projects (Academic IoT + GitHub projects) with real-time keyword search, category filter tabs (`All`, `IoT & Hardware`, `AI / Autonomous`, `Web & Interactive`), tech pills, GitHub buttons, and modal dialogs. |
-| **💼 Work Experience** | Dedicated timeline card detailing 6 months practical work experience at **Blinkit** as a **Picker-Packer**, plus academic project coordination at Sandip University. |
+| **🏠 Home** | Name, brand headline ("Curious mind. Creative code. Limitless possibilities."), Sandip University badge, interactive 3D Digital Planet canvas, and quick metrics strip. |
+| **👤 About Me** | Complete profile narrative, background in AI/ML, IoT, and Business Analytics, practical discipline from Blinkit, and editorial cards. |
+| **💻 Skills** | Interactive 3D/2D Constellation Canvas linking technology nodes with hover glass cards, alongside an accessible categorized grid alternative. |
+| **🚀 Projects** | 7 curated projects with 3D perspective tilt cards, status badges, tech pills, and in-depth native `<dialog>` case studies. |
+| **🏆 Achievements** | 3D trophy showcase featuring MyCaptain Business Analytics Award (Adeeba Kadri letter), Blinkit Operational Excellence, and GitHub open-source achievements. |
 | **🎓 Education** | **B.Tech — Computer Science & Engineering (Artificial Intelligence & Machine Learning)** at **Sandip University, Nashik**. |
-| **🏆 Certifications** | **Business Analytics Course** from **MyCaptain (January 2026)**, including mentor Adeeba Kadri's letter of appreciation and SDSN youth-led solution recognition. |
-| **📄 Resume** | In-page preview with Quick View modal, direct print button, and standalone printable page (`resume.html`). |
-| **📩 Contact** | Direct email (`durgesh401td@gmail.com`), GitHub link, LinkedIn link, location (Nashik, India), and validated contact form with feedback toast. |
+| **💼 Work Experience** | Dedicated timeline card detailing 6 months practical work experience at **Blinkit** as a **Picker-Packer**, plus academic project coordination at Sandip University. |
+| **📄 Resume** | Direct downloadable CV (`assets/resume.pdf`) and standalone printable page (`resume.html`). |
+| **📩 Contact** | Direct email (`durgesh401td@gmail.com`), GitHub link, LinkedIn link, location (Nashik, India), and validated contact form with accessible feedback. |
 | **🌓 Dark / Light Mode** | Persistent theme toggle with zero-FOUC inline script and `localStorage` synchronization. |
+| **🤖 Apex Assistant** | Non-intrusive floating AI assistant launcher at bottom-right providing structured answers on Durgesh's background, IoT systems, and supply-chain work. |
 
 ---
 
@@ -133,10 +134,12 @@ portfolio/
 │   ├── style.css               # Main design system & responsive stylesheet
 │   └── resume.css              # Print & screen styling for resume.html
 ├── js/
-│   ├── main.js                 # Theme manager, typing animation, search, dialogs, form
+│   ├── main.js                 # Theme manager, Three.js planet, constellation, dialogs, apex
 │   └── projects-data.js        # Structured project & skills data from PDF
 └── assets/
+    ├── resume.pdf              # Official downloadable curriculum vitae
     └── images/
+        ├── profile.jpg         # Authentic professional photograph
         ├── profile-avatar.svg  # Custom developer visual avatar
         ├── project-plant-iot.svg
         ├── project-smart-lighting.svg
@@ -149,13 +152,19 @@ portfolio/
 
 ---
 
-## 9. UI/UX Design
+## 9. UI/UX Design (Obsidian Orange / Cinematic Universe)
 
-- **Visual Theme:** Modern dark tech aesthetic with deep slate/indigo backdrop and crisp light mode alternative.
-- **Brand Identity:** Monogram badge `DS` representing Durgesh Sonar.
-- **Accents:** Electric sky blue (`#38bdf8`) and emerald green (`#34d399`) symbolizing IoT and software vitality.
-- **Typography:** `Inter` for clean legibility, paired with `JetBrains Mono` for code snippets and technical tags.
-- **Accessibility:** High contrast ratios (WCAG 2.1 AA compliant), keyboard focus outlines, ARIA labels on buttons and modals.
+- **Art Direction:** Cinematic Universe / Obsidian Orange, engineered for maximum spaciousness, depth, and clarity without clutter.
+- **Palette Tokens:**
+  - *Dark Theme:* Canvas `#08090B`, Cards `#111318`, Elevated `#191D24`, Text `#F5F5F2`, Accent `#FF7A1A` (Obsidian Orange), Amber `#FFB347`.
+  - *Light Theme:* Canvas `#F5F5F2`, Cards `#FFFFFF`, Elevated `#ECEDEB`, Text `#17191D`, Accent `#D95E0B`.
+- **Hero Centerpiece:** Interactive 3D **Digital Planet** with orbital particle rings, mouse parallax, and resilient 2D Canvas fallback.
+- **Brand Wordmark:** “Durgesh (Dev) Sonar” with headline “Curious mind. Creative code. Limitless possibilities.”
+- **Global Navigation:** Fixed desktop vertical sidebar with scroll-spy active state, high-contrast toggle, font scaling, audio chimes toggle, and mobile off-canvas drawer.
+- **Interactive Skills Constellation:** Connected node network representing real technologies from the candidate's resume with hover cards and accessible grid view.
+- **Curated Projects Showcase:** 3D perspective tilt cards with in-depth `<dialog>` case study modals (Overview, Problem, Goal, Role, Architecture, Challenges, Outcomes).
+- **Apex AI Assistant:** Non-intrusive floating assistant at bottom-right providing contextual guidance on projects and experience.
+- **Accessibility:** Full compliance with `prefers-reduced-motion: reduce`, keyboard focus indicators, visible skip link, semantic landmarks, and WCAG AA contrast.
 
 ---
 
@@ -166,12 +175,13 @@ All projects and skills are maintained in structured data arrays containing:
 - `id`: Unique identifier
 - `title`: Formal project name
 - `category`: Category (`iot`, `ai`, `web`)
-- `tagline`: Concise descriptive subtitle
-- `description`: Architectural explanation from the resume
-- `tags`: Specific technologies (e.g. ESP8266, Google Gemini API, Three.js, MediaPipe)
+- `status`: Completion status (`Completed`, `Working`, `Upcoming`)
+- `badge`: Display tag
+- `shortSummary`: Concise subtitle
+- `technologies`: Specific technologies (e.g. ESP8266, Google Gemini API, Three.js, MediaPipe)
 - `image`: SVG visual mockup path
 - `github` & `liveDemo`: External links
-- `highlights`: Technical accomplishment bullet points
+- `caseStudy`: In-depth breakdown including Overview, Problem, Goal, Role, Architecture, Challenges, and Outcome
 
 ### 10.2 Accessible `<dialog>` Modals
 Uses native HTML5 `<dialog>` elements with `showModal()` and backdrop light-dismiss logic, eliminating heavy modal third-party dependencies while guaranteeing full keyboard trapping (`Tab`, `Escape`).
@@ -190,7 +200,7 @@ Implemented via an un-deferred inline script inside `<head>` to evaluate `localS
 ```bash
 git init
 git add .
-git commit -m "feat: complete personal portfolio website based on official resume"
+git commit -m "feat: implement Obsidian Orange Cinematic Universe UI/UX redesign"
 git branch -M main
 git remote add origin https://github.com/durgesh401td-rgb/portfolio.git
 git push -u origin main
@@ -214,10 +224,10 @@ git push -u origin main
 | Test ID | Scenario | Expected Outcome | Result |
 | :--- | :--- | :--- | :--- |
 | **TC-01** | Dark/Light Switcher | Toggles theme and saves to `localStorage` | **PASS** |
-| **TC-02** | IoT Filter Tab | Filters grid to show ESP8266/IoT projects | **PASS** |
-| **TC-03** | AI Filter Tab | Shows AI Voice Assistant "Aura" project | **PASS** |
-| **TC-04** | Project Search | Typing "Gemini" reveals Aura assistant | **PASS** |
-| **TC-05** | Native Dialog Modal | Opens with smooth scale transition and backdrop | **PASS** |
+| **TC-02** | 3D Digital Planet | Renders WebGL wireframe with particles + canvas fallback | **PASS** |
+| **TC-03** | Skills Constellation | Renders node network with hover tooltips + accessible grid | **PASS** |
+| **TC-04** | Case Study Modal | Opens native `<dialog>` with full project breakdown | **PASS** |
+| **TC-05** | Apex Assistant | Floating launcher opens chat drawer with responsive query handling | **PASS** |
 | **TC-06** | Contact Form Validation | Flags missing inputs with feedback alert | **PASS** |
 | **TC-07** | Resume Print Engine | Opens print dialog with clean ATS styling | **PASS** |
 
@@ -229,14 +239,14 @@ git push -u origin main
 
 ## 14. Screenshots & Section Walkthrough
 
-- **Hero:** Profile photo avatar, greeting with Sandip University badge, dynamic typewriter headline, quick contact links.
-- **Profile:** Comprehensive background narrative, soft skills grid, and career interests.
-- **Skills:** Categorized skills covering C, C++, Python, JavaScript, HTML, CSS, Three.js, Gemini API, MediaPipe, ESP8266, and Business Analytics.
-- **Projects:** 7 projects with rich SVGs, technology pills, and interactive modals.
+- **Hero:** Authentic portrait card, Sandip University badge, brand headline, interactive 3D Digital Planet canvas.
+- **About:** Editorial card blocks covering academic journey, Blinkit operational discipline, and business analytics.
+- **Skills:** Dual-mode constellation network and categorized accessible cards.
+- **Projects:** 7 projects with 3D tilt interaction, technology pills, and in-depth case study modals.
 - **Experience:** 6 months at Blinkit as Picker-Packer highlighting teamwork and workplace discipline.
 - **Education:** B.Tech CSE (AI & ML) at Sandip University, Nashik.
 - **Certifications:** MyCaptain Business Analytics Course with Mentor Adeeba Kadri letter of appreciation.
-- **Resume & Contact:** Dual-view resume access and interactive validated contact form.
+- **Resume & Contact:** Downloadable CV, printable resume page, and interactive validated contact form.
 
 ---
 

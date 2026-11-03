@@ -7,15 +7,16 @@
   --res-bg: #ffffff;
   --res-text: #1e293b;
   --res-text-light: #475569;
-  --res-primary: #E50914;
-  --res-secondary: #0f172a;
+  --res-primary: #FF7A1A;
+  --res-primary-dark: #D95E0B;
+  --res-secondary: #08090B;
   --res-border: #e2e8f0;
   --res-font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --res-font-mono: 'JetBrains Mono', monospace;
 }
 
 body.resume-page-body {
-  background-color: #141414;
+  background-color: #08090B;
   color: var(--res-text);
   font-family: var(--res-font);
   line-height: 1.55;

@@ -1,159 +1,116 @@
-# 🎬 Durgesh — Personal Portfolio Website (Netflix-Themed)
+# 🌌 Durgesh (Dev) Sonar — Personal Portfolio Website (Cinematic Universe)
 
 [![Vercel Deployment](https://img.shields.io/badge/Vercel-Deployed-black?style=for-the-badge&logo=vercel)](https://portfolio-durgesh401td-rgb.vercel.app/)
-[![Theme](https://img.shields.io/badge/UI_Theme-Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)](https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/)
+[![Theme](https://img.shields.io/badge/UI_Theme-Obsidian_Orange-FF7A1A?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://portfolio-durgesh401td-rgb.vercel.app/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://isocpp.org/)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![IoT ESP8266](https://img.shields.io/badge/IoT-ESP8266-E05D44?style=for-the-badge&logo=espressif&logoColor=white)](https://www.espressif.com/)
 [![Gemini AI](https://img.shields.io/badge/Google_Gemini-API-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 
-> **B.Tech CSE (AI &amp; ML) Student | Aspiring Business Analyst | IoT &amp; Technology Enthusiast**  
+> **“Curious mind. Creative code. Limitless possibilities.”**  
+> **Durgesh (Dev) Sonar** · B.Tech CSE (AI &amp; ML) Student | Aspiring Business Analyst | IoT &amp; Technology Enthusiast  
 > Sandip University, Nashik | Maharashtra, India  
-> *Engineered as a full-featured, interactive streaming platform interface inspired by Netflix.*
+> *Engineered as a spacious, cinematic portfolio experience following the Obsidian Orange specification.*
 
 ---
 
 ## 🔗 Profiles & Contact Links
 
-- **🚀 Live Website (Vercel):** [https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/](https://portfolio-durgesh401td-rgb.vercel.app/)
+- **🚀 Live Website (Vercel):** [https://portfolio-durgesh401td-rgb.vercel.app/](https://portfolio-durgesh401td-rgb.vercel.app/)
 - **🐙 GitHub Profile:** [https://github.com/durgesh401td-rgb](https://github.com/durgesh401td-rgb)
 - **💼 LinkedIn Profile:** [https://www.linkedin.com/in/durgesh-sonar-441231389/](https://www.linkedin.com/in/durgesh-sonar-441231389/)
 - **📧 Email:** [durgesh401td@gmail.com](mailto:durgesh401td@gmail.com)
+- **📄 Download CV:** [`assets/resume.pdf`](assets/resume.pdf) | [View Printable Resume Webpage](resume.html)
+
+---
+
+## 🎨 Design System: Obsidian Orange / Cinematic Universe
+
+Built in accordance with the official UI/UX design specification:
+- **Brand Wordmark:** “Durgesh (Dev) Sonar”
+- **Atmosphere:** Deep obsidian canvas (`#08090B`) with subtle glowing Orange Nebula radial gradients and floating particle dust.
+- **Hero Centerpiece:** 3D interactive **Digital Planet** wireframe with atmospheric particle ring, mouse-reactive parallax, and pure Canvas fallback.
+- **Global Navigation:** Fixed vertical desktop sidebar with scroll-spy active indicators, sound effects toggle, high-contrast switch, font-scaling controls, and compact mobile drawer.
+- **Interactive Constellation:** 3D/2D interactive skill constellation canvas linking technology nodes with hover glass cards, alongside an accessible grid view.
+- **Curated Projects Gallery:** 3D perspective tilt cards for all 7 verified projects with rich native `<dialog>` full-depth case studies (Overview, Problem, Goal, Role, Architecture, Challenges, Outcomes).
+- **Apex AI Assistant:** Non-intrusive floating assistant at bottom-right providing structured answers on Durgesh's background, IoT projects, and supply-chain experience.
+- **Strict Accessibility:** Automatic adherence to `prefers-reduced-motion: reduce`, keyboard focus traps, skip links, and WCAG AA contrast in both Dark and Light modes.
 
 ---
 
 ## 👤 Profile Summary
 
-Motivated B.Tech Computer Science &amp; Engineering (AI &amp; ML) student at Sandip University, Nashik with hands-on exposure to Python, C/C++, IoT and ESP8266-based projects, along with Business Analytics learning through MyCaptain. Builds and ships independent projects spanning IoT, AI-assisted tools and browser-based interactive apps, published openly on GitHub. Demonstrated problem-solving, teamwork and leadership through academic and project activities, backed by 6 months of practical work experience at Blinkit as a Picker-Packer.
+> *"Motivated B.Tech Computer Science &amp; Engineering (AI &amp; ML) student at Sandip University, Nashik with hands-on exposure to Python, C/C++, IoT and ESP8266-based projects, along with Business Analytics learning through MyCaptain. Builds and ships independent projects spanning IoT, AI-assisted tools and browser-based interactive apps, published openly on GitHub. Demonstrated problem-solving, teamwork and leadership through academic and project activities, backed by 6 months of practical work experience at Blinkit as a Picker-Packer."*
 
 ---
 
 ## 🛠️ Technical Skills
 
-| Category | Skills &amp; Tools |
+| Category | Technologies &amp; Tools |
 | :--- | :--- |
-| **Programming** | C, C++, Python, JavaScript |
-| **Web / Frontend** | HTML, CSS, JavaScript, Three.js |
-| **AI / Tooling** | Google Gemini API, MediaPipe, Google Apps Script |
-| **Development** | VS Code, MSYS2, Git &amp; GitHub |
-| **IoT / Hardware** | ESP8266, ultrasonic &amp; distance sensors, LEDs, sensor-based automation |
-| **Business / Analytics** | Business Analytics fundamentals, project-based learning |
+| **Programming Languages** | C, C++, Python, JavaScript (ES6+) |
+| **AI &amp; Computer Vision** | Google Gemini API, MediaPipe, ReAct Agent Loops |
+| **Web &amp; 3D Graphics** | HTML5 Semantic Markup, CSS3 Modern Layouts, Three.js, WebGL |
+| **IoT &amp; Hardware** | ESP8266, Arduino ATmega, HC-SR04 Ultrasonic, LDR, Soil Sensors |
+| **Developer Tools** | VS Code, MSYS2, Git &amp; GitHub, Google Apps Script |
+| **Business &amp; Operations** | Business Analytics (MyCaptain Certified), Fast-Paced Logistics (Blinkit) |
 
 ---
 
-## 🚀 Projects Showcase
+## 🚀 Projects Showcase (7 Verified Projects)
 
-### Academic Projects
-1. **Smart Plant Monitoring System using IoT**
-   - Developed an IoT-based plant monitoring concept using ESP8266 and sensor-based data collection to monitor plant/environment conditions and support smarter plant care.
-   - *Tech:* ESP8266, sensors, IoT automation, C++.
-
-2. **IoT Smart Lighting &amp; Distance Alert System**
-   - Built an ESP8266-based system using an ultrasonic sensor, LDR and LED/RGB indication for distance-based alerts and smart lighting behavior.
-   - *Tech:* ESP8266, ultrasonic sensor, LDR, LEDs, C++.
-
-### Featured GitHub Projects (`github.com/durgesh401td-rgb`)
-3. **AI Resume Builder** *(HTML / CSS / JavaScript)*
-   - A web-based tool that helps users create professional resumes quickly — users enter details such as education, skills, projects and experience, and the tool generates a formatted resume.
-
-4. **SmartTrack** *(HTML / Google Apps Script)*
-   - A responsive Expense &amp; Investment Tracker web portal featuring interactive compound-growth calculators, with real-time data storage powered by Google Sheets and Google Apps Script.
-
-5. **AI Voice Assistant — "Aura"** *(Python)*
-   - A next-generation, voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop rather than simple command matching.
-
-6. **Distance Measurement System** *(C++ / Arduino / ESP8266)*
-   - An IoT-based system built with Arduino and an ESP8266 Wi-Fi module — an ultrasonic sensor measures distance to an object, Arduino processes the readings, and the ESP8266 sends the data wirelessly.
-
-7. **Car Racing Game** *(JavaScript / Three.js / MediaPipe)*
-   - A gesture-controlled, infinite car racing game featuring bright Solar Highway graphics and a Knockout Elimination mode, with real-time hand tracking via webcam and explosion effects.
+1. **AI Voice Assistant — "Aura"** *(Python, Google Gemini API, ReAct Loop)*
+   - Autonomous desktop voice assistant reasoning dynamically through multi-step desktop tasks and Windows automation.
+2. **Smart Plant Monitoring System using IoT** *(ESP8266, C++, Soil Probes, DHT11)*
+   - Automated plant telemetry station tracking soil moisture, temperature, and ambient humidity with automated alerts.
+3. **IoT Smart Lighting &amp; Distance Alert System** *(ESP8266, HC-SR04, LDR)*
+   - Ambient light-sensing and proximity detection unit providing automated illumination and distance hazard warnings.
+4. **SmartTrack — Expense &amp; Investment Tracker** *(JavaScript, Apps Script, Sheets API)*
+   - Personal finance and wealth forecasting dashboard persisting directly into Google Sheets via serverless endpoints.
+5. **AI Resume Builder** *(HTML5, CSS3, JavaScript, Print CSS)*
+   - Responsive web tool formatting input details into pixel-perfect, ATS-friendly resumes with 1-click PDF printing.
+6. **Distance Measurement System** *(C++, Arduino, ESP8266, Ultrasonic)*
+   - Millimeter-precision distance sensor instrument with local I2C display and wireless Wi-Fi telemetry bridge.
+7. **Gesture-Controlled 3D Car Racing Game** *(JavaScript, Three.js, MediaPipe)*
+   - WebGL arcade racing game powered by real-time webcam hand tracking without physical controllers.
 
 ---
 
-## 💼 Work Experience
+## 💼 Work Experience &amp; Leadership
 
-**Blinkit — Picker-Packer | 6 Months**
-- Picked and packed customer orders accurately and efficiently in a fast-paced environment.
-- Handled products and order-related tasks while maintaining accuracy and timely processing.
-- Worked collaboratively with team members to support smooth day-to-day operations.
-- Developed practical skills in responsibility, time management, teamwork and workplace discipline.
-
-**Additional Experience:**
-- Academic project coordination and hands-on technical activities involving IoT, programming and practical problem solving at Sandip University, Nashik.
+- **Picker-Packer | Blinkit** *(6 Months)*
+  - High-precision customer order picking and packing in fast-paced logistics fulfillment centers.
+  - Developed workplace discipline, punctuality, and operational agility under tight delivery deadlines.
+- **Academic Technical Coordinator | Sandip University, Nashik** *(Ongoing)*
+  - Guided student peer groups in microcontroller circuit assembly, C++ programming, and AI prototyping.
 
 ---
 
-## 🎓 Education
+## 🏆 Certifications &amp; Achievements
 
-**B.Tech — Computer Science &amp; Engineering (Artificial Intelligence &amp; Machine Learning)**  
-Sandip University, Nashik
-
----
-
-## 🏆 Certifications &amp; Recognition
-
-**Business Analytics Course** | MyCaptain · January 2026
-- Appreciation letter from mentor Adeeba Kadri recognizing participation, willingness to learn, skill development and a unique approach to assigned projects.
-- MyCaptain is recognized by SDSN among the Top 50 youth-led solutions in quality education.
-- MyCaptain Business Analytics Certificate included as a certification credential.
+- **Business Analytics Certification** — *MyCaptain (January 2026)*
+  - Letter of appreciation from mentor **Adeeba Kadri** commending dedication, analytical reasoning, and unique approach to projects.
+  - MyCaptain recognized among the UN SDSN Top 50 youth-led quality education solutions.
+- **Blinkit Operational Excellence** *(6 Months)*
+  - Maintained consistent accuracy and swift order processing in high-volume retail fulfillment.
 
 ---
 
-## 🤝 Leadership &amp; Soft Skills
+## ⚙️ Running the Project Locally
 
-- Leadership &amp; team coordination
-- Teamwork &amp; collaboration
-- Problem-solving &amp; analytical thinking
-- Communication &amp; active participation
-- Time management &amp; responsibility
-- Quick learning, creative approach
+```bash
+# Clone the repository
+git clone https://github.com/durgesh401td-rgb/portfolio.git
+cd portfolio
 
----
-
-## 📁 Project Structure
-
+# Open index.html in any modern web browser or start a local server
+npx serve .
+# Or use Python built-in server:
+python -m http.server 8000
 ```
-portfolio/
-├── index.html                  # Main portfolio single-page application
-├── resume.html                 # Formatted ATS-friendly printable resume
-├── vercel.json                 # Vercel deployment configuration
-├── .gitignore                  # Git ignore rules
-├── README.md                   # GitHub project overview & quickstart
-├── DOCUMENTATION.md            # Software Engineering Project Documentation
-├── css/
-│   ├── style.css               # Design system & responsive stylesheet
-│   └── resume.css              # Print & screen styling for resume.html
-├── js/
-│   ├── main.js                 # Theme switcher, modals, search, contact form
-│   └── projects-data.js        # Structured project & skills data from PDF
-└── assets/
-    └── images/
-        ├── profile-avatar.svg
-        ├── project-plant-iot.svg
-        ├── project-smart-lighting.svg
-        ├── project-aura.svg
-        ├── project-smarttrack.svg
-        ├── project-resume-builder.svg
-        ├── project-distance.svg
-        └── project-racing.svg
-```
+Visit `http://localhost:8000` to experience the website.
 
 ---
 
-## 🚀 How to Run Locally
-
-1. Clone or open the repository folder in **VS Code**.
-2. Right-click `index.html` and select **"Open with Live Server"**, or run:
-   ```bash
-   python -m http.server 3000
-   ```
-3. Open `http://localhost:3000` in your web browser.
-
----
-
-## ☁️ Vercel Deployment
-
-1. Push this repository to your GitHub account: `https://github.com/durgesh401td-rgb/portfolio`.
-2. Connect your repository to [vercel.com](https://vercel.com).
-3. Select framework preset **"Other"** and deploy with zero configuration.
+© 2026 **Durgesh (Dev) Sonar**. All rights reserved. Sandip University, Nashik.

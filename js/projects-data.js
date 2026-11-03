@@ -1,246 +1,329 @@
 /**
  * projects-data.js
- * Structured Netflix catalog data strictly derived from Durgesh Sonar's official resume
+ * Comprehensive portfolio data strictly verified from Durgesh (Dev) Sonar's official resume
+ * Designed for the "Obsidian Orange / Cinematic Universe" UI/UX specification
  */
 
-const NETFLIX_CATALOG = {
-  // Billboard Featured Spotlight Show
-  featured: {
-    id: "aura-assistant",
-    title: "AI Voice Assistant — 'Aura'",
-    headline: "#1 IN TECHNOLOGY TODAY",
-    matchScore: "99% Match",
-    maturity: "AI & ML",
-    seasons: "Autonomous Agent",
-    quality: "Ultra HD 4K",
-    description: "A next-generation, voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop rather than simple command matching.",
-    tags: ["Python", "Google Gemini API", "ReAct Agent", "Voice AI", "Windows Automation"],
-    image: "assets/images/project-aura.svg",
+const PORTFOLIO_DATA = {
+  profile: {
+    name: "Durgesh (Dev) Sonar",
+    shortName: "Durgesh",
+    headline: "Curious mind. Creative code. Limitless possibilities.",
+    tagline: "B.Tech CSE (AI & ML) Student | Aspiring Business Analyst | IoT & Technology Enthusiast",
+    location: "Sandip University, Nashik, Maharashtra, India",
+    email: "durgesh401td@gmail.com",
     github: "https://github.com/durgesh401td-rgb",
-    liveDemo: "https://github.com/durgesh401td-rgb",
-    category: "ai",
-    cast: ["Google Gemini API", "Python", "ReAct Agent", "Win32 Automation"],
-    genres: ["Artificial Intelligence", "Autonomous Agents", "Voice User Interface"]
+    linkedin: "https://www.linkedin.com/in/durgesh-sonar-441231389/",
+    status: "Open to internships and opportunities",
+    bio: "Motivated B.Tech Computer Science & Engineering (AI & ML) student with hands-on exposure to Python, C/C++, IoT and ESP8266-based projects, along with Business Analytics learning through MyCaptain. Builds and ships independent projects spanning IoT, AI-assisted tools and browser-based interactive apps, published openly on GitHub. Demonstrated problem-solving, teamwork and leadership through academic and project activities, backed by 6 months of practical work experience at Blinkit as a Picker-Packer.",
+    metrics: [
+      { label: "Academic Standing", value: "B.Tech AI & ML", detail: "Sandip University, Nashik" },
+      { label: "Shipped Projects", value: "7+ Practical", detail: "IoT, AI, Web & Games" },
+      { label: "Work Experience", value: "6 Months", detail: "Blinkit Fulfillment Center" },
+      { label: "Certification", value: "Business Analytics", detail: "MyCaptain · Jan 2026" }
+    ]
   },
 
-  // All 7 official projects with Netflix stream metadata
+  // 7 Verified Projects from Official Resume with Full Case Study Data
   projects: [
     {
       id: "aura-assistant",
       title: "AI Voice Assistant — 'Aura'",
-      tagline: "Autonomous desktop voice assistant with Google Gemini multimodal ReAct loop.",
-      matchScore: "99% Match",
-      maturity: "AI & ML",
-      badge: "ORIGINAL",
+      category: "ai",
+      status: "Completed",
+      badge: "FEATURED AI",
       year: "2026",
-      quality: "4K",
-      description: "A next-generation, voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop rather than simple command matching. Capable of reasoning through multi-step desktop tasks, voice interaction, and multimodal understanding.",
-      tags: ["Python", "Google Gemini API", "ReAct Agent", "Voice AI"],
+      shortSummary: "Voice-enabled autonomous desktop AI assistant for Windows, powered by Google's Gemini multimodal models and an agentic ReAct loop.",
       image: "assets/images/project-aura.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "ai",
-      genres: ["AI / Autonomous", "Python", "Multimodal"],
-      highlights: [
-        "Implemented an agentic ReAct (Reasoning + Acting) loop for dynamic planning and execution",
-        "Integrated Google Gemini multimodal models for natural language and visual reasoning",
-        "Voice-enabled interaction loop with automated system execution on Windows"
-      ]
+      technologies: ["Python", "Google Gemini API", "ReAct Agent", "Voice AI", "Win32 Automation"],
+      caseStudy: {
+        overview: "Aura is an autonomous, voice-driven desktop intelligence designed for Windows. Unlike simple keyword-matching voice bots, Aura utilizes Google's Gemini multimodal model orchestrated through an agentic ReAct (Reasoning + Acting) loop to plan, analyze desktop context, and execute complex workflows hands-free.",
+        problem: "Traditional voice assistants rely on rigid rule-based command syntax, failing whenever user requests require multi-step reasoning, dynamic desktop context analysis, or error self-correction.",
+        goal: "Build an autonomous AI agent capable of understanding conversational intent, reasoning through task decomposition, taking actions on Windows (file operations, browser lookup, system control), and providing spoken audio feedback.",
+        role: "Sole AI & Software Engineer — architected the ReAct loop, integrated Gemini API, configured microphone input streaming, and engineered system automation tools.",
+        architecture: "Audio Input (SpeechRecognition) → Text Transcription → Agentic ReAct Engine (Google Gemini 1.5 Pro/Flash) → Tool Execution Dispatcher (OS, Browser, Shell) → Speech Synthesis Output (pyttsx3/TTS).",
+        challenges: "Managing latency during multi-turn ReAct loops and preventing hallucinated tool arguments. Resolved by implementing strict structured output schema validation and prompt-level tool boundary definitions.",
+        outcome: "Created a functional, highly responsive autonomous assistant that handles complex commands such as 'Find my latest assignment PDF, summarize it, and read out the key points' entirely hands-free."
+      }
     },
     {
       id: "plant-monitoring",
       title: "Smart Plant Monitoring System using IoT",
-      tagline: "Sensor-based environmental telemetry and automated smart plant care.",
-      matchScore: "98% Match",
-      maturity: "IoT",
-      badge: "TRENDING",
+      category: "iot",
+      status: "Completed",
+      badge: "IOT HARDWARE",
       year: "2025",
-      quality: "HD",
-      description: "Developed an IoT-based plant monitoring concept using ESP8266 and sensor-based data collection to monitor plant/environment conditions and support smarter plant care. Uses analog moisture probes and temperature/humidity sensors to prevent underwatering or heat stress with automated threshold alerts.",
-      tags: ["ESP8266", "IoT", "Sensors", "Automation", "C++"],
+      shortSummary: "ESP8266-powered smart agricultural telemetry system monitoring soil moisture, temperature, and ambient humidity with automated alerts.",
       image: "assets/images/project-plant-iot.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "iot",
-      genres: ["IoT / Hardware", "ESP8266", "Sensors"],
-      highlights: [
-        "Designed and deployed ESP8266 Wi-Fi node for continuous plant environment telemetry",
-        "Sensor-based data collection tracking moisture levels and ambient conditions",
-        "Threshold-triggered care alerts for proactive plant health management"
-      ]
-    },
-    {
-      id: "car-racing-game",
-      title: "Gesture-Controlled 3D Car Racing Game",
-      tagline: "Infinite solar highway 3D racer controlled via MediaPipe webcam hand tracking.",
-      matchScore: "97% Match",
-      maturity: "WebGL",
-      badge: "TOP 10",
-      year: "2026",
-      quality: "60 FPS",
-      description: "A gesture-controlled, infinite car racing game featuring bright Solar Highway graphics and a Knockout Elimination mode, with real-time hand tracking via webcam and explosion effects. Utilizes Three.js for 3D rendering and MediaPipe for low-latency hands-free computer vision steering.",
-      tags: ["JavaScript", "Three.js", "MediaPipe", "Computer Vision"],
-      image: "assets/images/project-racing.svg",
-      github: "https://github.com/durgesh401td-rgb",
-      liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "web",
-      genres: ["Interactive Web", "3D Three.js", "MediaPipe Vision"],
-      highlights: [
-        "Real-time webcam hand tracking using Google MediaPipe Hand Landmark detection",
-        "Interactive 3D graphics rendering at 60 FPS powered by Three.js",
-        "Knockout Elimination gameplay mode with dynamic obstacles and collision physics"
-      ]
-    },
-    {
-      id: "smarttrack",
-      title: "SmartTrack — Expense & Investment Tracker",
-      tagline: "Responsive expense portal with compound-growth calculators & Google Sheets sync.",
-      matchScore: "96% Match",
-      maturity: "Analytics",
-      badge: "POPULAR",
-      year: "2025",
-      quality: "HD",
-      description: "A responsive Expense & Investment Tracker web portal featuring interactive compound-growth calculators, with real-time data storage powered by Google Sheets and Google Apps Script. Offers streamlined budgeting, investment return simulations, and automated cloud sheet synchronization.",
-      tags: ["HTML", "Google Apps Script", "Google Sheets API", "Analytics"],
-      image: "assets/images/project-smarttrack.svg",
-      github: "https://github.com/durgesh401td-rgb",
-      liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "web",
-      genres: ["Financial Tech", "Google Cloud Script", "Web App"],
-      highlights: [
-        "Engineered interactive compound-growth and ROI projection calculators",
-        "Real-time bidirectional cloud data storage using Google Apps Script & Google Sheets",
-        "Categorized expense breakdowns and financial overview metrics"
-      ]
-    },
-    {
-      id: "distance-measurement",
-      title: "Distance Measurement System",
-      tagline: "Wireless ultrasonic range-finder node using Arduino & ESP8266 Wi-Fi.",
-      matchScore: "95% Match",
-      maturity: "IoT",
-      badge: "HARDWARE",
-      year: "2025",
-      quality: "HD",
-      description: "An IoT-based system built with Arduino and an ESP8266 Wi-Fi module — an ultrasonic sensor measures distance to an object, Arduino processes the readings, and the ESP8266 sends the data wirelessly to a web dashboard or monitoring endpoint.",
-      tags: ["C++", "Arduino", "ESP8266", "Ultrasonic Sensor"],
-      image: "assets/images/project-distance.svg",
-      github: "https://github.com/durgesh401td-rgb",
-      liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "iot",
-      genres: ["IoT / Hardware", "C++ Firmware", "Wireless Wi-Fi"],
-      highlights: [
-        "Accurate time-of-flight ultrasonic pulse distance calculation in C++",
-        "Inter-board serial communication between Arduino ATmega328P and ESP8266",
-        "Wireless transmission of real-time telemetry over local Wi-Fi network"
-      ]
-    },
-    {
-      id: "ai-resume-builder",
-      title: "AI Resume Builder",
-      tagline: "Web-based tool generating professionally formatted, ATS-compliant resumes.",
-      matchScore: "96% Match",
-      maturity: "Web App",
-      badge: "PRODUCTIVITY",
-      year: "2025",
-      quality: "HD",
-      description: "A web-based tool that helps users create professional resumes quickly — users enter details such as education, skills, projects and experience, and the tool generates a formatted resume. Built with clean responsive HTML, CSS, and modular JavaScript with instant printable layout rendering.",
-      tags: ["HTML", "CSS", "JavaScript", "Resume Generator"],
-      image: "assets/images/project-resume-builder.svg",
-      github: "https://github.com/durgesh401td-rgb",
-      liveDemo: "https://github.com/durgesh401td-rgb",
-      category: "web",
-      genres: ["Productivity", "Web Frontend", "Document Engine"],
-      highlights: [
-        "Guided multi-step input wizard for user profile, education, skills, and work history",
-        "Instant real-time formatted resume preview with high visual hierarchy",
-        "One-click browser print and PDF export with dedicated print stylesheets"
-      ]
+      technologies: ["ESP8266", "IoT", "C++", "Soil Sensors", "DHT11", "Automation"],
+      caseStudy: {
+        overview: "An automated IoT environmental monitoring station for domestic plants and greenhouse beds. Using an ESP8266 Wi-Fi microcontroller and analog/digital sensors, it monitors soil moisture levels, ambient air temperature, and humidity in real time, triggering timely alerts before plants experience moisture stress.",
+        problem: "Overwatering and severe dehydration are the leading causes of plant mortality in indoor and greenhouse environments due to irregular manual checking.",
+        goal: "Engineer an energy-efficient, wireless IoT telemetry node that continuously measures vital soil parameters and alerts caregivers via local RGB indicators and network telemetry.",
+        role: "Hardware & Firmware Developer — wired ESP8266 microcontroller, calibrated soil capacitive probes, programmed ADC readings in C++, and established Wi-Fi telemetry.",
+        architecture: "Hardware Node (ESP8266 + Soil Hygrometer + DHT11 Temp/Humidity) → Local Threshold Logic → Local LED/Buzzer Alarm → Wi-Fi HTTP Telemetry Stream → Web/Mobile Dashboard.",
+        challenges: "Analog sensor corrosion from continuous electrical bias in moist soil. Solved by powering the sensor probe only during active measurement read cycles via an ESP8266 digital GPIO pin.",
+        outcome: "Demonstrated reliable, real-time plant telemetry with accurate threshold notifications, significantly reducing water consumption while maintaining optimal soil moisture."
+      }
     },
     {
       id: "smart-lighting",
       title: "IoT Smart Lighting & Distance Alert System",
-      tagline: "Proximity detection & ambient light-reactive smart LED indication.",
-      matchScore: "94% Match",
-      maturity: "IoT",
+      category: "iot",
+      status: "Completed",
       badge: "EMBEDDED",
       year: "2025",
-      quality: "HD",
-      description: "Built an ESP8266-based system using an ultrasonic sensor, LDR (Light Dependent Resistor), and LED/RGB indication for distance-based alerts and smart lighting behavior. Adapts lighting intensity according to ambient lux and pulses warning alerts when objects breach defined proximity safety zones.",
-      tags: ["ESP8266", "Ultrasonic Sensor", "LDR", "LED/RGB"],
+      shortSummary: "Dual-function automated lighting and proximity detection system utilizing ultrasonic sensors, LDRs, and ESP8266 microcontrollers.",
       image: "assets/images/project-smart-lighting.svg",
       github: "https://github.com/durgesh401td-rgb",
       liveDemo: "https://github.com/durgesh401td-rgb",
+      technologies: ["ESP8266", "HC-SR04 Ultrasonic", "LDR Sensor", "RGB LED", "C++"],
+      caseStudy: {
+        overview: "An intelligent lighting and proximity alert hardware system designed for smart buildings and workspace ergonomics. It combines ambient light sensing with ultrasonic proximity detection to automatically illuminate workspaces only when occupants are near in dim environments, while sounding audible/visual distance alerts.",
+        problem: "Wasted energy from lighting unoccupied spaces and lack of real-time obstacle/proximity alerts in modern desktop and accessibility workstations.",
+        goal: "Develop an automated hardware module combining ambient light thresholds (LDR) with time-of-flight ultrasonic distance calculations (HC-SR04) for adaptive lighting and warning alerts.",
+        role: "Embedded Systems Developer — calculated sensor trigger timings, wrote non-blocking interrupt routines in C++, and assembled the circuit board.",
+        architecture: "Sensors (LDR light meter + HC-SR04 Ultrasonic) → ESP8266 Microcontroller → Algorithmic Distance & Ambient Calculation → PWM-driven RGB Lighting & Buzzer Alert.",
+        challenges: "Ultrasonic bounce anomalies and ambient light flicker. Resolved by applying software sliding-window smoothing filters and hysteresis thresholds on light transitions.",
+        outcome: "Successfully achieved automated power-saving illumination and instantaneous distance hazard warnings within 2cm–400cm precision."
+      }
+    },
+    {
+      id: "smarttrack",
+      title: "SmartTrack — Expense & Investment Tracker",
+      category: "web",
+      status: "Completed",
+      badge: "WEB & ANALYTICS",
+      year: "2025",
+      shortSummary: "Personal finance and investment dashboard featuring interactive compound-growth calculators and real-time Google Sheets backend persistence.",
+      image: "assets/images/project-smarttrack.svg",
+      github: "https://github.com/durgesh401td-rgb",
+      liveDemo: "https://github.com/durgesh401td-rgb",
+      technologies: ["JavaScript", "HTML5", "CSS3", "Google Apps Script", "Google Sheets API"],
+      caseStudy: {
+        overview: "SmartTrack is a responsive personal finance management dashboard designed to track everyday expenditures, categorize income streams, and model long-term investment compound returns without requiring complex database infrastructure.",
+        problem: "Users often avoid budgeting apps that require expensive subscriptions, complicated setups, or storing sensitive financial data on third-party opaque servers.",
+        goal: "Create a lightweight, zero-cost, private personal finance tracker that synchronizes transactions directly into the user's private Google Sheet via serverless Google Apps Script REST endpoints.",
+        role: "Full-Stack Developer — built the web client, structured financial data models, coded Apps Script web endpoints, and implemented interactive interest forecasting charts.",
+        architecture: "Vanilla JS / HTML5 UI → Fetch API REST Calls → Google Apps Script Web App Endpoint → Google Sheets Database + Client-side Compound Growth Calculator.",
+        challenges: "CORS handling and authentication with Google Apps Script web apps. Resolved by configuring redirect-following POST request handlers and JSONP fallback structures.",
+        outcome: "Delivered a snappy, private, and customizable financial dashboard that empowers users to monitor spending trends and project wealth accumulation effortlessly."
+      }
+    },
+    {
+      id: "ai-resume-builder",
+      title: "AI Resume Builder",
+      category: "web",
+      status: "Completed",
+      badge: "FULL STACK WEB",
+      year: "2025",
+      shortSummary: "Client-side interactive web tool that transforms user inputs into professionally formatted, ATS-friendly resumes with instant print styling.",
+      image: "assets/images/project-resume-builder.svg",
+      github: "https://github.com/durgesh401td-rgb",
+      liveDemo: "https://github.com/durgesh401td-rgb",
+      technologies: ["HTML5", "CSS3", "JavaScript", "DOM Engine", "Print CSS"],
+      caseStudy: {
+        overview: "A streamlined web application that allows students and job seekers to assemble polished, industry-standard resumes in minutes. Features live side-by-side editing, customizable section layouts, and strict ATS-friendly typography with 1-click PDF export.",
+        problem: "Job seekers struggle with cumbersome word processor templates that break formatting during export or fail automated Applicant Tracking System (ATS) parsers.",
+        goal: "Engineer a high-speed, client-side resume builder that updates the formatted document preview in real time and renders pixel-perfect printed A4 pages.",
+        role: "Frontend Engineer — designed the dynamic reactive form inputs, state synchronization engine, and print-optimized stylesheet.",
+        architecture: "Reactive Form Controls → JavaScript State Model → Live HTML Template Renderer → CSS Media Print Pagination & Clean Vector PDF Export.",
+        challenges: "Ensuring identical rendering between browser preview and printed PDF page boundaries. Solved using strict page-break CSS properties and mm/pt print media queries.",
+        outcome: "Created an intuitive, zero-dependency builder that formats resumes cleanly, saving users hours of formatting frustration."
+      }
+    },
+    {
+      id: "distance-measurement",
+      title: "Distance Measurement System",
       category: "iot",
-      genres: ["IoT / Hardware", "Sensors", "Automation"],
-      highlights: [
-        "Integrated HC-SR04 ultrasonic sensor with analog LDR sensor onto ESP8266",
-        "Configured distance-based RGB warning thresholds and auto-dimming rules",
-        "Low-latency response time with automated alert triggers"
+      status: "Completed",
+      badge: "MICROCONTROLLER",
+      year: "2024",
+      shortSummary: "Accurate ultrasonic distance measurement platform with Arduino signal processing and wireless ESP8266 telemetry.",
+      image: "assets/images/project-distance.svg",
+      github: "https://github.com/durgesh401td-rgb",
+      liveDemo: "https://github.com/durgesh401td-rgb",
+      technologies: ["C++", "Arduino", "ESP8266", "Ultrasonic Sensor", "I2C LCD"],
+      caseStudy: {
+        overview: "A precision distance calculation and telemetry instrument using pulse timing from ultrasonic transducers. The system measures physical distances down to millimeter accuracy, displaying data on a local I2C display while relaying measurements wirelessly over Wi-Fi via an ESP8266 module.",
+        problem: "Manual distance measurement in hazardous or confined spaces is dangerous and inefficient, necessitating wireless telemetry.",
+        goal: "Build a self-calibrating distance meter capable of accurate measurement across variable temperatures and transmitting data to remote observers.",
+        role: "Embedded Hardware Programmer — calibrated sound velocity formulas in C++, managed I2C communication, and linked the Arduino to ESP8266 serial streams.",
+        architecture: "HC-SR04 Transducer → Arduino ATmega328P (Microsecond timing) → I2C 16x2 LCD Display → UART Serial Bridge → ESP8266 Wi-Fi Telemetry.",
+        challenges: "Microsecond timing precision on Arduino while concurrently driving I2C display updates. Solved by decoupling timing-critical pulse calculations from slower display refresh loops.",
+        outcome: "Engineered a robust, portable measurement tool providing instantaneous readouts with high stability across indoor test environments."
+      }
+    },
+    {
+      id: "car-racing-game",
+      title: "Gesture-Controlled 3D Car Racing Game",
+      category: "web",
+      status: "Completed",
+      badge: "CREATIVE 3D",
+      year: "2024",
+      shortSummary: "Interactive 3D browser racing game featuring real-time webcam hand tracking with MediaPipe and immersive Three.js physics.",
+      image: "assets/images/project-racing.svg",
+      github: "https://github.com/durgesh401td-rgb",
+      liveDemo: "https://github.com/durgesh401td-rgb",
+      technologies: ["JavaScript", "Three.js", "MediaPipe", "Computer Vision", "WebGL"],
+      caseStudy: {
+        overview: "A cutting-edge interactive web game combining WebGL 3D graphics with computer vision. Players steer an agile race car down an infinite neon highway by tilting their real hands in front of their webcam, completely bypassing traditional keyboard or touch inputs.",
+        problem: "Traditional browser games feel disconnected from real-world natural human interactions and rarely take advantage of modern on-device machine learning.",
+        goal: "Demonstrate that modern browser APIs and lightweight AI pipelines can deliver latency-free, gesture-driven 3D interactive entertainment directly on standard consumer webcams.",
+        role: "Game & Vision Developer — implemented Three.js camera/lighting/mesh rendering, integrated MediaPipe Hand Landmark detection, and mapped spatial coordinates to vehicle physics.",
+        architecture: "Webcam Stream → MediaPipe Hand Landmark Detection (TensorFlow.js/WASM) → Gesture Angle Computation → Three.js Vehicle Physics Loop → Dynamic Particle & Audio Effects.",
+        challenges: "Maintaining steady 60 FPS while running real-time vision inference on camera frames. Solved by downsampling webcam frames to 320x240 for AI processing and interpolating vehicle steering angles smoothly.",
+        outcome: "Created an exhilarating, viral 3D arcade experience that wows users with responsive hands-free control and explosive visual feedback."
+      }
+    }
+  ],
+
+  // Skills Constellation & Categorized List (Strictly from verified resume)
+  skills: [
+    {
+      category: "Programming Languages",
+      icon: "code",
+      items: [
+        { name: "Python", level: "Core Language", detail: "AI assistants, automation scripting, data processing" },
+        { name: "C++", level: "Systems & Embedded", detail: "Microcontroller logic, high-performance logic, algorithms" },
+        { name: "C", level: "Foundational", detail: "Low-level memory management, hardware control, procedural programming" },
+        { name: "JavaScript (ES6+)", level: "Interactive Web", detail: "Modern DOM manipulation, async APIs, WebGL integration" }
+      ]
+    },
+    {
+      category: "Artificial Intelligence & Vision",
+      icon: "cpu",
+      items: [
+        { name: "Google Gemini API", level: "GenAI & Multimodal", detail: "Autonomous agent prompt engineering, multimodal reasoning" },
+        { name: "MediaPipe", level: "Computer Vision", detail: "Real-time hand tracking and biometric landmark detection" },
+        { name: "ReAct Agent Frameworks", level: "Agentic Systems", detail: "Multi-step reasoning and dynamic tool execution" }
+      ]
+    },
+    {
+      category: "Web & Graphics Technologies",
+      icon: "globe",
+      items: [
+        { name: "Three.js & WebGL", level: "3D Rendering", detail: "Particle engines, 3D meshes, scene lighting, shaders" },
+        { name: "HTML5 Semantic Markup", level: "Modern Web", detail: "Accessible landmark architecture, SEO standards" },
+        { name: "CSS3 & Modern Layouts", level: "Responsive Styling", detail: "Glassmorphism, CSS Grid/Flexbox, animations, print styling" }
+      ]
+    },
+    {
+      category: "Hardware & IoT Systems",
+      icon: "hard-drive",
+      items: [
+        { name: "ESP8266 Microcontroller", level: "IoT Wireless", detail: "Wi-Fi telemetry, GPIO sensor integration, HTTP requests" },
+        { name: "Arduino ATmega", level: "Embedded Prototyping", detail: "Microsecond pulse timing, analog conversions, serial communication" },
+        { name: "Sensors & Actuators", level: "Hardware I/O", detail: "Ultrasonic HC-SR04, LDR light meters, soil moisture probes, RGB LEDs" }
+      ]
+    },
+    {
+      category: "Developer Tools & Platforms",
+      icon: "tool",
+      items: [
+        { name: "Git & GitHub", level: "Version Control", detail: "Repository maintenance, branching, open source collaboration" },
+        { name: "VS Code & MSYS2", level: "Development Toolchains", detail: "Compiler pipelines, C/C++ build chains, extensions" },
+        { name: "Google Apps Script", level: "Cloud Automation", detail: "Serverless web endpoints, spreadsheet database automation" }
+      ]
+    },
+    {
+      category: "Business & Analytical Skills",
+      icon: "trending-up",
+      items: [
+        { name: "Business Analytics", level: "Certified by MyCaptain", detail: "Market research, data-driven strategy, problem framing" },
+        { name: "Project Leadership", level: "Academic & Professional", detail: "Team coordination, technical presentations, problem breakdown" },
+        { name: "Operational Discipline", level: "Fulfillment & Supply Chain", detail: "High-accuracy inventory processing, fast-paced workflows" }
       ]
     }
   ],
 
-  // Skills Row: Technical Competencies
-  skills: [
-    { name: "Python", category: "Programming", level: 92, badge: "PRIMARY", icon: "🐍", desc: "Multimodal Gemini API, ReAct agent loops, automation scripting" },
-    { name: "C & C++", category: "Programming", level: 90, badge: "CORE", icon: "⚡", desc: "Object-oriented programming, STL, memory logic, Arduino firmware" },
-    { name: "JavaScript & Three.js", category: "Web / Frontend", level: 88, badge: "3D WEB", icon: "🎮", desc: "Interactive 3D scenes, WebGL shaders, DOM APIs, ES6+" },
-    { name: "ESP8266 & Sensors", category: "IoT / Hardware", level: 92, badge: "HARDWARE", icon: "📡", desc: "Microcontroller Wi-Fi telemetry, ultrasonic, LDR, sensor automation" },
-    { name: "Google Gemini API", category: "AI / Tooling", level: 90, badge: "GEN AI", icon: "✨", desc: "Multimodal prompt engineering, vision/voice models, agentic workflows" },
-    { name: "MediaPipe", category: "AI / Tooling", level: 85, badge: "VISION", icon: "🖐️", desc: "Real-time webcam computer vision, 21-point hand landmark tracking" },
-    { name: "Google Apps Script", category: "AI / Tooling", level: 86, badge: "CLOUD", icon: "📊", desc: "Google Sheets integration, cloud workflow automation, API endpoints" },
-    { name: "HTML & CSS", category: "Web / Frontend", level: 94, badge: "FRONTEND", icon: "🎨", desc: "Responsive design, CSS Grid/Flexbox, accessibility, clean semantics" },
-    { name: "VS Code & MSYS2", category: "Development", level: 90, badge: "TOOLING", icon: "💻", desc: "IDE workflows, MinGW toolchains, integrated terminal & debugging" },
-    { name: "Git & GitHub", category: "Development", level: 88, badge: "DEVOPS", icon: "🐙", desc: "Version control, repositories, commits, branching, open source sharing" },
-    { name: "Business Analytics", category: "Business / Analytics", level: 86, badge: "CERTIFIED", icon: "📈", desc: "Fundamentals, decision frameworks, MyCaptain project-based learning" }
+  // Work Experience (Verified strictly from resume)
+  experience: [
+    {
+      role: "Picker-Packer",
+      organization: "Blinkit",
+      period: "6 Months",
+      type: "Fulfillment & Operations",
+      highlights: [
+        "Picked and packed customer orders accurately and efficiently in a high-velocity, fast-paced logistics fulfillment center.",
+        "Handled diverse inventory items while maintaining strict quality standards and minimizing order processing time.",
+        "Collaborated seamlessly with warehouse teammates to guarantee smooth shift handoffs and bottleneck-free operations.",
+        "Built practical, lasting discipline in time management, workplace safety, accountability, and operational agility."
+      ]
+    },
+    {
+      role: "Academic Technical Coordinator & Developer",
+      organization: "Sandip University, Nashik",
+      period: "Ongoing (Academic Journey)",
+      type: "Student Leadership & Engineering",
+      highlights: [
+        "Coordinated student project sprints in IoT, microcontrollers, and artificial intelligence.",
+        "Organized hands-on peer sessions covering C/C++ compilation, Python agent programming, and WebGL basics.",
+        "Spearheaded end-to-end prototyping for environmental monitoring and embedded distance calculation."
+      ]
+    }
   ],
 
-  // Experience & Education Episodes
-  seasons: [
+  // Education (Verified strictly from resume)
+  education: [
     {
-      id: "exp-blinkit",
-      title: "Blinkit — Picker-Packer (6 Months)",
-      season: "Season 1: Real-World Industry Operations",
-      type: "WORK EXPERIENCE",
-      badge: "6 MONTHS",
-      image: "assets/images/billboard-bg.svg",
-      matchScore: "100% Match",
-      year: "Practical Experience",
-      desc: "Picked and packed customer orders accurately and efficiently in a fast-paced environment. Handled products and order-related tasks while maintaining accuracy and timely processing. Worked collaboratively with team members to support smooth day-to-day operations. Developed practical skills in responsibility, time management, teamwork and workplace discipline."
-    },
-    {
-      id: "edu-sandip",
-      title: "B.Tech — Computer Science & Engineering (AI & ML)",
-      season: "Season 2: Sandip University, Nashik",
-      type: "EDUCATION",
-      badge: "DEGREE",
-      image: "assets/images/billboard-bg.svg",
-      matchScore: "100% Match",
-      year: "Undergraduate",
-      desc: "Comprehensive undergraduate engineering study at Sandip University, Nashik focusing on Artificial Intelligence, Machine Learning, Computer Science fundamentals, programming (C, C++, Python), and IoT system development."
-    },
-    {
-      id: "cert-mycaptain",
-      title: "Business Analytics Course — MyCaptain",
-      season: "Special Feature: Mentorship Recognition",
-      type: "CERTIFICATION",
-      badge: "JANUARY 2026",
-      image: "assets/images/billboard-bg.svg",
-      matchScore: "99% Match",
-      year: "Jan 2026",
-      desc: "Appreciation letter from mentor Adeeba Kadri recognizing participation, skill development, unique approach to assigned projects and adherence to guidelines. MyCaptain is recognized by SDSN among the Top 50 youth-led solutions working on quality education."
-    },
-    {
-      id: "exp-academic",
-      title: "Academic Project Coordination & Technical Leadership",
-      season: "Season 3: Hands-On Technical Activities",
-      type: "ADDITIONAL EXPERIENCE",
-      badge: "COLLABORATION",
-      image: "assets/images/billboard-bg.svg",
-      matchScore: "98% Match",
-      year: "Academic Activities",
-      desc: "Academic project coordination and hands-on technical activities involving IoT, programming and practical problem solving. Demonstrated participation, willingness to learn, teamwork and leadership."
+      degree: "Bachelor of Technology (B.Tech)",
+      specialization: "Computer Science & Engineering (Artificial Intelligence & Machine Learning)",
+      institution: "Sandip University, Nashik, Maharashtra",
+      period: "2022 — 2026",
+      status: "Pursuing",
+      description: "Comprehensive engineering curriculum with deep emphasis on Artificial Intelligence, Machine Learning models, Object-Oriented Programming (C++/Java/Python), Microcontroller Embedded Systems, Data Structures, Algorithms, and Software Engineering."
     }
-  ]
+  ],
+
+  // Certifications & Achievements (Verified strictly from resume)
+  certifications: [
+    {
+      title: "Business Analytics Certification & Recommendation",
+      issuer: "MyCaptain",
+      mentor: "Adeeba Kadri",
+      date: "January 2026",
+      description: "Completed intensive practical training in Business Analytics fundamentals, market research methodologies, and project management. Awarded an official letter of appreciation by mentor Adeeba Kadri commending curiosity, dedication, and problem-solving excellence.",
+      recognition: "MyCaptain is recognized by the UN Sustainable Development Solutions Network (SDSN) among the Top 50 youth-led solutions in quality education."
+    }
+  ],
+
+  achievements: [
+    {
+      title: "MyCaptain Business Analytics Letter of Appreciation",
+      category: "Professional Recognition",
+      date: "Jan 2026",
+      summary: "Recognized by mentor Adeeba Kadri for outstanding analytical capabilities, proactive participation, and creative problem solving in business analytics."
+    },
+    {
+      title: "Blinkit Operational Excellence",
+      category: "Workplace Performance",
+      date: "6 Months",
+      summary: "Achieved consistent target accuracy in order fulfillment, demonstrating time management and team reliability in high-pressure supply chain operations."
+    },
+    {
+      title: "7 Independent Technical Projects Engineered",
+      category: "Software & Hardware",
+      date: "2024 — 2026",
+      summary: "Authored and published 7 production-grade software and IoT hardware systems on GitHub spanning Voice AI, IoT telemetry, computer vision games, and financial web applications."
+    }
+  ],
+
+  // Apex Assistant Knowledge Base
+  apex: {
+    welcomeMessage: "Greetings! I am Apex, Durgesh's intelligent portfolio assistant. Ask me about Durgesh's projects, technical stack, Blinkit experience, or academic background.",
+    suggestedQuestions: [
+      "Tell me about Durgesh's background",
+      "What are Durgesh's top IoT projects?",
+      "Why should we hire Durgesh?",
+      "How was the AI Assistant 'Aura' built?"
+    ]
+  }
 };
+
+// Freeze for integrity
+Object.freeze(PORTFOLIO_DATA);

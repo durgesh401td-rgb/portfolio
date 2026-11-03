@@ -3,362 +3,907 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Durgesh | Personal Portfolio</title>
   
-  <!-- SEO & Social Meta Tags -->
-  <meta name="description" content="Personal portfolio of Durgesh Sonar. B.Tech CSE (AI & ML) Student, Sandip University Nashik. Python, C/C++, IoT, ESP8266, and Web Projects.">
-  <meta name="keywords" content="Durgesh Sonar, Durgesh, Portfolio, Sandip University, AI ML, IoT, ESP8266, Blinkit, Business Analytics">
-  <meta name="author" content="Durgesh Sonar">
-  <meta name="color-scheme" content="dark">
+  <!-- Modern Web Guidance: Color-Scheme Specification & FOUC Prevention Script -->
+  <meta name="color-scheme" content="light dark">
+  <script>
+    try {
+      const stored = localStorage.getItem("color-scheme");
+      if (stored === "light" || stored === "dark") {
+        document.querySelector('meta[name="color-scheme"]').content = stored;
+      }
+    } catch (e) {}
+  </script>
 
-  <!-- Google Fonts: Bebas Neue for Netflix Title & Inter for Metadata -->
+  <title>Durgesh (Dev) Sonar — Portfolio</title>
+  <meta name="description" content="Cinematic Universe portfolio of Durgesh (Dev) Sonar. B.Tech CSE (AI & ML) Student, Sandip University, Nashik. IoT, Voice AI, WebGL, and Business Analytics.">
+  <meta name="keywords" content="Durgesh Sonar, Dev Sonar, Portfolio, Sandip University, AI ML, IoT, ESP8266, Blinkit, Business Analytics, Three.js, Gemini API">
+  <meta name="author" content="Durgesh (Dev) Sonar">
+
+  <!-- Typography: Syne (Display), Plus Jakarta Sans (Body), JetBrains Mono (Code/Tags) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Netflix Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- Strict WCAG Skip Navigation Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Ambient Orange Nebula Canvas Overlay -->
+  <div class="nebula-background" aria-hidden="true"></div>
+
   <!-- =========================================================================
-       1. NETFLIX NAVBAR
+       1. GLOBAL DESKTOP VERTICAL SIDEBAR NAVIGATION
        ========================================================================= -->
-  <header class="netflix-navbar" id="netflix-navbar">
-    <div class="nav-left">
-      <a href="#billboard" class="durflix-brand" aria-label="Durgesh Home">
-        <img src="assets/images/durflix-logo.svg" alt="Durgesh Logo" class="durflix-logo-img" />
+  <nav class="app-sidebar" id="app-sidebar" aria-label="Main Navigation">
+    <div class="sidebar-header">
+      <a href="#hero" class="brand-badge" id="brand-orb-trigger" aria-label="Durgesh (Dev) Sonar Home">
+        <div class="brand-orb" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
+        <div class="brand-meta">
+          <span class="brand-name">Durgesh Sonar</span>
+          <span class="brand-role">B.Tech AI &amp; ML</span>
+        </div>
       </a>
-      <ul class="nav-primary-links" id="nav-primary-links">
-        <li class="nav-item active"><a href="#billboard">Home</a></li>
-        <li class="nav-item"><a href="#trending-section">Projects</a></li>
-        <li class="nav-item"><a href="#iot-section">IoT Originals</a></li>
-        <li class="nav-item"><a href="#skills-section">Tech Stack</a></li>
-        <li class="nav-item"><a href="#experience-section">Career &amp; Edu</a></li>
-        <li class="nav-item"><a href="resume.html">My List (Resume)</a></li>
-        <li class="nav-item"><a href="#contact-section">Contact</a></li>
+    </div>
+
+    <div class="sidebar-nav">
+      <ul class="nav-list" role="list">
+        <li><a href="#hero" class="nav-link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg> <span>About</span></a></li>
+        <li><a href="#skills" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg> <span>Skills</span></a></li>
+        <li><a href="#projects" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> <span>Projects</span></a></li>
+        <li><a href="#achievements" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg> <span>Achievements</span></a></li>
+        <li><a href="#education" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> <span>Education</span></a></li>
+        <li><a href="#certifications" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> <span>Certifications</span></a></li>
+        <li><a href="#experience" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg> <span>Experience</span></a></li>
+        <li><a href="#contact" class="nav-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> <span>Contact</span></a></li>
       </ul>
     </div>
 
-    <div class="nav-right">
-      <!-- Search Widget -->
-      <div class="search-widget" id="search-widget">
-        <button class="search-toggle-btn" id="search-toggle-btn" aria-label="Search Projects" title="Search Projects">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <div class="sidebar-footer">
+      <div class="control-row">
+        <button class="control-btn" id="theme-toggle-btn" aria-label="Toggle dark/light theme" aria-pressed="true">
+          <span id="theme-toggle-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+          <span id="theme-toggle-label">Theme</span>
         </button>
-        <input type="text" id="search-input-box" class="search-input-box" placeholder="Titles, IoT, Gemini, Python..." aria-label="Search titles" />
+
+        <button class="control-btn" id="sound-toggle-btn" aria-label="Toggle ambient UI audio" aria-pressed="false">
+          <span id="sound-toggle-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </span>
+          <span>Sound</span>
+        </button>
+
+        <button class="control-btn" id="a11y-toggle-btn" aria-label="Accessibility Settings">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+          <span>A11y</span>
+        </button>
       </div>
 
-      <!-- Notification Bell -->
-      <button class="circle-action-btn" style="border: none; background: none;" title="Notifications (1 New Project Deployed)" onclick="showToast('Durgesh Sonar recently shipped AI Voice Assistant Aura!')">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-      </button>
+      <a href="assets/resume.pdf" download class="resume-download-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+      <a href="resume.html" style="text-align: center; font-size: 0.78rem; color: var(--text-muted); text-decoration: none;">
+        View Clean Web Resume →
+      </a>
+    </div>
+  </nav>
 
-      <!-- User Profile Avatar & Dropdown -->
-      <div class="profile-menu-container">
-        <button class="profile-avatar-btn" aria-label="Profile Menu">
-          <img src="assets/images/avatar-red.svg" alt="User Avatar" class="nav-avatar-icon" id="nav-current-avatar" />
-          <svg class="dropdown-caret" viewBox="0 0 24 24" fill="currentColor"><polygon points="0 0 24 0 12 16 0 0"/></svg>
-        </button>
-        <div class="profile-dropdown">
-          <div style="padding: 0 1.2rem 0.5rem 1.2rem; font-size: 0.75rem; color: #777;">SWITCH VIEWER PROFILE:</div>
-          <a href="#" class="profile-option" onclick="event.preventDefault(); document.querySelector('[data-profile-name=\'Recruiter\']').click();">
-            <img src="assets/images/avatar-red.svg" class="profile-option-avatar" alt="Recruiter">
-            <span>Recruiter</span>
-          </a>
-          <a href="#" class="profile-option" onclick="event.preventDefault(); document.querySelector('[data-profile-name=\'Tech Lead\']').click();">
-            <img src="assets/images/avatar-blue.svg" class="profile-option-avatar" alt="Tech Lead">
-            <span>Tech Lead</span>
-          </a>
-          <a href="#" class="profile-option" onclick="event.preventDefault(); document.querySelector('[data-profile-name=\'Academic Evaluator\']').click();">
-            <img src="assets/images/avatar-yellow.svg" class="profile-option-avatar" alt="Evaluator">
-            <span>Academic Evaluator</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="resume.html" class="profile-option">📄 Open Printable Resume</a>
-          <a href="https://github.com/durgesh401td-rgb" target="_blank" rel="noopener" class="profile-option">🐙 GitHub Profile</a>
-          <a href="https://www.linkedin.com/in/durgesh-sonar-441231389/" target="_blank" rel="noopener" class="profile-option">💼 LinkedIn Profile</a>
+  <!-- Mobile Header Bar -->
+  <header class="mobile-header" id="mobile-header">
+    <div style="display: flex; align-items: center; gap: 8px;">
+      <div class="brand-orb" style="width: 32px; height: 32px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;">Durgesh Sonar</span>
+    </div>
+    <button class="menu-toggle-btn" id="mobile-menu-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </header>
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+
+  <!-- =========================================================================
+       2. MAIN CONTENT REGION
+       ========================================================================= -->
+  <main class="main-content" id="main-content">
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 1: HERO (Cinematic Split & Digital Planet)
+         ----------------------------------------------------------------------- -->
+    <section class="section-container hero-section" id="hero">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span>Open to internships &amp; opportunities</span>
+          </div>
+
+          <div class="hero-title-wrap">
+            <h1 class="hero-title">Durgesh (Dev) Sonar</h1>
+            <p class="hero-headline">Curious mind. Creative code. Limitless possibilities.</p>
+          </div>
+
+          <p class="hero-bio">
+            B.Tech Computer Science &amp; Engineering (AI &amp; ML) student at Sandip University, Nashik. 
+            Designing intelligent autonomous agents, embedded IoT systems, and high-performance interactive web tools, 
+            backed by 6 months of fast-paced operations experience at Blinkit.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn-primary">
+              Let's Connect
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <a href="#projects" class="btn-secondary">
+              Explore Projects
+            </a>
+            <a href="assets/resume.pdf" download class="btn-secondary" style="border-style: dashed;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              CV (PDF)
+            </a>
+          </div>
+
+          <div class="hero-metrics-bar">
+            <div class="metric-item">
+              <span class="metric-value">B.Tech AI &amp; ML</span>
+              <span class="metric-label">Sandip University, Nashik</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">7+ Shipped</span>
+              <span class="metric-label">IoT, Voice AI &amp; Web</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">6 Months</span>
+              <span class="metric-label">Blinkit Fulfillment Ops</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-value">MyCaptain</span>
+              <span class="metric-label">Business Analytics Cert</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="planet-canvas-wrap">
+            <canvas id="digital-planet-canvas"></canvas>
+          </div>
+
+          <!-- Authentic Portrait Card in Orbit -->
+          <div class="portrait-orbit-card">
+            <img src="assets/images/profile.jpg" alt="Durgesh Sonar" class="orbit-avatar" onerror="this.src='assets/images/profile-avatar.svg'">
+            <div>
+              <div class="orbit-meta-title">Durgesh Sonar</div>
+              <div class="orbit-meta-sub">Sandip University · Nashik</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </header>
-
-  <!-- =========================================================================
-       2. BILLBOARD SPOTLIGHT HERO
-       ========================================================================= -->
-  <section class="billboard-hero" id="billboard">
-    <div class="billboard-content">
-      <div class="billboard-badge-row">
-        <span class="top-10-badge">TOP 10</span>
-        <span class="ranking-text">#1 in Technology &amp; Engineering Today</span>
-      </div>
-
-      <h1 class="billboard-title">DURGESH SONAR</h1>
-
-      <div class="billboard-meta-row">
-        <span class="match-score">99% Match</span>
-        <span class="year-tag">2026</span>
-        <span class="maturity-tag">B.Tech CSE (AI &amp; ML)</span>
-        <span class="quality-badge">Ultra HD 4K</span>
-        <span style="color: #AAAAAA; font-size: 0.85rem;">Sandip University, Nashik</span>
-      </div>
-
-      <p class="billboard-synopsis">
-        Motivated B.Tech Computer Science &amp; Engineering (AI &amp; ML) student with hands-on exposure to Python, C/C++, IoT and ESP8266-based projects, along with Business Analytics learning through MyCaptain. Builds and ships independent projects spanning IoT, AI-assisted tools and browser-based interactive apps, published openly on GitHub. Backed by 6 months of practical work experience at Blinkit.
-      </p>
-
-      <div class="billboard-actions">
-        <button class="nf-btn nf-btn-play" id="billboard-play-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-          Play Featured Demo
-        </button>
-        <button class="nf-btn nf-btn-more-info" id="billboard-info-btn">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          More Info
-        </button>
-        <a href="resume.html" class="nf-btn nf-btn-more-info" style="border: 1px solid rgba(255,255,255,0.4);">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
-          My List (Resume)
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       3. "WHO'S WATCHING?" PROFILE BAR
-       ========================================================================= -->
-  <div class="profile-switch-bar">
-    <div class="profile-greeting-wrap">
-      <span style="font-size: 1.4rem;">👋</span>
-      <div class="greeting-text">
-        Welcome to Durgesh, <span id="profile-greeting-name">Recruiter</span>
-      </div>
-    </div>
-    <div class="profile-pills-list">
-      <span style="font-size: 0.8rem; color: #888; margin-right: 4px;">SWITCH PERSPECTIVE:</span>
-      <button class="profile-pill active" data-profile-name="Recruiter" data-avatar-src="assets/images/avatar-red.svg">
-        <img src="assets/images/avatar-red.svg" alt="Recruiter"> Recruiter
-      </button>
-      <button class="profile-pill" data-profile-name="Tech Lead" data-avatar-src="assets/images/avatar-blue.svg">
-        <img src="assets/images/avatar-blue.svg" alt="Tech Lead"> Tech Lead
-      </button>
-      <button class="profile-pill" data-profile-name="Academic Evaluator" data-avatar-src="assets/images/avatar-yellow.svg">
-        <img src="assets/images/avatar-yellow.svg" alt="Academic Evaluator"> Academic Evaluator
-      </button>
-      <button class="profile-pill" data-profile-name="Explorer" data-avatar-src="assets/images/avatar-blue.svg">
-        <img src="assets/images/avatar-blue.svg" alt="Explorer"> Explorer
-      </button>
-    </div>
-  </div>
-
-  <!-- =========================================================================
-       4. NETFLIX HORIZONTAL CAROUSEL ROWS
-       ========================================================================= -->
-  <main class="netflix-main-content">
-
-    <!-- ROW 1: TRENDING NOW (FEATURED PROJECTS) -->
-    <section class="content-row-section" id="trending-section">
-      <div class="row-header">
-        <h2 class="row-title">
-          🔥 Trending Now — Featured Projects
-          <span class="row-category-pill">github.com/durgesh401td-rgb</span>
-        </h2>
-      </div>
-      <div class="carousel-wrapper">
-        <button class="slider-arrow arrow-left" data-target-row="row-trending" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="row-trending"></div>
-        <button class="slider-arrow arrow-right" data-target-row="row-trending" aria-label="Next">❯</button>
-      </div>
     </section>
 
-    <!-- ROW 2: IOT & HARDWARE ORIGINALS -->
-    <section class="content-row-section" id="iot-section">
-      <div class="row-header">
-        <h2 class="row-title">
-          📡 IoT &amp; Hardware Originals — ESP8266 &amp; Sensors
-          <span class="row-category-pill">Hardware Series</span>
-        </h2>
-      </div>
-      <div class="carousel-wrapper">
-        <button class="slider-arrow arrow-left" data-target-row="row-iot" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="row-iot"></div>
-        <button class="slider-arrow arrow-right" data-target-row="row-iot" aria-label="Next">❯</button>
-      </div>
-    </section>
+    <!-- -----------------------------------------------------------------------
+         SECTION 2: ABOUT
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="about">
+      <span class="section-tag">About Me</span>
+      <h2 class="section-heading">Architecting Intelligent Systems from Silicon to Software</h2>
+      <p class="section-subtitle">Blending artificial intelligence, embedded electronics, and analytical thinking to solve real-world problems.</p>
 
-    <!-- ROW 3: AI & WEB APPS -->
-    <section class="content-row-section" id="ai-web-section">
-      <div class="row-header">
-        <h2 class="row-title">
-          🧠 Autonomous AI &amp; Interactive Web Series
-          <span class="row-category-pill">Gemini · Three.js · Apps Script</span>
-        </h2>
-      </div>
-      <div class="carousel-wrapper">
-        <button class="slider-arrow arrow-left" data-target-row="row-ai-web" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="row-ai-web"></div>
-        <button class="slider-arrow arrow-right" data-target-row="row-ai-web" aria-label="Next">❯</button>
-      </div>
-    </section>
+      <div class="about-grid">
+        <div class="about-portrait-wrap">
+          <img src="assets/images/profile.jpg" alt="Durgesh (Dev) Sonar portrait" class="about-portrait-img" onerror="this.src='assets/images/profile-avatar.svg'">
+          <div class="about-portrait-overlay"></div>
+        </div>
 
-    <!-- ROW 4: SKILLS & TECHNICAL STACK -->
-    <section class="content-row-section" id="skills-section">
-      <div class="row-header">
-        <h2 class="row-title">
-          ⚡ Critically Acclaimed: Core Technical Skills
-          <span class="row-category-pill">Languages · Tools · Analytics</span>
-        </h2>
-      </div>
-      <div class="carousel-wrapper">
-        <button class="slider-arrow arrow-left" data-target-row="row-skills" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="row-skills"></div>
-        <button class="slider-arrow arrow-right" data-target-row="row-skills" aria-label="Next">❯</button>
-      </div>
-    </section>
-
-    <!-- ROW 5: EXPERIENCE & EDUCATION EPISODES -->
-    <section class="content-row-section" id="experience-section">
-      <div class="row-header">
-        <h2 class="row-title">
-          💼 The Real-World Season: Practical Experience &amp; Academic Degrees
-          <span class="row-category-pill">Blinkit · Sandip University · MyCaptain</span>
-        </h2>
-      </div>
-      <div class="carousel-wrapper">
-        <button class="slider-arrow arrow-left" data-target-row="row-experience" aria-label="Previous">❮</button>
-        <div class="carousel-track" id="row-experience"></div>
-        <button class="slider-arrow arrow-right" data-target-row="row-experience" aria-label="Next">❯</button>
-      </div>
-    </section>
-
-    <!-- =========================================================================
-         5. NETFLIX SUBSCRIPTION-STYLE CONTACT SECTION
-         ========================================================================= -->
-    <section class="netflix-contact-cta" id="contact-section">
-      <div class="contact-cta-wrapper">
-        <h2 class="contact-headline">Ready to Recruit Durgesh Sonar?</h2>
-        <p class="contact-subtext">
-          Enter your message below to connect with an engineering student skilled in Python, C/C++, IoT, Google Gemini AI, and Full-Stack Web Development.
-        </p>
-
-        <form id="netflix-contact-form" class="netflix-contact-form">
-          <div class="form-row-group">
-            <input type="text" id="nf-contact-name" class="nf-input-box" placeholder="Your Name or Company" required />
-            <input type="email" id="nf-contact-email" class="nf-input-box" placeholder="Your Email Address" required />
+        <div class="about-content-blocks">
+          <div class="about-card">
+            <h3 class="about-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+              The Academic &amp; Engineering Journey
+            </h3>
+            <p class="about-card-text">
+              Currently pursuing a Bachelor of Technology in Computer Science &amp; Engineering with a specialization in Artificial Intelligence &amp; Machine Learning at Sandip University, Nashik. My technical focus bridges hardware experimentation with software automation—translating high-level machine learning concepts into functional, embedded, and browser-based reality.
+            </p>
           </div>
-          <textarea id="nf-contact-message" class="nf-input-box nf-textarea" placeholder="Opportunity details or project inquiry..." required></textarea>
-          
-          <button type="submit" class="btn-netflix-submit">
-            Get In Touch ❯
+
+          <div class="about-card">
+            <h3 class="about-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              Operational Agility &amp; Blinkit Experience
+            </h3>
+            <p class="about-card-text">
+              Over 6 months as a Picker-Packer at Blinkit, I operated in high-velocity supply chain fulfillment centers where order accuracy, systematic inventory handling, and strict time discipline were critical. This experience instilled workplace discipline, strong accountability, and high-pressure teamwork that directly informs my engineering mindset today.
+            </p>
+          </div>
+
+          <div class="about-card">
+            <h3 class="about-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              Business Analytics &amp; Creative Problem-Solving
+            </h3>
+            <p class="about-card-text">
+              Certified in Business Analytics through MyCaptain, where mentor Adeeba Kadri commended my analytical thinking, curiosity, and proactive project approach. I believe that true technical mastery lies in pairing software craftsmanship with solid commercial viability and user empathy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 3: SKILLS (Interactive Constellation & Accessible List)
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="skills">
+      <span class="section-tag">Technical Constellation</span>
+      <h2 class="section-heading">Verified Technical Capabilities</h2>
+      <p class="section-subtitle">Real technologies and tools actively utilized across shipped IoT hardware, AI agents, and web applications.</p>
+
+      <div class="skills-wrapper">
+        <div class="skills-view-toggle" role="tablist" aria-label="Skills view options">
+          <button class="skills-tab-btn active" id="tab-view-constellation" role="tab" aria-selected="true">3D Constellation View</button>
+          <button class="skills-tab-btn" id="tab-view-list" role="tab" aria-selected="false">Accessible Grid View</button>
+        </div>
+
+        <!-- Mode A: Interactive 2D/3D Node Constellation -->
+        <div class="constellation-container" id="constellation-container">
+          <canvas id="constellation-canvas"></canvas>
+          <div class="constellation-tooltip" id="constellation-tooltip" role="tooltip"></div>
+        </div>
+
+        <!-- Mode B: Accessible Grid Alternative -->
+        <div class="skills-grid" id="skills-list-container" style="display: none;">
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+              <h3 class="skill-category-title">Programming Languages</h3>
+            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag-item"><span class="skill-tag-name">Python</span><span class="skill-tag-detail">Autonomous AI &amp; Automation</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">C++</span><span class="skill-tag-detail">Microcontrollers &amp; Hardware</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">C</span><span class="skill-tag-detail">Systems &amp; Logic Foundations</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">JavaScript (ES6+)</span><span class="skill-tag-detail">Interactive WebGL &amp; DOM</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+              <h3 class="skill-category-title">AI, Vision &amp; WebGL</h3>
+            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag-item"><span class="skill-tag-name">Google Gemini API</span><span class="skill-tag-detail">Multimodal Reasoning</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">MediaPipe</span><span class="skill-tag-detail">Real-time Computer Vision</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">ReAct Framework</span><span class="skill-tag-detail">Agentic Planning Loops</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Three.js</span><span class="skill-tag-detail">3D Graphics &amp; Shaders</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/></svg>
+              <h3 class="skill-category-title">Hardware &amp; IoT Systems</h3>
+            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag-item"><span class="skill-tag-name">ESP8266 Microcontroller</span><span class="skill-tag-detail">Wi-Fi &amp; HTTP Telemetry</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">HC-SR04 Ultrasonic</span><span class="skill-tag-detail">Precision Time-of-Flight</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">LDR &amp; Soil Moisture</span><span class="skill-tag-detail">Environmental Analog I/O</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Arduino ATmega</span><span class="skill-tag-detail">Serial &amp; I2C Communication</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              <h3 class="skill-category-title">Developer Tools &amp; Cloud</h3>
+            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag-item"><span class="skill-tag-name">Git &amp; GitHub</span><span class="skill-tag-detail">Version Control &amp; CI/CD</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">VS Code &amp; MSYS2</span><span class="skill-tag-detail">Toolchain Configuration</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Google Apps Script</span><span class="skill-tag-detail">Serverless REST Endpoints</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">HTML5 &amp; CSS3</span><span class="skill-tag-detail">Semantic &amp; Print Engines</span></li>
+            </ul>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              <h3 class="skill-category-title">Business &amp; Operations</h3>
+            </div>
+            <ul class="skill-tags-list">
+              <li class="skill-tag-item"><span class="skill-tag-name">Business Analytics</span><span class="skill-tag-detail">Market &amp; Data Framing</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Supply Chain Ops</span><span class="skill-tag-detail">6 Months Blinkit Accuracy</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Project Coordination</span><span class="skill-tag-detail">Academic Team Leadership</span></li>
+              <li class="skill-tag-item"><span class="skill-tag-name">Problem Decomposition</span><span class="skill-tag-detail">End-to-End System Design</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 4: PROJECTS (Curated 3D Tilt Gallery — 7 Verified Projects)
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="projects">
+      <span class="section-tag">Engineering Showcase</span>
+      <h2 class="section-heading">Curated Shipped Projects</h2>
+      <p class="section-subtitle">A curated portfolio of 7 verified projects spanning Autonomous Voice AI, IoT telemetry, computer vision, and web engines.</p>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: AI Voice Assistant Aura -->
+        <article class="project-card" data-project-id="aura-assistant" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for AI Voice Assistant Aura">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-aura.svg" alt="AI Voice Assistant Aura banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2026</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Voice Assistant — "Aura"</h3>
+            <p class="project-summary">Autonomous voice-enabled Windows desktop assistant powered by Google's Gemini multimodal models and an agentic ReAct loop for reasoning and multi-step task execution.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Gemini API</span>
+              <span class="tech-tag">ReAct Loop</span>
+              <span class="tech-tag">Win32</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for Aura">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Smart Plant Monitoring System using IoT -->
+        <article class="project-card" data-project-id="plant-monitoring" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Smart Plant Monitoring System">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-plant-iot.svg" alt="Smart Plant Monitoring System banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2025</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Smart Plant Monitoring System using IoT</h3>
+            <p class="project-summary">ESP8266-based agricultural telemetry node gathering soil moisture, temperature, and humidity data to automate plant care and issue smart irrigation alerts.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">ESP8266</span>
+              <span class="tech-tag">IoT</span>
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Sensors</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for Smart Plant Monitoring">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: IoT Smart Lighting & Distance Alert System -->
+        <article class="project-card" data-project-id="smart-lighting" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for IoT Smart Lighting">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-smart-lighting.svg" alt="IoT Smart Lighting banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2025</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">IoT Smart Lighting &amp; Distance Alert System</h3>
+            <p class="project-summary">Dual-function automated lighting and proximity detection system utilizing ultrasonic sensors, LDR ambient detection, and ESP8266 microcontrollers.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">ESP8266</span>
+              <span class="tech-tag">HC-SR04</span>
+              <span class="tech-tag">LDR</span>
+              <span class="tech-tag">RGB LED</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for Smart Lighting">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 4: SmartTrack -->
+        <article class="project-card" data-project-id="smarttrack" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for SmartTrack">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-smarttrack.svg" alt="SmartTrack Expense Tracker banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2025</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">SmartTrack — Expense &amp; Investment Tracker</h3>
+            <p class="project-summary">Personal finance dashboard featuring compound-growth forecasting calculators and direct serverless transaction synchronization with Google Sheets.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">Apps Script</span>
+              <span class="tech-tag">Sheets API</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for SmartTrack">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 5: AI Resume Builder -->
+        <article class="project-card" data-project-id="ai-resume-builder" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for AI Resume Builder">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-resume-builder.svg" alt="AI Resume Builder banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2025</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI Resume Builder</h3>
+            <p class="project-summary">Interactive client-side web application that transforms user inputs into professionally formatted, ATS-compliant resumes with real-time preview and 1-click PDF export.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Print Engine</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for AI Resume Builder">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 6: Distance Measurement System -->
+        <article class="project-card" data-project-id="distance-measurement" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for Distance Measurement System">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-distance.svg" alt="Distance Measurement System banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2024</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Distance Measurement System</h3>
+            <p class="project-summary">Precision ultrasonic distance calculation platform with Arduino time-of-flight processing, I2C LCD readout, and ESP8266 wireless telemetry bridging.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">C++</span>
+              <span class="tech-tag">Arduino</span>
+              <span class="tech-tag">ESP8266</span>
+              <span class="tech-tag">Ultrasonic</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for Distance Measurement">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 7: Gesture-Controlled 3D Car Racing Game -->
+        <article class="project-card" data-project-id="car-racing-game" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View case study for 3D Car Racing Game">
+          <div class="project-banner-wrap">
+            <img src="assets/images/project-racing.svg" alt="3D Car Racing Game banner" class="project-img">
+            <span class="project-badge-pill">COMPLETED · 2024</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Gesture-Controlled 3D Car Racing Game</h3>
+            <p class="project-summary">Browser arcade game combining Three.js 3D graphics with MediaPipe computer vision, allowing players to steer race cars using real-time webcam hand gestures.</p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">MediaPipe</span>
+              <span class="tech-tag">WebGL</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn-case-study" aria-label="Open case study for 3D Car Racing Game">
+                Explore Case Study →
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 5: ACHIEVEMENTS (3D Trophy Showcase)
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="achievements">
+      <span class="section-tag">Recognition &amp; Honors</span>
+      <h2 class="section-heading">Demonstrated Accomplishments</h2>
+      <p class="section-subtitle">Milestones spanning professional appreciation, logistics performance, and independent software authoring.</p>
+
+      <div class="achievements-grid">
+        <div class="trophy-card">
+          <div class="trophy-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H7"/><path d="M14 14.66V17c0 .55.45 1 1 1h2"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+          </div>
+          <h3 class="trophy-title">MyCaptain Business Analytics Appreciation</h3>
+          <div class="trophy-meta">JANUARY 2026 · MENTOR ADEEBA KADRI</div>
+          <p class="trophy-desc">
+            Awarded an official letter of recommendation commending curiosity, dedication, analytical prowess, and a unique problem-solving approach. MyCaptain is recognized by the UN SDSN among the Top 50 youth-led quality education solutions.
+          </p>
+        </div>
+
+        <div class="trophy-card">
+          <div class="trophy-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3 class="trophy-title">Blinkit Operational Excellence</h3>
+          <div class="trophy-meta">6 MONTHS · FAST-PACED LOGISTICS</div>
+          <p class="trophy-desc">
+            Sustained high-precision order fulfillment, fast dispatch turnaround, inventory handling accuracy, and team collaboration in a high-velocity retail warehouse environment.
+          </p>
+        </div>
+
+        <div class="trophy-card">
+          <div class="trophy-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="trophy-title">7 Production Systems Published</h3>
+          <div class="trophy-meta">2024 — 2026 · OPEN SOURCE GITHUB</div>
+          <p class="trophy-desc">
+            Engineered, tested, and published 7 independent systems covering Voice AI, IoT telemetry, Three.js game design, and finance dashboards on GitHub for public evaluation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 6: EDUCATION
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="education">
+      <span class="section-tag">Academic Foundations</span>
+      <h2 class="section-heading">Education History</h2>
+      <p class="section-subtitle">Rigorous degree program specializing in modern artificial intelligence and machine learning engineering.</p>
+
+      <div class="timeline-wrap">
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Bachelor of Technology (B.Tech)</h3>
+              <span class="timeline-period">2022 — 2026 · Pursuing</span>
+            </div>
+            <div class="timeline-org">Computer Science &amp; Engineering (Artificial Intelligence &amp; Machine Learning)</div>
+            <div style="font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">Sandip University, Nashik, Maharashtra, India</div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">Comprehensive engineering study focused on Artificial Intelligence algorithms, Deep Learning concepts, and Machine Learning pipelines.</li>
+              <li class="timeline-bullet">Core coursework in Data Structures, Object-Oriented Analysis in C++ and Python, Operating Systems, Computer Networks, and Database Management.</li>
+              <li class="timeline-bullet">Practical laboratory and project work with microcontroller programming (ESP8266/Arduino), sensor circuits, and full-stack software architecture.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 7: CERTIFICATIONS
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="certifications">
+      <span class="section-tag">Credentials</span>
+      <h2 class="section-heading">Certifications &amp; Training</h2>
+      <p class="section-subtitle">Professional accreditations verifying practical competence in business strategy and analytical methodologies.</p>
+
+      <div class="achievements-grid">
+        <div class="trophy-card" style="border-color: var(--border-strong);">
+          <div class="trophy-icon-wrap" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <h3 class="trophy-title">Business Analytics Certificate &amp; Recommendation Letter</h3>
+          <div class="trophy-meta">MYCAPTAIN · COMPLETED JAN 2026</div>
+          <p class="trophy-desc">
+            Trained in core Business Analytics competencies: market segmentation, exploratory data analysis, KPI metric formulation, and strategic presentation. Received an appreciation letter from Mentor Adeeba Kadri highlighting proactive participation and dedication.
+          </p>
+          <div style="margin-top: 14px; font-size: 0.8rem; font-family: var(--font-mono); color: var(--accent-orange);">
+            Recognized by UN SDSN Youth-Led Solutions Network
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 8: EXPERIENCE
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="experience">
+      <span class="section-tag">Practical Work</span>
+      <h2 class="section-heading">Professional Experience</h2>
+      <p class="section-subtitle">Real-world logistics operations and hands-on academic technical coordination.</p>
+
+      <div class="timeline-wrap">
+        <!-- Blinkit Experience -->
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Picker-Packer</h3>
+              <span class="timeline-period">6 Months</span>
+            </div>
+            <div class="timeline-org">Blinkit · Supply Chain Fulfillment Center</div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">Picked and packed customer orders accurately and efficiently in a high-velocity, fast-paced logistics warehouse environment.</li>
+              <li class="timeline-bullet">Handled diverse retail inventory items while maintaining strict safety, condition, and order accuracy standards.</li>
+              <li class="timeline-bullet">Worked collaboratively with shift colleagues to maintain zero-delay outbound dispatch queues and seamless inventory replenishment.</li>
+              <li class="timeline-bullet">Developed lasting practical discipline in punctuality, team communication, accountability, and operational agility.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Academic Project Coordination -->
+        <div class="timeline-item">
+          <div class="timeline-marker" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Academic Technical Coordinator &amp; Developer</h3>
+              <span class="timeline-period">Ongoing Academic Journey</span>
+            </div>
+            <div class="timeline-org">Sandip University, Nashik</div>
+            <ul class="timeline-bullets">
+              <li class="timeline-bullet">Spearheaded hands-on project coordination among engineering peers for embedded hardware and Python software prototypes.</li>
+              <li class="timeline-bullet">Conducted peer demonstrations on sensor wiring, microcontroller flashing, and C++ algorithm optimization.</li>
+              <li class="timeline-bullet">Organized structured technical documentation and Git repository workflows for collaborative university assignments.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         SECTION 9: CONTACT ME (Social Universe & Validated Form)
+         ----------------------------------------------------------------------- -->
+    <section class="section-container" id="contact">
+      <span class="section-tag">Get in Touch</span>
+      <h2 class="section-heading">Let's Connect &amp; Collaborate</h2>
+      <p class="section-subtitle">Whether you have an internship opportunity, a technical inquiry, or want to discuss IoT &amp; AI development, I would love to connect.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info-col">
+          <a href="mailto:durgesh401td@gmail.com" class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">Email Address</div>
+              <div class="contact-card-val">durgesh401td@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/durgesh-sonar-441231389/" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">LinkedIn Profile</div>
+              <div class="contact-card-val">linkedin.com/in/durgesh-sonar</div>
+            </div>
+          </a>
+
+          <a href="https://github.com/durgesh401td-rgb" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">GitHub Profile</div>
+              <div class="contact-card-val">github.com/durgesh401td-rgb</div>
+            </div>
+          </a>
+
+          <div class="contact-card">
+            <div class="contact-card-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-card-title">Location</div>
+              <div class="contact-card-val">Nashik, Maharashtra, India</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Validated Contact Form -->
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="contact-name" class="form-label">Your Name *</label>
+            <input type="text" id="contact-name" name="name" class="form-input" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-email" class="form-label">Email Address *</label>
+            <input type="email" id="contact-email" name="email" class="form-input" placeholder="e.g. john@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contact-subject" class="form-label">Subject</label>
+            <input type="text" id="contact-subject" name="subject" class="form-input" placeholder="e.g. Internship Inquiry / Project Discussion">
+          </div>
+
+          <div class="form-group">
+            <label for="contact-message" class="form-label">Message *</label>
+            <textarea id="contact-message" name="message" class="form-textarea" placeholder="Tell me about your opportunity or question..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary" style="justify-content: center;">
+            Send Message
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           </button>
+
+          <div class="form-status" id="form-status-message" role="status" aria-live="polite"></div>
         </form>
       </div>
     </section>
 
+    <!-- -----------------------------------------------------------------------
+         FOOTER
+         ----------------------------------------------------------------------- -->
+    <footer class="app-footer" id="footer">
+      <div class="footer-orb" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <p class="footer-quote">“Curious mind. Creative code. Limitless possibilities.”</p>
+      
+      <ul class="footer-links" role="list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="resume.html">Print Resume</a></li>
+        <li><a href="assets/resume.pdf" download>Download CV (PDF)</a></li>
+        <li><a href="DOCUMENTATION.md">Project Docs</a></li>
+        <li><a href="README.md">README</a></li>
+      </ul>
+
+      <div class="footer-bottom">
+        <span>© 2026 Durgesh (Dev) Sonar. All rights reserved. B.Tech CSE (AI &amp; ML), Sandip University.</span>
+        <button class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Back to top">
+          Back to Top ↑
+        </button>
+      </div>
+    </footer>
+
   </main>
 
   <!-- =========================================================================
-       6. NETFLIX MINIMALIST FOOTER
+       3. CASE STUDY MODAL DIALOG (Native HTML5 <dialog> with Full Accessibility)
        ========================================================================= -->
-  <footer class="netflix-footer">
-    <div class="footer-contact-phone">
-      Direct Contact: <a href="mailto:durgesh401td@gmail.com">durgesh401td@gmail.com</a> · Nashik, Maharashtra, India
+  <dialog id="case-study-dialog" class="case-study-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header">
+      <img id="dialog-banner-img" src="assets/images/billboard-bg.svg" alt="Project Banner" class="dialog-img">
+      <div class="dialog-header-gradient"></div>
+      <button class="dialog-close-btn" id="case-study-close-btn" aria-label="Close Case Study Dialog">✕</button>
     </div>
+    <div class="dialog-body">
+      <div>
+        <h2 id="dialog-title" class="dialog-title">Project Case Study</h2>
+        <div id="dialog-tags" class="project-tech-tags"></div>
+      </div>
 
-    <ul class="footer-links-grid">
-      <li><a href="https://github.com/durgesh401td-rgb" target="_blank" rel="noopener">GitHub Profile</a></li>
-      <li><a href="https://www.linkedin.com/in/durgesh-sonar-441231389/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-      <li><a href="resume.html">Printable Resume</a></li>
-      <li><a href="https://portfolio-7y8z72l36-durgesh401td-rgb.vercel.app/">Live Vercel Site</a></li>
-      <li><a href="#trending-section">All 7 Projects</a></li>
-      <li><a href="#iot-section">IoT ESP8266</a></li>
-      <li><a href="#experience-section">Blinkit (6 Months)</a></li>
-      <li><a href="#experience-section">Sandip University, Nashik</a></li>
-      <li><a href="#skills-section">Python &amp; C/C++</a></li>
-      <li><a href="#skills-section">Business Analytics</a></li>
-      <li><a href="DOCUMENTATION.md">Project Documentation</a></li>
-      <li><a href="README.md">Repository README</a></li>
-    </ul>
+      <div>
+        <h3 class="dialog-section-title">Overview</h3>
+        <p id="dialog-overview" class="dialog-text"></p>
+      </div>
 
-    <div class="footer-bottom-line">
-      <span>Durgesh · Personal Portfolio of Durgesh Sonar · B.Tech CSE (AI &amp; ML)</span>
-      <span>© 2026 Durgesh Sonar. All rights reserved.</span>
-    </div>
-  </footer>
-
-  <!-- =========================================================================
-       7. NETFLIX CINEMATIC EXPANDED MODAL DIALOG
-       ========================================================================= -->
-  <dialog id="netflix-modal" class="netflix-dialog" aria-labelledby="modal-title">
-    <div style="position: relative;">
-      <!-- Hero Banner inside Modal -->
-      <div class="dialog-hero-banner">
-        <img id="modal-hero-img" src="assets/images/billboard-bg.svg" alt="Project Banner" />
-        <div class="dialog-hero-gradient"></div>
-        <button class="dialog-close-x" id="netflix-modal-close" aria-label="Close Preview">✕</button>
-        
-        <div class="dialog-hero-caption">
-          <h3 id="modal-title" class="dialog-hero-title">AI Voice Assistant — "Aura"</h3>
-          <div class="dialog-hero-btns">
-            <a id="modal-demo-btn" href="#" target="_blank" rel="noopener" class="nf-btn nf-btn-play" style="padding: 0.55rem 1.4rem; font-size: 0.95rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              Open Live Link
-            </a>
-            <a id="modal-github-btn" href="#" target="_blank" rel="noopener" class="nf-btn nf-btn-more-info" style="padding: 0.55rem 1.4rem; font-size: 0.95rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-              View on GitHub
-            </a>
-          </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+        <div>
+          <h3 class="dialog-section-title">Problem Statement</h3>
+          <p id="dialog-problem" class="dialog-text"></p>
+        </div>
+        <div>
+          <h3 class="dialog-section-title">Engineering Goal</h3>
+          <p id="dialog-goal" class="dialog-text"></p>
         </div>
       </div>
 
-      <!-- Scrollable Details Section -->
-      <div class="dialog-scrollable-body">
-        <div class="dialog-two-col">
-          <!-- Left Column -->
-          <div class="dialog-left-col">
-            <div style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
-              <span id="modal-match" class="match-score">99% Match</span>
-              <span id="modal-year" class="year-tag">2026</span>
-              <span id="modal-maturity" class="maturity-tag">AI &amp; ML</span>
-              <span id="modal-quality" class="quality-badge">HD</span>
-            </div>
+      <div>
+        <h3 class="dialog-section-title">Role &amp; Responsibility</h3>
+        <p id="dialog-role" class="dialog-text"></p>
+      </div>
 
-            <p id="modal-desc" style="font-size: 1rem; color: #FFFFFF; line-height: 1.6;">
-              Project overview description.
-            </p>
+      <div>
+        <h3 class="dialog-section-title">Architecture &amp; Process</h3>
+        <p id="dialog-architecture" class="dialog-text"></p>
+      </div>
 
-            <h4 style="font-size: 0.95rem; font-weight: 700; color: #FFFFFF; margin-top: 0.5rem; text-transform: uppercase;">
-              Architectural Highlights &amp; Features:
-            </h4>
-            <ul id="modal-highlights-list" style="padding-left: 1.3rem; color: #CCCCCC; font-size: 0.9rem; line-height: 1.6;"></ul>
-          </div>
+      <div>
+        <h3 class="dialog-section-title">Key Challenges &amp; Technical Solutions</h3>
+        <p id="dialog-challenges" class="dialog-text"></p>
+      </div>
 
-          <!-- Right Column (Cast & Metadata) -->
-          <div class="dialog-right-col">
-            <div>
-              <strong>Technologies Used:</strong>
-              <div id="modal-tags-list" style="color: #FFFFFF; margin-top: 2px;"></div>
-            </div>
-            <div>
-              <strong>Categories / Genres:</strong>
-              <div id="modal-genres-list" style="color: #FFFFFF; margin-top: 2px;"></div>
-            </div>
-            <div>
-              <strong>Author:</strong>
-              <div style="color: #FFFFFF;">Durgesh Sonar (Sandip University)</div>
-            </div>
-            <div>
-              <strong>Maturity Rating:</strong>
-              <div style="color: #FFFFFF;">Recommended for Software Engineering &amp; AI/ML Recruiters</div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <h3 class="dialog-section-title">Outcome &amp; Engineering Lessons</h3>
+        <p id="dialog-outcome" class="dialog-text"></p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; padding-top: 1rem; border-top: 1px solid var(--border-subtle);">
+        <a id="dialog-github-btn" href="https://github.com/durgesh401td-rgb" target="_blank" rel="noopener" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          View GitHub Repository
+        </a>
+        <a id="dialog-demo-btn" href="https://github.com/durgesh401td-rgb" target="_blank" rel="noopener" class="btn-secondary" style="padding: 0.6rem 1.2rem; font-size: 0.88rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Live Demo / Details
+        </a>
       </div>
     </div>
   </dialog>
 
-  <!-- Scripts -->
+  <!-- =========================================================================
+       4. ACCESSIBILITY SETTINGS DIALOG
+       ========================================================================= -->
+  <dialog id="a11y-dialog" class="accessibility-dialog" aria-labelledby="a11y-heading">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.2rem;">
+      <h2 id="a11y-heading" style="font-family: var(--font-display); font-size: 1.25rem;">Accessibility Controls</h2>
+      <button id="a11y-close-btn" style="background: transparent; border: none; font-size: 1.2rem; color: var(--text-muted); cursor: pointer;" aria-label="Close accessibility dialog">✕</button>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1.2rem;">
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Text Size Scaling</label>
+        <div style="display: flex; gap: 8px;">
+          <button class="control-btn" id="font-normal-btn">Normal (100%)</button>
+          <button class="control-btn" id="font-lg-btn">Large (110%)</button>
+          <button class="control-btn" id="font-xl-btn">Extra Large (122%)</button>
+        </div>
+      </div>
+
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Motion Preference</label>
+        <button class="control-btn" id="motion-toggle-btn" aria-pressed="false">Toggle Reduced Motion Override</button>
+      </div>
+
+      <div>
+        <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); display: block; margin-bottom: 6px;">Contrast Mode</label>
+        <button class="control-btn" id="contrast-toggle-btn" aria-pressed="false">Toggle High Contrast</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- =========================================================================
+       5. APEX ASSISTANT FLOATING LAUNCHER & CHAT DRAWER
+       ========================================================================= -->
+  <button id="apex-launcher-btn" class="apex-launcher-btn" aria-label="Open Apex Assistant" aria-expanded="false">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 14h-2v-2h2zm0-4h-2V7h2z"/></svg>
+    <span>Apex AI</span>
+  </button>
+
+  <aside id="apex-chat-drawer" class="apex-chat-drawer" aria-label="Apex Assistant Chat Window">
+    <div class="apex-chat-header">
+      <div class="apex-header-brand">
+        <div class="brand-orb" style="width: 24px; height: 24px;">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"/></svg>
+        </div>
+        <span>Apex — Portfolio Assistant</span>
+      </div>
+      <div class="apex-actions-row">
+        <button class="apex-icon-btn" id="apex-clear-btn" aria-label="Clear chat messages" title="Clear chat">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+        </button>
+        <button class="apex-icon-btn" id="apex-close-btn" aria-label="Close assistant drawer">✕</button>
+      </div>
+    </div>
+
+    <div class="apex-messages-list" id="apex-messages-list" role="log" aria-live="polite">
+      <div class="chat-bubble bot">
+        Greetings! I am Apex, Durgesh's intelligent portfolio assistant. Ask me about Durgesh's 7 projects, technical stack, Blinkit experience, or academic background.
+      </div>
+    </div>
+
+    <div class="apex-quick-prompts">
+      <button class="quick-prompt-chip">About Durgesh</button>
+      <button class="quick-prompt-chip">Top IoT Projects</button>
+      <button class="quick-prompt-chip">Why hire Durgesh?</button>
+      <button class="quick-prompt-chip">AI Assistant Aura</button>
+    </div>
+
+    <div class="apex-input-bar">
+      <input type="text" id="apex-user-input" class="apex-text-input" placeholder="Ask Apex a question..." aria-label="Type message for Apex">
+      <button id="apex-send-btn" class="apex-send-btn" aria-label="Send message">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Three.js Library via CDN (resilient fallback provided in main.js) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Portfolio Logic & Verified Resume Dataset -->
   <script src="js/projects-data.js"></script>
   <script src="js/main.js"></script>
 </body>
